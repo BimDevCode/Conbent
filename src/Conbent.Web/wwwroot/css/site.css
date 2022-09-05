@@ -14,5 +14,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  background-image: linear-gradient(90deg,rgb(10, 10, 10), rgb(61, 61, 61));
+  background-color: rgb(61, 61, 61);
+  background-repeat: repeat-y;
 }

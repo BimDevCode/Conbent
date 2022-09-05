@@ -1,0 +1,12 @@
+C:\_startup\Conbent\src\Conbent.SharedKernel\bin\Debug\net6.0\Conbent.SharedKernel.deps.json
+C:\_startup\Conbent\src\Conbent.SharedKernel\bin\Debug\net6.0\Conbent.SharedKernel.dll
+C:\_startup\Conbent\src\Conbent.SharedKernel\bin\Debug\net6.0\Conbent.SharedKernel.pdb
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\Conbent.SharedKernel.csproj.AssemblyReference.cache
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\Conbent.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\Conbent.SharedKernel.AssemblyInfoInputs.cache
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\Conbent.SharedKernel.AssemblyInfo.cs
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\Conbent.SharedKernel.csproj.CoreCompileInputs.cache
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\Conbent.SharedKernel.dll
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\refint\Conbent.SharedKernel.dll
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\Conbent.SharedKernel.pdb
+C:\_startup\Conbent\src\Conbent.SharedKernel\obj\Debug\net6.0\ref\Conbent.SharedKernel.dll
