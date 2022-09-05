@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "XVXrd0891G/KGshT04CuA7KpVsDuRDPpIMCcjH9Qhg/kt5jIFKyXbKT0S9wgO64QzDp5K1z1RX2rPfV/1XQnBQ==",
+  "success": true,
+  "projectFilePath": "C:\\_startup\\Conbent\\src\\Conbent.SharedKernel\\Conbent.SharedKernel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nikol\\.nuget\\packages\\ardalis.specification\\6.1.0\\ardalis.specification.6.1.0.nupkg.sha512",
+    "C:\\Users\\nikol\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\nikol\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
