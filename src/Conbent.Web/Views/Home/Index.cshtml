@@ -1,135 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Clean DDD Architecture Sample";
 }
-<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Index.cshtml.css")"  media="screen" />
-<section class="main-page">
-  <div class="intro-conteiner">
-    <div class="intro-conteiner-sturtup">
-      <div class="intro-conteiner intro-conteiner-slogan">
-        <div class="outside intro-conteiner__maintence">
-          <p class="intro-conteiner-slogan__maintence">The essence<br>of useful</p>
-        </div>
-        <div class="intro-conteiner__about inside">
-          <p class="intro-conteiner-slogan__about">Summary of works on the development<br>of automated building<br>information systems</p>
-        </div>
-        <div class="outside bottom-conteiner intro-conteiner__by">
-          <p class="intro-conteiner-slogan__by">by Sabaleuski Mikalai</p>
-        </div>
-      </div>
-      <div class="intro-conteiner-canvas">
-        <canvas class="conteiner-canvas"></canvas>
-      </div>
+<div class="row">
+    <div class="col-md-4">
+        <h3>Using this template</h3>
+        <p>
+            This template includes support for:
+            <ul>
+                <li>APIs using API Endpoints (in the /Endpoints folder)</li>
+                <li>APIs using Controllers (in the /Api and /ApiModels folders)</li>
+                <li>Pages using Razor Pages (in the /Pages folder and /Views/Shared folder)</li>
+                <li>Pages using Controllers and Views (in the /Controllers, /ViewModels, and /Views folders - keep /Views/Shared for Razor Pages though)</li>
+            </ul>
+            Choose which features you will use for your project and delete the ones you will not use.
+        </p>
+        <p>
+            Provide feedback and report issues in the <a href="https://github.com/ardalis/CleanArchitecture">project's GitHub repository</a>; ask questions using the <a href="https://stackoverflow.com/questions/tagged/ardalis-cleanarchitecture?tab=Newest">ardalis-cleanarchitecture tag on StackOverflow</a>.
+        </p>
     </div>
-  </div>
-  @*<div class="about-conteiner">
-    <div class="about-conteiner-content content">
-      <div class="content-container-about">
-        <div class="container-about-text_h">
-          <p class="container-about-text__header">About Us</p>
-        </div>
-        <div class="container-about-text">
-          <p class="container-about-text__main">This site was created in order to obtain information about our projects, achievements and results.</p>
-          <p class="container-about-text__main">We are a team that optimizes design and construction processes by creating software products for company management, projects and auxiliary products for developers of construction documentation.</p>
-          <p class="container-about-text__main">We work with BIM technologies for creating structures of various types.</p>
-        </div>
-      </div>
-    </div>*@
-    <div class="about-technologies">
-			<div class="app">
-				<div class="cardList">
-					<button class="cardList__btn btn btn--left">
-						<div class="icon">
-							<svg>
-								<use xlink:href="#arrow-left"></use>
-							</svg>
-						</div>
-					</button>
-
-					<div class="cards__wrapper">
-						<div class="card current--card">
-							<div class="card__image">
-								<img src="~/img/architect.jpg" alt="" />
-							</div>
-						</div>
-						<div class="card next--card">
-							<div class="card__image">
-								<img src="~/img/construction.jpg" alt="" />
-							</div>
-						</div>
-						<div class="card previous--card">
-							<div class="card__image">
-								<img src="~/img/engineer.jpg" alt="" />
-							</div>
-						</div>
-					</div>
-
-					<button class="cardList__btn btn btn--right">
-						<div class="icon">
-							<svg>
-								<use xlink:href="#arrow-right"></use>
-							</svg>
-						</div>
-					</button>
-				</div>
-
-				<div class="infoList">
-					<div class="info__wrapper">
-						<div class="info current--info">
-							<h1 class="text name">Constructional/h1>
-							<p class="text description">Create apps for automating Constructional</p>
-						</div>
-
-						<div class="info next--info">
-							<h1 class="text name">Architectural</h1>
-							<p class="text description">Create apps for automating Architectural</p>
-						</div>
-
-						<div class="info previous--info">
-							<h1 class="text name">Piping</h1>
-							<p class="text description">Create apps for automating Piping</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="app__bg">
-					<div class="app__bg__image current--image">
-						<img src="~/img/architect.jpg" alt="" />
-					</div>
-					<div class="app__bg__image next--image">
-						<img src="~/img/construction.jpg" alt="" />
-					</div>
-					<div class="app__bg__image previous--image">
-						<img src="~/img/engineer.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-
-			<div class="loading__wrapper">
-				<div class="loader--text">Loading...</div>
-				<div class="loader">
-					<span></span>
-				</div>
-			</div>
-
-			<svg class="icons" style="display: none;">
-				<symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-					<polyline points='328 112 184 256 328 400' style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
-				</symbol>
-				<symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-					<polyline points='184 112 328 256 184 400' style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
-				</symbol>
-			</svg>
-
-			<div class="support">
-				<a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
-				<a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
-			</div>
-
+    <div class="col-md-4">
+        <h3>APIs</h3>
+        Shows both Controller and Endpoint APIs.
+        <ul>
+            <li><a href="/swagger">API Documentation (Swagger)</a></li>
+        </ul>
+        <h3>Projects (using Razor Pages)</h3>
+        <ul>
+            <li><a asp-page="/ProjectDetails/Index" asp-route-ProjectId="1">Show Project ID:1 and its To Do Items</a></li>
+            <li><a asp-page="/ProjectDetails/Incomplete">List Incomplete To Do Items</a></li>
+        </ul>
+        <h3>Projects (using MVC Views)</h3>
+        <ul>
+            <li><a asp-area="" asp-controller="Project" asp-action="Index" asp-route-projectId="1">Show Project ID:1 and its To Do Items</a></li>
+        </ul>
     </div>
-  </div>
-  <div class="techologies-conteiner">
-  </div>
-  <div class="abilities-conteiner">
-  </div>
-  
-</section>
+    <div class="col-md-4">
+        <h3>About the Author</h3>
+        <ul>
+            <li><a href="https://ardalis.com">Blog - Ardalis.com</a></li>
+            <li><a href="https://twitter.com/ardalis">Twitter - @@ardalis</a></li>
+            <li><a href="https://github.com/ardalis">GitHub</a></li>
+            <li><a href="https://www.pluralsight.com/authors/steve-smith">Latest Pluralsight Courses</a></li>
+        </ul>
+        <h3>More resources for this template</h3>
+        <ul>
+            <li><a href="https://github.com/ardalis/CleanArchitecture">CleanArchitecture GitHub repository</a></li>
+            <li><a href="https://stackoverflow.com/questions/tagged/ardalis-cleanarchitecture?tab=Newest">Ardalis-CleanArchitecture on Stack Overflow</a></li>
+            <li><a href="https://www.pluralsight.com/courses/domain-driven-design-fundamentals">Domain-Driven Design Fundamentals Course (Pluralsight)</a></li>
+            <li><a href="https://www.pluralsight.com/courses/n-tier-apps-part1">Creating N-Tier Applications in C# Course (Part 1) (Pluralsight)</a></li>
+            <li><a href="https://www.pluralsight.com/courses/n-tier-csharp-part2">Creating N-Tier Applications in C# Course (Part 2) (Pluralsight)</a></li>
+        </ul>
+    </div>
+</div>

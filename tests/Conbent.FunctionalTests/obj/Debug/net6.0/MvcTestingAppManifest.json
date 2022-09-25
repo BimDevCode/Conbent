@@ -1,7 +1,0 @@
-{
-  "Conbent.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\_startup\\Conbent\\src\\Conbent.Core",
-  "Conbent.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\_startup\\Conbent\\src\\Conbent.Infrastructure",
-  "Conbent.SharedKernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\_startup\\Conbent\\src\\Conbent.SharedKernel",
-  "Conbent.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\_startup\\Conbent\\tests\\Conbent.UnitTests",
-  "Conbent.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\_startup\\Conbent\\src\\Conbent.Web"
-}
