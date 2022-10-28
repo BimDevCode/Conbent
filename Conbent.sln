@@ -1,61 +1,61 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.2.32602.215
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.Core", "src\Conbent.Core\Conbent.Core.csproj", "{B34ADFC7-C554-4A90-86B8-AB6753343885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{DD422F63-CFF8-4AAF-B387-B1A506015C5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.Infrastructure", "src\Conbent.Infrastructure\Conbent.Infrastructure.csproj", "{B8D3B0E3-C143-4540-89EC-EE17B24F939D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.SharedKernel", "src\Conbent.SharedKernel\Conbent.SharedKernel.csproj", "{2346D481-A364-4100-A629-3C537FA93523}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.Web", "src\Conbent.Web\Conbent.Web.csproj", "{628E465A-C6E7-466F-B4B4-2AE979396A81}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.FunctionalTests", "tests\Conbent.FunctionalTests\Conbent.FunctionalTests.csproj", "{F10928F4-3709-4FEA-AC8A-AF52987C2EF7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.IntegrationTests", "tests\Conbent.IntegrationTests\Conbent.IntegrationTests.csproj", "{CB3F3FE5-A379-4345-9BA5-3B4F6898D73C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.UnitTests", "tests\Conbent.UnitTests\Conbent.UnitTests.csproj", "{E7B94E74-DA0C-4925-BC76-354F07FD3113}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUi", "src\WebUI\WebUi.csproj", "{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ConbentUI = Debug|ConbentUI
 		Release|Any CPU = Release|Any CPU
+		Release|ConbentUI = Release|ConbentUI
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B34ADFC7-C554-4A90-86B8-AB6753343885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B34ADFC7-C554-4A90-86B8-AB6753343885}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B34ADFC7-C554-4A90-86B8-AB6753343885}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B34ADFC7-C554-4A90-86B8-AB6753343885}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8D3B0E3-C143-4540-89EC-EE17B24F939D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8D3B0E3-C143-4540-89EC-EE17B24F939D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8D3B0E3-C143-4540-89EC-EE17B24F939D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8D3B0E3-C143-4540-89EC-EE17B24F939D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2346D481-A364-4100-A629-3C537FA93523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2346D481-A364-4100-A629-3C537FA93523}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2346D481-A364-4100-A629-3C537FA93523}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2346D481-A364-4100-A629-3C537FA93523}.Release|Any CPU.Build.0 = Release|Any CPU
-		{628E465A-C6E7-466F-B4B4-2AE979396A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{628E465A-C6E7-466F-B4B4-2AE979396A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{628E465A-C6E7-466F-B4B4-2AE979396A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{628E465A-C6E7-466F-B4B4-2AE979396A81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F10928F4-3709-4FEA-AC8A-AF52987C2EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F10928F4-3709-4FEA-AC8A-AF52987C2EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F10928F4-3709-4FEA-AC8A-AF52987C2EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F10928F4-3709-4FEA-AC8A-AF52987C2EF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB3F3FE5-A379-4345-9BA5-3B4F6898D73C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB3F3FE5-A379-4345-9BA5-3B4F6898D73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB3F3FE5-A379-4345-9BA5-3B4F6898D73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB3F3FE5-A379-4345-9BA5-3B4F6898D73C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7B94E74-DA0C-4925-BC76-354F07FD3113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7B94E74-DA0C-4925-BC76-354F07FD3113}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7B94E74-DA0C-4925-BC76-354F07FD3113}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7B94E74-DA0C-4925-BC76-354F07FD3113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Debug|ConbentUI.ActiveCfg = Debug|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Debug|ConbentUI.Build.0 = Debug|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Release|ConbentUI.ActiveCfg = Release|Any CPU
+		{DD422F63-CFF8-4AAF-B387-B1A506015C5D}.Release|ConbentUI.Build.0 = Release|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Debug|ConbentUI.ActiveCfg = Debug|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Debug|ConbentUI.Build.0 = Debug|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Release|ConbentUI.ActiveCfg = Release|Any CPU
+		{C0837337-EDED-4C54-95BC-E2BB1B0A0B69}.Release|ConbentUI.Build.0 = Release|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Debug|ConbentUI.ActiveCfg = Debug|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Debug|ConbentUI.Build.0 = Debug|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Release|ConbentUI.ActiveCfg = Release|Any CPU
+		{169C0613-AF9A-4100-B4DA-2DB2898E9FC5}.Release|ConbentUI.Build.0 = Release|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Debug|ConbentUI.ActiveCfg = Debug|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Debug|ConbentUI.Build.0 = Debug|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Release|ConbentUI.ActiveCfg = Release|Any CPU
+		{0A868DE9-1CA7-418D-ACE2-DDDCA7913D5E}.Release|ConbentUI.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {254D97C6-DCAC-4E58-A27D-D4F2C33AB7AB}
+		SolutionGuid = {F619D159-F206-4935-B164-837670390A2C}
 	EndGlobalSection
 EndGlobal
