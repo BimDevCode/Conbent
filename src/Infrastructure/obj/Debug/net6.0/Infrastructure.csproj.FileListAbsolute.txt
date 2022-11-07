@@ -15,3 +15,5 @@ C:\#startup\#Project\Main#\Conbent\src\Infrastructure\bin\Debug\net6.0\Domain.dl
 C:\#startup\#Project\Main#\Conbent\src\Infrastructure\bin\Debug\net6.0\Application.pdb
 C:\#startup\#Project\Main#\Conbent\src\Infrastructure\bin\Debug\net6.0\Domain.pdb
 C:\#startup\#Project\Main#\Conbent\src\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+C:\#startup\#Project\Main#\Conbent\src\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+C:\#startup\#Project\Main#\Conbent\src\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache

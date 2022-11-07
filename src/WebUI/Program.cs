@@ -2,35 +2,48 @@ using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using WebUi;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebUi.Areas.Identity.Data;
-using WebUi.Data;
 using Microsoft.Extensions.DependencyInjection;
+using WebUi.Models;
+using Microsoft.AspNetCore.Server.IIS;
 
 
 #region Builder
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("WebUIAccountContextConnection") ?? throw new InvalidOperationException("Connection string 'WebUIAccountContextConnection' not found.");
+builder.Services.AddEntityFrameworkNpgsql().AddDbContext<ConbentAccountDbContext>(opt => opt.UseNpgsql(
+    builder.Configuration.GetConnectionString("WebUIAccountContextConnection")));
 
-builder.Services.AddDbContext<WebUIAccountContext>(options =>
-    options.UseNpgsql(connectionString));
-
-builder.Services.AddIdentity<ConbentUser, IdentityRole<long>>()
-    .AddEntityFrameworkStores<WebUIAccountContext>()
+builder.Services.AddIdentity<ConbentUser, IdentityRole>()
+    .AddEntityFrameworkStores<ConbentAccountDbContext>()
+     .AddDefaultUI()
     .AddDefaultTokenProviders();
+//builder.Services.AddAuthentication(LoginModel.NameCookieAuth).AddCookie(LoginModel.NameCookieAuth, options =>
+//{
+//    options.Cookie.Name = LoginModel.NameCookieAuth;
+//    options.LoginPath = "/Account/Login";
+//    options.AccessDeniedPath = "/Account/AccessDenied";
+//});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("MustBeHR",
+        policy => policy.RequireClaim("Department", "HR"));
+});
 
 builder.Logging.AddConsole();
 builder.Services.AddMemoryCache();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddRazorPages();
+
 builder.Services.AddRouting(options =>
 {
     // Replace the type and the name used to refer to it with your own
     // IOutboundParameterTransformer implementation
-    options.ConstraintMap["slugify"] = typeof(SlugifyParameterTransformer);
+    options.ConstraintMap["slugify"] = typeof(IOutboundParameterTransformer);
 });
 builder.Services.AddMvc(options =>
 {
@@ -57,8 +70,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
 
+app.UseAuthentication(); ;
 app.UseAuthorization();
 
 app.MapControllerRoute(
