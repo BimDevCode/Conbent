@@ -262,3 +262,5 @@ C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\staticwebassets\ms
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebUi.props
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebUi.props
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\staticwebassets.pack.json
+C:\#startup\#Project\Main#\Conbent\src\WebUI\bin\Debug\net6.0\bundleconfig.Development.json
+C:\#startup\#Project\Main#\Conbent\src\WebUI\bin\Debug\net6.0\bundleconfig.json

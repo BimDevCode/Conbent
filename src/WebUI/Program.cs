@@ -5,25 +5,39 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebUi.Models;
 using Microsoft.AspNetCore.Server.IIS;
+using WebUi.Configuration;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.CodeAnalysis.Options;
 
 
 #region Builder
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEntityFrameworkNpgsql().AddDbContext<ConbentAccountDbContext>(opt => opt.UseNpgsql(
-    builder.Configuration.GetConnectionString("WebUIAccountContextConnection")));
+builder.Services.AddEntityFrameworkNpgsql()
+    .AddDbContext<ConbentAccountDbContext>(opt => opt.UseNpgsql(
+        builder.Configuration.GetConnectionString("WebUIContextConnection")));
+builder.Services.AddEntityFrameworkNpgsql()
+    .AddDbContext<ContentDbContext>(opt => opt.UseNpgsql(
+        builder.Configuration.GetConnectionString("ContentConnection")));
 
 builder.Services.AddIdentity<ConbentUser, IdentityRole>()
     .AddEntityFrameworkStores<ConbentAccountDbContext>()
-     .AddDefaultUI()
+    .AddDefaultUI()
     .AddDefaultTokenProviders();
-//builder.Services.AddAuthentication(LoginModel.NameCookieAuth).AddCookie(LoginModel.NameCookieAuth, options =>
-//{
-//    options.Cookie.Name = LoginModel.NameCookieAuth;
-//    options.LoginPath = "/Account/Login";
-//    options.AccessDeniedPath = "/Account/AccessDenied";
-//});
+
+#region Cookie Settings
+
+builder.Services.AddCookieSettings();//Our Service for revoke cookie and main setting (time life, name)
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>//add cookie opt to proj
+    {
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        options.Cookie.SameSite = SameSiteMode.Lax;
+    });
+
+#endregion
 
 builder.Services.AddAuthorization(options =>
 {
@@ -43,7 +57,8 @@ builder.Services.AddRouting(options =>
 {
     // Replace the type and the name used to refer to it with your own
     // IOutboundParameterTransformer implementation
-    options.ConstraintMap["slugify"] = typeof(IOutboundParameterTransformer);
+    options.ConstraintMap["slugify"] = typeof(SlugifyParameterTransformer);
+    options.LowercaseUrls = true;
 });
 builder.Services.AddMvc(options =>
 {
@@ -58,6 +73,25 @@ builder.Services.AddMvc(options =>
 
 var app = builder.Build();
 
+app.Logger.LogInformation("App created...");
+
+app.Logger.LogInformation("Seeding Database...");
+using (var scope = app.Services.CreateScope())
+{
+    var scopedProvider = scope.ServiceProvider;
+    try
+    {
+        var contentContext = scopedProvider.GetRequiredService<ContentDbContext>();
+        await ContentDbContextSeed.SeedAsync(contentContext, app.Logger);
+
+        //var userManager = scopedProvider.GetRequiredService<UserManager<ConbentUser>>();
+        //var roleManager = scopedProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    }
+    catch (Exception ex)
+    {
+        app.Logger.LogError(ex, "An error occurred seeding the DB.");
+    }
+}
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -71,12 +105,17 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication(); ;
+#region Identity
+
+app.UseCookiePolicy();
+app.UseAuthentication();
 app.UseAuthorization();
+
+#endregion
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller:slugify=Home}/{action:slugify=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();
