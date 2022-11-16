@@ -9,31 +9,81 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebUI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/curosel.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/EaselPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/PixiPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CustomEase.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebUI</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid container-display">
+                <a class="navbar-logo-padding" asp-area="" asp-controller="Home" asp-action="Index">
+                  <img class="logo-img logo-img-main" src="/img/SM-logo.svg" alt="Samikai">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav nav-pills navbar-center" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link button-gradient" id="pills-home-tab" 
+                                    data-bs-toggle="pill" data-bs-target="#pills-home" 
+                                    type="button" role="tab" aria-controls="pills-home" 
+                                    aria-selected="true">Home</button>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link button-gradient" id="pills-profile-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-profile" 
+                                    type="button" role="tab" aria-controls="pills-profile" 
+                                    aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link button-gradient" id="pills-profile-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-contact" 
+                                    type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">Contact</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a asp-controller="Articles" asp-action="Index">
+                                <button class="nav-link button-gradient rigth-align" id="pills-contact-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                                        aria-controls="pills-contact" aria-selected="false">Content</button>
+                            </a>
                         </li>
                     </ul>
+                    <a asp-page="/Account/Login">
+                        <button class="nav-link button-gradient rigth-align" id="pills-contact-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                                aria-controls="pills-contact" aria-selected="false" >Login</button>
+                    </a>
+                    <a asp-controller="Account" asp-action="Index">
+                        <button class="nav-link button-gradient rigth-align" id="pills-contact-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                                aria-controls="pills-contact" aria-selected="false">Account</button>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <div class="content-container">
+        <main role="main" >
             @RenderBody()
         </main>
     </div>
@@ -46,6 +96,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/intro.js" asp-append-version="true"></script>
+    <script src="~/js/curosel.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

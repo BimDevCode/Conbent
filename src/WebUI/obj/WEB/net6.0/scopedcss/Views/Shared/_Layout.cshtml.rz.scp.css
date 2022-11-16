@@ -1,48 +1,124 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+for details on configuring this project to bundle and minify static web assets. 
+
+*/
 
 a.navbar-brand[b-50ebo1uj6s] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 a[b-50ebo1uj6s] {
-  color: #0077cc;
+    color: #0077cc;
 }
 
-.btn-primary[b-50ebo1uj6s] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.button-gradient[b-50ebo1uj6s] {
+    border: none;
+    display: inline-block;
+    border-radius: 16px;
+    color: #FFFAFA;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    letter-spacing: 2px;
 }
 
-.nav-pills .nav-link.active[b-50ebo1uj6s], .nav-pills .show > .nav-link[b-50ebo1uj6s] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+    .button-gradient[b-50ebo1uj6s]:before,
+    .button-gradient[b-50ebo1uj6s]:after {
+        content: ' ';
+        position: absolute;
+        border-radius: 16px;
+    }
+
+    .button-gradient[b-50ebo1uj6s]:before {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -2;
+        background: linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%);
+    }
+
+    .button-gradient[b-50ebo1uj6s]:after {
+        top: 1.5px;
+        bottom: 1.5px;
+        left: 1.5px;
+        right: 1.5px;
+        background-color: #202020;
+        z-index: -1;
+        opacity: 1;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .button-gradient:hover[b-50ebo1uj6s]:after {
+        opacity: 0;
+    }
+
 
 .border-top[b-50ebo1uj6s] {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom[b-50ebo1uj6s] {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow[b-50ebo1uj6s] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy[b-50ebo1uj6s] {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 .footer[b-50ebo1uj6s] {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+.nav-item[b-50ebo1uj6s] {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.navbar-center[b-50ebo1uj6s] {
+    display: flex;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.navbar-logo-padding[b-50ebo1uj6s] {
+    margin-right: 0;
+}
+
+.container-display[b-50ebo1uj6s] {
+    display: flex;
+    padding: 20px;
+}
+
+.rigth-align[b-50ebo1uj6s] {
+    display: block;
+    text-align: center;
+    padding: 8px 14px 8px 14px;
+    margin: 0;
+}
+
+.navbar[b-50ebo1uj6s] {
+    padding: 0;
+}
+
+.content-container[b-50ebo1uj6s] {
+    margin: 0;
+    padding: 0;
 }

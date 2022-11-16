@@ -11,4 +11,4 @@ public class Article : BaseEntity
     public string Name { get; set; }//https://www.npgsql.org/doc/types/basic.html
     public string Content { get; set; }
     public string HttpRefs { get; set; }
-} 
+}

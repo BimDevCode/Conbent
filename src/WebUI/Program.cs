@@ -14,6 +14,7 @@ using Microsoft.CodeAnalysis.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.Services.AddEntityFrameworkNpgsql()
     .AddDbContext<ConbentAccountDbContext>(opt => opt.UseNpgsql(
         builder.Configuration.GetConnectionString("WebUIContextConnection")));
