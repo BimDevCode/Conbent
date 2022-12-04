@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eKKGXllR9xwWCUDnjI3riAQRbO5W/XQXgRDpF4UVjzs=",
+  "Hash": "WZg+FY86Ls3oZSzi/VB24ZK09XacvpV2Y9T9qAke0A0=",
   "Source": "WebUi",
   "BasePath": "_content/WebUi",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\curosel.css"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\dropdownbutton.css",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "css/dropdownbutton.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\dropdownbutton.css"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\main.css",
@@ -1358,6 +1375,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\curosel.js"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\dropdownbutton.js",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "js/dropdownbutton.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\dropdownbutton.js"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\dropdownbutton.min.js",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "js/dropdownbutton.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\dropdownbutton.min.js"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\intro.js",

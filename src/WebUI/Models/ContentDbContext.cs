@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
+using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
 using WebUi.Models.EntityImplementation;
 
@@ -15,5 +17,8 @@ public class ContentDbContext : DbContext
     {
         base.OnModelCreating(builder);
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        builder.Entity<Article>()
+            .HasIndex(p => new { p.Name})
+            .IsUnique(true);
     }
 }

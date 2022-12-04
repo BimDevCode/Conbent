@@ -1487,21 +1487,19 @@ a.navbar-brand[b-50ebo1uj6s] {
     word-break: break-all;
 }
 
-a[b-50ebo1uj6s] {
-    color: #0077cc;
-}
-
 .button-gradient[b-50ebo1uj6s] {
     border: none;
     display: inline-block;
     border-radius: 16px;
     color: #FFFAFA;
     position: relative;
+    vertical-align: middle;
     z-index: 1;
     font-size: 14px;
     font-weight: 200;
     text-transform: uppercase;
     font-family: 'Poppins';
+    line-height:normal;
     letter-spacing: 2px;
 }
 
