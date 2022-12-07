@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nAA3m0oaUwc/27Xe7VxsVwLXu0UFRq4pTtpqNNk38wL/GJ7nEBeC4xFNVwFYFvKvvnhdmRN55tRSA4DlPBG3WA==",
+  "dgSpecHash": "Xjw6NH4SN2nHYnoMn6MoRqKlwdXPOFhTxEx3E06aiIBELGxqB8N9xbl2WrGTSXggiPjSWUwPQD7Yo7KETxLMog==",
   "success": true,
   "projectFilePath": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\WebUi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikol\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
+    "C:\\Users\\nikol\\.nuget\\packages\\highlight.js\\1.0.4\\highlight.js.1.0.4.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

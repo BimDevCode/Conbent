@@ -8,6 +8,9 @@
           "build/BuildBundlerMinifier.targets": {}
         }
       },
+      "Highlight.js/1.0.4": {
+        "type": "package"
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -3749,6 +3752,53 @@
         "tools/netstandard1.3/BundlerMinifier.dll",
         "tools/netstandard1.3/NUglify.dll",
         "tools/netstandard1.3/Newtonsoft.Json.dll"
+      ]
+    },
+    "Highlight.js/1.0.4": {
+      "sha512": "aSyASPqfi1NyunL+tddx3Rpf4J2sfciVeI0cHRHQKaRRUebP6YTLMTiVvNo8k8rdXwk+33Lpnf08jevoif01Ig==",
+      "type": "package",
+      "path": "highlight.js/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/App_Code/Highlight/Highlight.cs",
+        "content/App_Code/Highlight/LICENSE",
+        "content/App_Code/Highlight/README.md",
+        "content/App_Code/Highlight/README.ru.md",
+        "content/App_Code/Highlight/classref.txt",
+        "content/Content/Highlight/arta.css",
+        "content/Content/Highlight/ascetic.css",
+        "content/Content/Highlight/brown_paper.css",
+        "content/Content/Highlight/brown_papersq.png",
+        "content/Content/Highlight/dark.css",
+        "content/Content/Highlight/default.css",
+        "content/Content/Highlight/far.css",
+        "content/Content/Highlight/github.css",
+        "content/Content/Highlight/googlecode.css",
+        "content/Content/Highlight/idea.css",
+        "content/Content/Highlight/ir_black.css",
+        "content/Content/Highlight/magula.css",
+        "content/Content/Highlight/monokai.css",
+        "content/Content/Highlight/pojoaque.css",
+        "content/Content/Highlight/pojoaque.jpg",
+        "content/Content/Highlight/rainbow.css",
+        "content/Content/Highlight/school_book.css",
+        "content/Content/Highlight/school_book.png",
+        "content/Content/Highlight/solarized_dark.css",
+        "content/Content/Highlight/solarized_light.css",
+        "content/Content/Highlight/sunburst.css",
+        "content/Content/Highlight/tomorrow-night-blue.css",
+        "content/Content/Highlight/tomorrow-night-bright.css",
+        "content/Content/Highlight/tomorrow-night-eighties.css",
+        "content/Content/Highlight/tomorrow-night.css",
+        "content/Content/Highlight/tomorrow.css",
+        "content/Content/Highlight/vs.css",
+        "content/Content/Highlight/xcode.css",
+        "content/Content/Highlight/zenburn.css",
+        "content/Scripts/Highlight/highlight.pack.js",
+        "content/Web.config.transform",
+        "highlight.js.1.0.4.nupkg.sha512",
+        "highlight.js.nuspec"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -10478,6 +10528,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "BuildBundlerMinifier >= 3.2.449",
+      "Highlight.js >= 1.0.4",
       "MediatR >= 11.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.10",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.10",
@@ -10537,6 +10588,10 @@
           "BuildBundlerMinifier": {
             "target": "Package",
             "version": "[3.2.449, )"
+          },
+          "Highlight.js": {
+            "target": "Package",
+            "version": "[1.0.4, )"
           },
           "MediatR": {
             "target": "Package",
@@ -10602,7 +10657,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

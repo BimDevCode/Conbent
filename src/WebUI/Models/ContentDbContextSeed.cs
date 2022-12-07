@@ -15,8 +15,8 @@ public class ContentDbContextSeed
         {
             await contentContext.Database.MigrateAsync();
 
-            await contentContext.Articles.AddRangeAsync(
-                GetPreconfiguredItems());
+            //await contentContext.Articles.AddRangeAsync(
+            //    GetPreconfiguredItems());
             await contentContext.SaveChangesAsync();
         }
         catch (Exception ex)

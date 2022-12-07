@@ -9,8 +9,8 @@ public class BaseEntity : IEntity
     public bool IsActive { get; set; } = true;
     public DateTime CreatedDateTime { get; set; } = DateTime.Now;
     public DateTime UpdateDateTime { get; set; } = DateTime.Now;
-    public Guid? UserCreatedGuid { get; set; }
-    public Guid? UserUpdatedGuid { get; set; }
+    public Guid? UserCreatedGuid { get; set; } = Guid.NewGuid();//Test
+    public Guid? UserUpdatedGuid { get; set; } = Guid.NewGuid();//Test
 
     public static string ToStringUtc( DateTime time)
     {

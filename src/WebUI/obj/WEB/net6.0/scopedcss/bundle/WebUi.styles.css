@@ -1323,6 +1323,24 @@ p.center-date[b-giccfwr4d9] {
         background: #e64c65;
         border-radius: 100%;
     }
+/* _content/WebUi/Views/Articles/Create.cshtml.rz.scp.css */
+.article-create-title[b-y0q5mg15ch] {
+    display: block;
+    color: #FFFAFA;
+    text-align: center;
+    width: 100%;
+}
+
+.create-field-name[b-y0q5mg15ch] {
+    color: #FFFAFA;
+}
+/* _content/WebUi/Views/Articles/Index.cshtml.rz.scp.css */
+.article-item[b-jeqcdv47zy] {
+    display: block;
+    color: #FFFAFA;
+    text-align: center;
+    width: 100%;
+}
 /* _content/WebUi/Views/Home/Index.cshtml.rz.scp.css */
 .conteiner-canvas[b-5r8mtzixyh] {
   display: flex;
@@ -1549,7 +1567,7 @@ a.navbar-brand[b-50ebo1uj6s] {
 
 button.accept-policy[b-50ebo1uj6s] {
     font-size: 1rem;
-    line-height: inherit;
+    line-height: normal;
 }
 
 .footer[b-50ebo1uj6s] {
@@ -1557,7 +1575,7 @@ button.accept-policy[b-50ebo1uj6s] {
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    line-height: 60px;
+    line-height: normal;
 }
 
 .nav-item[b-50ebo1uj6s] {

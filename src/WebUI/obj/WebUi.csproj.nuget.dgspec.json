@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[3.2.449, )"
             },
+            "Highlight.js": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[11.0.0, )"
@@ -112,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,7 +22,7 @@ public class ArticlesController : Controller
     // GET: Articles
     public async Task<IActionResult> Index()
     {
-          return View(await _context.Articles.ToListAsync());
+         return View(await _context.Articles.ToListAsync());
     }
 
     // GET: Articles/Details/5
@@ -53,11 +54,20 @@ public class ArticlesController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Name,Content,HttpRefs,Id,IsActive,CreatedDateTime,UpdateDateTime,UserCreatedGuid,UserUpdatedGuid")] Article article)
+    public async Task<IActionResult> Create([Bind("Path, Name," +
+                                                  "IntroTextPart,IntroCodePart," +
+                                                  "BodyTextPart,BodyCodePart," +
+                                                  "ConclusionTextPart," +
+                                                  "HttpRefs1,HttpRefs2,PicHttpRefs1,PicHttpRefs2")] Article article)
     {
         if (ModelState.IsValid)
         {
             article.Id = Guid.NewGuid();
+            article.IsActive = true;
+            article.CreatedDateTime = DateTime.Now.SetKindUtc();
+            article.UpdateDateTime = DateTime.Now.SetKindUtc();
+            article.UserCreatedGuid = Guid.NewGuid();
+            article.UserUpdatedGuid = Guid.NewGuid();
             _context.Add(article);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -86,7 +96,11 @@ public class ArticlesController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Guid id, [Bind("Name,Content,HttpRefs,Id,IsActive,CreatedDateTime,UpdateDateTime,UserCreatedGuid,UserUpdatedGuid")] Article article)
+    public async Task<IActionResult> Edit(Guid id, [Bind("Name," +
+                                                         "IntroTextPart,IntroCodePart," +
+                                                         "BodyTextPart,BodyCodePart," +
+                                                         "ConclusionTextPart," +
+                                                         "HttpRefs1,HttpRefs2,PicHttpRefs1,PicHttpRefs2")] Article article)
     {
         if (id != article.Id)
         {

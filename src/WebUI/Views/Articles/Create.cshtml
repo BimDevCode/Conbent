@@ -4,54 +4,70 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="article-create-title">
+    <h1> Create Article</h1>
+</div>
 
-<h1>Create</h1>
-
-<h4>Article</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+<div >
+    <div class="create-field-name">
+        <form asp-action="Create" class="content-article-form">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group content-article-form">
+                <label asp-for="Path" ></label>
+                <input asp-for="Path" value="Code/ASP.NET/" class="form-control" />
+            </div>
+            <div class="form-group content-article-form">
+                <label asp-for="Name" ></label>
                 <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
-                <span asp-validation-for="Content" class="text-danger"></span>
+            @*Include*@
+            <div class="form-group content-article-form">
+                <label asp-for="IntroTextPart" ></label>
+                <textarea asp-for="IntroTextPart"  
+                    type="text" >
+                    Default</textarea>
+                
             </div>
-            <div class="form-group">
-                <label asp-for="HttpRefs" class="control-label"></label>
-                <input asp-for="HttpRefs" class="form-control" />
-                <span asp-validation-for="HttpRefs" class="text-danger"></span>
+            <div class="form-group content-article-form">
+                <label asp-for="IntroCodePart" ></label>
+                <input asp-for="IntroCodePart" class="form-control" value="--"/>
+                @*<span asp-validation-for="IntroCodePart" class="text-danger"></span>*@
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
-                </label>
+            @*Body*@
+            <div class="form-group content-article-form">
+                <label asp-for="BodyTextPart" ></label>
+                <textarea 
+                    asp-for="BodyTextPart" 
+                    type="text" >
+                    Default</textarea>
             </div>
-            <div class="form-group">
-                <label asp-for="CreatedDateTime" class="control-label"></label>
-                <input asp-for="CreatedDateTime" class="form-control" />
-                <span asp-validation-for="CreatedDateTime" class="text-danger"></span>
+            <div class="form-group content-article-form">
+                <label asp-for="BodyCodePart" ></label>
+                <input asp-for="BodyCodePart" class="form-control " value="--"/>
             </div>
-            <div class="form-group">
-                <label asp-for="UpdateDateTime" class="control-label"></label>
-                <input asp-for="UpdateDateTime" class="form-control" />
-                <span asp-validation-for="UpdateDateTime" class="text-danger"></span>
+            @*Final*@
+            <div class="form-group content-article-form">
+                <label asp-for="ConclusionTextPart" ></label>
+                <textarea asp-for="ConclusionTextPart" 
+                type="text">
+                Default</textarea>
             </div>
-            <div class="form-group">
-                <label asp-for="UserCreatedGuid" class="control-label"></label>
-                <input asp-for="UserCreatedGuid" class="form-control" />
-                <span asp-validation-for="UserCreatedGuid" class="text-danger"></span>
+            @*Refs*@
+            <div class="form-group content-article-form">
+                <label asp-for="PicHttpRefs1" ></label>
+                <input asp-for="PicHttpRefs1" class="form-control" value="--"/>
             </div>
-            <div class="form-group">
-                <label asp-for="UserUpdatedGuid" class="control-label"></label>
-                <input asp-for="UserUpdatedGuid" class="form-control" />
-                <span asp-validation-for="UserUpdatedGuid" class="text-danger"></span>
+            <div class="form-group content-article-form">
+                <label asp-for="PicHttpRefs2" ></label>
+                <input asp-for="PicHttpRefs2" class="form-control" value="--"/>
+            </div>
+            <div class="form-group content-article-form">
+                <label asp-for="HttpRefs1" ></label>
+                <input asp-for="HttpRefs1" class="form-control" value="--"/>
+            </div>
+            <div class="form-group content-article-form">
+                <label asp-for="HttpRefs2" ></label>
+                <input  asp-for="HttpRefs2" class="form-control" value="--"/>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

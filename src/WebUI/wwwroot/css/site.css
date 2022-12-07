@@ -18,3 +18,16 @@ body {
     background-color: rgb(61, 61, 61);
     background-repeat: repeat-y;
 }
+
+.content-article-form {
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+    .content-article-form textarea {
+        height: 200px;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+    }

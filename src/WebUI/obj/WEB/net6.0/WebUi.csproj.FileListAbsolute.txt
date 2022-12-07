@@ -280,3 +280,10 @@ C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\refint\WebUi.dll
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\WebUi.pdb
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\WebUi.genruntimeconfig.cache
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\ref\WebUi.dll
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\staticwebassets\msbuild.WebUi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\staticwebassets\msbuild.build.WebUi.props
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebUi.props
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\staticwebassets\msbuild.buildTransitive.WebUi.props
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\staticwebassets.pack.json
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Articles\Create.cshtml.rz.scp.css
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Articles\Index.cshtml.rz.scp.css
