@@ -287,13 +287,3 @@ C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Ac
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Articles\Create.cshtml.rz.scp.css
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
 C:\#startup\#Project\Main#\Conbent\src\WebUi\obj\Debug\net6.0\scopedcss\Views\Articles\Index.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\About\Index.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\AboutPartial\0AboutSection.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\HomePartial\0AboutSection.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\HomePartial\1IntroTextSection.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\HomePartial\2TechnologySection.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\HomePartial\3OutputTextSection.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\HomePartial\4AbilitiesSection.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\HomePartial\5OutputTextSection.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\LayoutPartial\_Footer.cshtml.rz.scp.css
-C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\Debug\net6.0\scopedcss\Views\Shared\LayoutPartial\_Header.cshtml.rz.scp.css

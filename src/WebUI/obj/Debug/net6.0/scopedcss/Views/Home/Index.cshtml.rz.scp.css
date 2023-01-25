@@ -22,6 +22,7 @@
 }
 
 .main-page[b-5r8mtzixyh] {
+  height: 600vh
 }
 
 .intro-conteiner-canvas[b-5r8mtzixyh]{
@@ -32,7 +33,11 @@
 }
 
 .inside[b-5r8mtzixyh] {
+  position: absolute;
+  top: 50%;
+  left: 75%;
   width: 150%;
+  transform: translate(-50%, -50%);
 }
 
 .intro-conteiner-slogan[b-5r8mtzixyh] {
