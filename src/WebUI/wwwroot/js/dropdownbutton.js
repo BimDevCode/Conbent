@@ -4,8 +4,25 @@ const dropdownList = document.querySelector(".dropdown-list");
 const mainButton = document.querySelector(".drow-button");
 const floatingIcon = document.querySelector(".floating-icon");
 
+// When the user scrolls the page, execute myFunction
+window.onscroll = function () { myFunction() };
 
-const listItems = ["Linkedin", "Instagram", "Facebook", "Twitter", "Youtube"];
+// Get the header
+var header = document.getElementById("stickHeader");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
+
+const listItems = ["Project Examples", "Programming", "Enginering", "Managment"];
 
 const iconTemplate = (path) => {
     return `

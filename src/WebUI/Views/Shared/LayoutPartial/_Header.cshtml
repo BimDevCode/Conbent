@@ -1,0 +1,95 @@
+﻿    <header >
+        <nav class="navbar navbar-expand-lg sticky-background" id="stickHeader">
+            <div class="container-fluid container-display" >
+                <a class="navbar-logo-padding" asp-area="" asp-controller="Home" asp-action="Index">
+                  <img class="logo-img logo-img-main" src="/img/SM-logo.svg" alt="Samikai">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav nav-pills navbar-center" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link button-gradient" 
+                                    id="pills-home-tab" 
+                                    data-bs-toggle="pill" 
+                                    data-bs-target="#pills-home" 
+                                    type="button" 
+                                    role="tab" 
+                                    aria-controls="pills-home" 
+                                    aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item " role="presentation">
+                            <button class="button-gradient drow-button"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-content"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="pills-content"
+                                    aria-selected="false">
+                                <span class="dropdown-text" > Content</span>
+                                <span class="dropdown-arrow">
+                                    <svg width="100%" 
+                                         version="1.1" 
+                                         viewBox="0 0 700 700"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                         class="svg-dropdown-arrow"
+                                         preserveAspectRatio = xMinYMin meet>
+                                        <path class="path-dropdown-arrow" d="m442.16 252.42-92.16 92.16-92.16-92.16h184.32m0-23.336h-184.32c-20.789 0-31.199 25.133-16.5 39.832l92.16 92.16c4.5586 4.5586 10.527 6.8359 16.5 6.8359s11.941-2.2773 16.5-6.8359l92.16-92.16c14.699-14.699 4.2891-39.832-16.5-39.832z"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="dropdown-list-container">
+                                <div class="dropdown-list-wrapper-border">
+                                    <div class="dropdown-list-wrapper">
+                                        <ul class="dropdown-list"></ul>
+                                        <div class="floating-icon"
+                                             aria-hidden="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link button-gradient" id="pills-profile-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-contact" 
+                                    type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">CookBook</button>
+                        </li>
+                        @*   <li class="nav-item " style = "margin-right: 0" role="presentation">
+                            <a asp-controller="Articles" asp-action="Index">
+                                <button class="nav-link button-gradient rigth-align" id="pills-contact-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                                        aria-controls="pills-contact" aria-selected="false">Content</button>
+                            </a>
+                        </li>*@
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link button-gradient" id="pills-profile-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-contact" 
+                                    type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">About Me</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link button-gradient" id="pills-profile-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-contact" 
+                                    type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">Contact</button>
+                        </li>
+                    </ul>
+                    <div class="margin-r-3">
+                        <a asp-page="/Account/Login" >
+                            <button class="nav-link button-gradient rigth-align" id="pills-contact-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                                    aria-controls="pills-contact" aria-selected="false" >Log</button>
+                        </a>
+                    </div>
+                    <div>
+                        <a asp-controller="Account" asp-action="Index">
+                            <button class="nav-link button-gradient rigth-align" id="pills-contact-tab"
+                                    data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab"
+                                    aria-controls="pills-contact" aria-selected="false">Sign</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>

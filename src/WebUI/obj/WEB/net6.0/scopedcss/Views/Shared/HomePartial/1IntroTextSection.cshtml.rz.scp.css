@@ -1,0 +1,39 @@
+.content[b-0k08ddjbbj] {
+    margin: 0 auto;
+    padding-top: 2em;
+    width: 960px;
+    max-width: 100%;
+}
+
+article[b-0k08ddjbbj] {
+    float: left;
+    width: 960px;
+    padding-bottom: 2em;
+}
+
+article p:first-of-type[b-0k08ddjbbj] {
+    margin-top: 0;
+}
+
+h1[b-0k08ddjbbj] {
+    color: #FFFAFA;
+    margin: 0 auto;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 64px;
+}
+
+.article-format p[b-0k08ddjbbj] {
+    padding: 1em 0 1em 0;
+    word-wrap: break-word;
+    text-align: justify;
+    color: #FFFAFA;
+    margin: 0 auto;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 32px;
+}

@@ -205,8 +205,8 @@ button {
   width: calc(3 * var(--card-width));
   height: var(--card-height);
   pointer-events: none;
-  top: 2%;
-  left: 5%;
+  top: 30%;
+  left: 30%;
 }
 
   .infoList .info__wrapper {

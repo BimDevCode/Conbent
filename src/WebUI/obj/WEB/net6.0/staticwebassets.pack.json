@@ -289,12 +289,24 @@
       "PackagePath": "staticwebassets\\images\\icons\\favicon.ico"
     },
     {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\Microsoft_WPF.png",
+      "PackagePath": "staticwebassets\\img\\Microsoft_WPF.png"
+    },
+    {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\SM-logo.svg",
       "PackagePath": "staticwebassets\\img\\SM-logo.svg"
     },
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\architect.jpg",
       "PackagePath": "staticwebassets\\img\\architect.jpg"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\aspnetcore-logo.png",
+      "PackagePath": "staticwebassets\\img\\aspnetcore-logo.png"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\civil.jpg",
+      "PackagePath": "staticwebassets\\img\\civil.jpg"
     },
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\construction.jpg",
@@ -309,8 +321,16 @@
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\revit.jpg",
+      "PackagePath": "staticwebassets\\img\\revit.jpg"
+    },
+    {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\4AbilitiesSection.js",
+      "PackagePath": "staticwebassets\\js\\4AbilitiesSection.js"
     },
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\curosel.js",

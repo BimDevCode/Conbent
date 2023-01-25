@@ -1,0 +1,216 @@
+﻿.button-gradient {
+	border: none;
+	display: inline-block;
+	border-radius: 16px;
+	color: #FFFAFA;
+	position: relative;
+	vertical-align: middle;
+	z-index: 1;
+	font-size: 14px;
+	font-weight: 200;
+	text-transform: uppercase;
+	font-family: 'Poppins';
+	line-height: normal;
+	letter-spacing: 2px;
+    padding: 6px 30px 8px;
+}
+
+    .button-gradient:before,
+    .button-gradient:after {
+        content: ' ';
+        position: absolute;
+        border-radius: 16px;
+    }
+
+    .button-gradient:before {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -2;
+        background: linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%);
+    }
+
+    .button-gradient:after {
+        top: 1.5px;
+        bottom: 1.5px;
+        left: 1.5px;
+        right: 1.5px;
+        background-color: #202020;
+        z-index: -1;
+        opacity: 1;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .button-gradient:hover:after {
+        opacity: 0;
+    }
+
+.no-touch a.btn:hover {
+	background: #00a2ad;
+	box-shadow: 0px 8px 2px 0 rgba(0,0,0,0.075);
+	transform: translateY(-2px);
+	transition: all 0.25s 0s ease-out;
+}
+
+.no-touch a.btn:active, a.btn:active {
+	background: #008a93;
+	box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+	transform: translate3d(0,1px,0);
+	transition: all 0.025s 0s ease-out;
+}
+
+
+
+div.cards {
+	text-align: center;
+	padding-top: 0;
+	padding-bottom: 4em;
+	border: 1px solid rgb(10, 10, 10);
+	box-shadow: 0em 0.2em 2em rgb(10, 10, 10);
+	background: linear-gradient(90deg,rgb(10, 10, 10), rgb(61, 61, 61)) padding-box, linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%) border-box;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+div.cards h1 {
+		color: #FFFAFA;
+		margin: 0 auto;
+		font-family: 'Manrope';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 48px;
+        padding: 1em;
+	}
+
+div.card-ability {
+	display: inline-block;
+	margin: 8px;
+	height: 300px;
+	background: linear-gradient(rgb(81, 81, 81), rgb(81, 81, 81)) padding-box, linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%) border-box;
+	border-radius: 18px 18px 0 0;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-bottom: 2px solid rgb(81, 81, 81);
+	max-width: 300px;
+	perspective: 1000px;
+	position: relative;
+	text-align: left;
+	transition: all 0.3s 0s ease-in;
+	width: 250px;
+	z-index: 1;
+	color: #FFFAFA;
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 100;
+}
+
+	div.card-ability .card__image-holder {
+		height: 0;
+		z-index: 20;
+        margin-top: 0;
+        text-align: center;
+	}
+
+
+	div.card-ability div.card-title {
+		background: rgb(81, 81, 81);
+		padding: 0 1em 1em 1em;
+		margin-top: 230px;
+		margin-bottom: 0;
+		position: relative;
+		z-index: 0;
+        box-shadow: 0em 0.2em 2em rgb(10, 10, 10);
+	}
+
+		div.card-ability div.card-title a.toggle-info {
+			border-radius: 32px;
+			height: 32px;
+			padding: 0;
+			position: absolute;
+			right: 15px;
+			top: 10px;
+			width: 32px;
+		}
+
+		div.card-ability div.card-title h2 {
+			font-size: 24px;
+			font-weight: 700;
+			letter-spacing: -0.05em;
+			margin: 0;
+			padding: 0;
+            font-style: normal;
+            font-weight: 100;
+		}
+
+			div.card-ability div.card-title h2 small {
+				display: block;
+				font-size: 18px;
+				font-weight: 600;
+				letter-spacing: -0.025em;
+                font-style: normal;
+                font-weight: 100;
+			}
+
+	div.card-ability div.card-description {
+		padding: 0 15px 10px;
+		position: relative;
+		font-size: 14px;
+	}
+
+	div.card-ability div.card-actions {
+		padding: 10px 15px 20px;
+		text-align: center;
+	}
+
+	div.card-ability div.card-flap {
+		background: rgb(91, 91, 91);
+		position: absolute;
+		width: 100%;
+		transform-origin: top;
+		transform: rotateX(-90deg);
+	}
+
+	div.card-ability div.flap1 {
+		transition: all 0.3s 0.3s ease-out;
+		padding-top: 1em;
+		z-index: -1;
+	}
+
+	div.card-ability div.flap2 {
+		border-radius: 0 0 18px 18px;
+		transition: all 0.3s 0s ease-out;
+		z-index: -2;
+	}
+
+div.cards.showing div.card-ability {
+	cursor: pointer;
+	opacity: 0.6;
+	transform: scale(0.88);
+}
+
+.no-touch div.cards.showing div.card-ability:hover {
+	opacity: 0.94;
+	transform: scale(0.92);
+}
+
+div.card-ability.show {
+	opacity: 1 !important;
+	transform: scale(1) !important;
+}
+
+	div.card-ability.show div.card-flap {
+		background: rgb(81, 81, 81);
+		transform: rotateX(0deg);
+	}
+
+	div.card-ability.show div.flap1 {
+		transition: all 0.3s 0s ease-out;
+	}
+
+	div.card-ability.show div.flap2 {
+		transition: all 0.3s 0.2s ease-out;
+	}
+ 
