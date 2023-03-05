@@ -26,7 +26,6 @@ project.fragment.lock.json
 artifacts/
 
 *.cache
-*.assets.cache
 *.dll
 *.exe
 *.pdb

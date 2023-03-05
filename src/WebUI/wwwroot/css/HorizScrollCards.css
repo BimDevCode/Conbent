@@ -1,0 +1,67 @@
+
+.horizontal_cards {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1600px;
+    overflow-x: hidden;
+}
+
+.main-carousel {
+    padding: 50px 0;
+}
+
+.carousel-cell {
+    overflow: hidden;
+    border-radius: 10px;
+    display: block;
+    width: 300px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1), 0 0.9375rem 1.40625rem rgba(90,97,105,.1), 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1);
+    margin: 10px;
+}
+
+.carousel-cell img {
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.carousel-cell .card-inner {
+    padding: 0 20px 20px 20px;
+}
+
+.carousel-cell p {
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0 20px 0;
+}
+
+.carousel-cell h2 {
+    margin: 0;
+}
+
+.flickity-prev-next-button {
+    transition: 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05), 0 4px 10px rgba(90,97,105,.25);
+}
+
+.flickity-prev-next-button svg {
+    height: 40%;
+    top: 30%;
+    opacity: 0.5;
+}
+
+.flickity-prev-next-button[disabled] {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.flickity-viewport {
+    overflow: visible;
+}
+
+.flickity-page-dots .dot {
+    height: 6px;
+    width: 6px;
+}
+
+.flickity-page-dots .dot.is-selected {
+    box-shadow: 0 0 0 2px #000;
+}

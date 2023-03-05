@@ -63,10 +63,12 @@
                             </a>
                         </li>*@
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link button-gradient" id="pills-profile-tab"
-                                    data-bs-toggle="pill" data-bs-target="#pills-contact" 
-                                    type="button" role="tab" aria-controls="pills-contact"
-                                    aria-selected="false">About Me</button>
+                            <a asp-controller="About" asp-action="Index">
+                                <button class="nav-link button-gradient" id="pills-profile-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-contact"
+                                        type="button" role="tab" aria-controls="pills-contact"
+                                        aria-selected="false">About Me</button>
+                            </a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link button-gradient" id="pills-profile-tab"

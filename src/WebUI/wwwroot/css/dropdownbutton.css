@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 :root {
 	--bg-color: #222429;
 	--primary-bg-color: #333740;

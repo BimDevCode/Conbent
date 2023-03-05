@@ -64,6 +64,36 @@ a.navbar-brand[b-50ebo1uj6s] {
 .border-bottom[b-50ebo1uj6s] {
     border-bottom: 1px solid #e5e5e5;
 }
+.last-margin[b-50ebo1uj6s] {
+    margin-right: 0;
+}
+.margin-r-3[b-50ebo1uj6s] {
+    margin-right: 10px;
+}
+
+/* Page content */
+.content[b-50ebo1uj6s] {
+    padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky[b-50ebo1uj6s] {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content[b-50ebo1uj6s] {
+    padding-top: 102px;
+}
+
+.sticky-background[b-50ebo1uj6s] {
+    z-index: 2;
+    background-image: linear-gradient(90deg,rgb(10, 10, 10), rgb(61, 61, 61));
+    background-color: rgb(61, 61, 61);
+    box-shadow: 0em 0.2em 2em rgb(10, 10, 10);
+}
 
 .box-shadow[b-50ebo1uj6s] {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);

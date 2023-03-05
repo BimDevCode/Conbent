@@ -1,8 +1,14 @@
 ﻿@{
     ViewData["Title"] = "AboutMe Page";
 }
-<section class="main-page">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2.0.5/dist/flickity.min.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/HorizScrollCards.css" asp-append-version="true" />
 
-    <partial name="HomePartial/0AboutSection"/>
+<section class="main-page">
+    <partial name="AboutPartial/0IntroSection"/>
+    <script src="https://unpkg.com/flickity@2.0.5/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/js/HorizScrollCards.js" asp-append-version="true"></script>
+
 </section>
 
