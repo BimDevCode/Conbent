@@ -2028,7 +2028,6 @@ div.cards[b-3l31j7pbnw] {
 	padding-bottom: 4em;
 	border: 1px solid rgb(10, 10, 10);
 	box-shadow: 0em 0.2em 2em rgb(10, 10, 10);
-	background: linear-gradient(90deg,rgb(10, 10, 10), rgb(61, 61, 61)) padding-box, linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%) border-box;
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
 }
@@ -2703,7 +2702,7 @@ button.accept-policy[b-50ebo1uj6s] {
 
 .container-display[b-50ebo1uj6s] {
     display: flex;
-    padding: 20px;
+    padding: 15px;
 }
 
 .rigth-align[b-50ebo1uj6s] {

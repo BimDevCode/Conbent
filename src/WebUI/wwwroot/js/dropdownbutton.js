@@ -1,8 +1,7 @@
 ﻿const root = document.documentElement;
 const dropdownTitle = document.querySelector(".dropdown-title");
 const dropdownList = document.querySelector(".dropdown-list");
-
-
+const mainButton = document.querySelector(".drow-button");
 const floatingIcon = document.querySelector(".floating-icon");
 
 // When the user scrolls the page, execute myFunction
