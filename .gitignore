@@ -16,7 +16,8 @@
 [Rr]elease/
 [Rr]eleases/
 scopedcss/
-net6.0/
+src/WebUI/bin
+src/WebUI/obj
 x64/
 x86/
 bld/
