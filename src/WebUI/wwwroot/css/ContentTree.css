@@ -30,12 +30,14 @@
     margin-left: 5rem;
     float: right;
 }
+
 .text_block_code {
     display: none;
 }
 
 .text_block_code--current {
     display: block;
+
 }
 
 summary {
