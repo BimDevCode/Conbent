@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ndrka6NT7dCyCjKHZkiXFqnAKiqLJdFJ9Urn1l2PA+o=",
+  "Hash": "ma/VRZnJ2uVhNaWKgVqSlhk+sR2Y8oiB9XajsucNT5A=",
   "Source": "WebUi",
   "BasePath": "_content/WebUi",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\dropdownbutton.css"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\HorizScrollCards.css",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "css/HorizScrollCards.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\HorizScrollCards.css"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\main.css",
@@ -1343,6 +1360,23 @@
       "OriginalItemSpec": "wwwroot\\img\\engineer.jpg"
     },
     {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\fractals.jpg",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "img/fractals.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\fractals.jpg"
+    },
+    {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\logo.png",
       "SourceId": "WebUi",
       "SourceType": "Discovered",
@@ -1494,6 +1528,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\dropdownbutton.min.js"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\HorizScrollCards.js",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "js/HorizScrollCards.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\HorizScrollCards.js"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\HorizScrollCards.min.js",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "js/HorizScrollCards.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\HorizScrollCards.min.js"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\intro.js",

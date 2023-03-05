@@ -1,3 +1,4 @@
+/* _content/WebUi/Views/About/Index.cshtml.rz.scp.css */
 /* _content/WebUi/Views/Account/Index.cshtml.rz.scp.css */
 /** Inspired by: http://graphicburger.com/flat-design-ui-components/ **/
 /** Line-chart and donut-chart made by @kseso https://codepen.io/Kseso/pen/phiyL **/
@@ -1488,6 +1489,92 @@ p.center-date[b-giccfwr4d9] {
   background: rgba(0, 0, 0, 0.787);
   overflow: hidden;
 }
+/* _content/WebUi/Views/Shared/AboutPartial/0IntroSection.cshtml.rz.scp.css */
+.intro-article[b-orui8j8jp3] {
+    display: block;
+}
+
+.img_intro_container[b-orui8j8jp3] {
+
+}
+
+.list_item[b-orui8j8jp3] {
+    color: #FFFAFA;
+    margin: 0 auto;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+    .list_item[b-orui8j8jp3]::marker {
+        color: #EF5DA8;
+        font-size: 1.5em;
+    }
+
+.pointer[b-orui8j8jp3]{
+    
+}
+
+.landscape[b-orui8j8jp3] {
+    background-image: url(/img/fractals.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    border: 2px solid;
+}
+
+.content[b-orui8j8jp3] {
+    margin: 0 auto;
+    width: 960px;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    align-items: center;
+    overflow: hidden;
+}
+
+article[b-orui8j8jp3] {
+    float: left;
+    width: 960px;
+    padding-bottom: 2em;
+}
+
+article p:first-of-type[b-orui8j8jp3] {
+    margin-top: 0;
+}
+
+h1[b-orui8j8jp3] {
+    color: #FFFAFA;
+    margin: 0 auto;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 64px;
+}
+
+.article-format p[b-orui8j8jp3] {
+    padding: 1em 0 1em 0;
+    word-wrap: break-word;
+    text-align: justify;
+    color: #FFFAFA;
+    margin: 0 auto;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.horizontal_cards[b-orui8j8jp3] {
+    width: 100%;
+    height: 100%;
+}
 /* _content/WebUi/Views/Shared/HomePartial/0AboutSection.cshtml.rz.scp.css */
 .conteiner-canvas[b-u4gvsa75bf] {
   display: flex;
@@ -1941,7 +2028,6 @@ div.cards[b-3l31j7pbnw] {
 	padding-bottom: 4em;
 	border: 1px solid rgb(10, 10, 10);
 	box-shadow: 0em 0.2em 2em rgb(10, 10, 10);
-	background: linear-gradient(90deg,rgb(10, 10, 10), rgb(61, 61, 61)) padding-box, linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%) border-box;
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
 }
@@ -1961,7 +2047,7 @@ div.card-ability[b-3l31j7pbnw] {
 	display: inline-block;
 	margin: 8px;
 	height: 300px;
-	background: linear-gradient(rgb(81, 81, 81), rgb(81, 81, 81)) padding-box, linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%) border-box;
+	background: linear-gradient(rgb(81, 81, 81), rgb(81, 81, 81)) padding-box, linear-gradient(rgb(81, 81, 81), rgb(81, 81, 81)) border-box;
 	border-radius: 18px 18px 0 0;
 	border-top: 2px solid transparent;
 	border-left: 2px solid transparent;
@@ -1995,7 +2081,7 @@ div.card-ability[b-3l31j7pbnw] {
 		margin-bottom: 0;
 		position: relative;
 		z-index: 0;
-        box-shadow: 0em 0.2em 2em rgb(10, 10, 10);
+
 	}
 
 		div.card-ability div.card-title a.toggle-info[b-3l31j7pbnw] {
@@ -2616,7 +2702,7 @@ button.accept-policy[b-50ebo1uj6s] {
 
 .container-display[b-50ebo1uj6s] {
     display: flex;
-    padding: 20px;
+    padding: 15px;
 }
 
 .rigth-align[b-50ebo1uj6s] {

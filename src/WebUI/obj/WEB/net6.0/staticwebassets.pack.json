@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebUi.bundle.scp.css"
     },
     {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\HorizScrollCards.css",
+      "PackagePath": "staticwebassets\\css\\HorizScrollCards.css"
+    },
+    {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\curosel.css",
       "PackagePath": "staticwebassets\\css\\curosel.css"
     },
@@ -317,6 +321,10 @@
       "PackagePath": "staticwebassets\\img\\engineer.jpg"
     },
     {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\fractals.jpg",
+      "PackagePath": "staticwebassets\\img\\fractals.jpg"
+    },
+    {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
@@ -331,6 +339,14 @@
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\4AbilitiesSection.js",
       "PackagePath": "staticwebassets\\js\\4AbilitiesSection.js"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\HorizScrollCards.js",
+      "PackagePath": "staticwebassets\\js\\HorizScrollCards.js"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\HorizScrollCards.min.js",
+      "PackagePath": "staticwebassets\\js\\HorizScrollCards.min.js"
     },
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\curosel.js",
