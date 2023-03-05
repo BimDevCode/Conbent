@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ma/VRZnJ2uVhNaWKgVqSlhk+sR2Y8oiB9XajsucNT5A=",
+  "Hash": "W+q2yskWlSH3WcKrd3g8orJ0k66cWXFrZUoD5WNuUJU=",
   "Source": "WebUi",
   "BasePath": "_content/WebUi",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\obj\\WEB\\net6.0\\scopedcss\\projectbundle\\WebUi.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\ContentTree.css",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "css/ContentTree.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ContentTree.css"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\curosel.css",
@@ -117,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\prism.css",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "css/prism.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\prism.css"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\site.css",
@@ -1411,6 +1445,23 @@
       "OriginalItemSpec": "wwwroot\\img\\Microsoft_WPF.png"
     },
     {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\programming_fractals.jpg",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "img/programming_fractals.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\programming_fractals.jpg"
+    },
+    {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\revit.jpg",
       "SourceId": "WebUi",
       "SourceType": "Discovered",
@@ -1477,6 +1528,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\4AbilitiesSection.js"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\ContentTree.js",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "js/ContentTree.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ContentTree.js"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\curosel.js",
@@ -1596,6 +1664,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\main.js"
+    },
+    {
+      "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\prism.js",
+      "SourceId": "WebUi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\",
+      "BasePath": "_content/WebUi",
+      "RelativePath": "js/prism.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\prism.js"
     },
     {
       "Identity": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\site.js",

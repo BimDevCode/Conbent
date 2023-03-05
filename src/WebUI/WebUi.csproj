@@ -38,4 +38,9 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shared\ProgrammingPartial\CSHARP\" />
+    <Folder Include="Views\Shared\ProgrammingPartial\WPF\" />
+  </ItemGroup>
+
 </Project>

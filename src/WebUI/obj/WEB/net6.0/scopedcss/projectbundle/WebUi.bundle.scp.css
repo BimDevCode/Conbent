@@ -1342,6 +1342,80 @@ p.center-date[b-giccfwr4d9] {
     text-align: center;
     width: 100%;
 }
+/* _content/WebUi/Views/Content/Programming.cshtml.rz.scp.css */
+.intro-article[b-qf7uooghld] {
+    display: block;
+}
+
+.img_intro_container[b-qf7uooghld] {
+
+}
+
+.list_item[b-qf7uooghld] {
+    color: #FFFAFA;
+    margin: 0 auto;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+    .list_item[b-qf7uooghld]::marker {
+        color: #EF5DA8;
+        font-size: 1.5em;
+    }
+
+.pointer[b-qf7uooghld]{
+    
+}
+
+.landscape[b-qf7uooghld] {
+    background-image: url(/img/programming_fractals.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    border: 2px solid;
+}
+
+.content[b-qf7uooghld] {
+    margin: 0 auto;
+    width: 960px;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    align-items: center;
+    overflow: hidden;
+}
+
+article[b-qf7uooghld] {
+    float: left;
+    width: 960px;
+    padding-bottom: 2em;
+}
+
+article p:first-of-type[b-qf7uooghld] {
+    margin-top: 0;
+}
+
+h1[b-qf7uooghld] {
+    color: #FFFAFA;
+    margin: 0 auto;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 64px;
+}
+
+
+.horizontal_cards[b-qf7uooghld] {
+    width: 100%;
+    height: 100%;
+}
 /* _content/WebUi/Views/Home/Index.cshtml.rz.scp.css */
 .conteiner-canvas[b-5r8mtzixyh] {
   display: flex;
@@ -1531,7 +1605,7 @@ p.center-date[b-giccfwr4d9] {
     width: 960px;
     max-width: 100%;
     width: 100%;
-    display: flex;
+    display: grid;
     justify-content: center;
     padding-top: 2em;
     align-items: center;

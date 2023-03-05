@@ -8,4 +8,9 @@ public class ContentController : Controller
     {
         return View();
     }
+
+    public IActionResult Programming()
+    {
+        return View();
+    }
 }

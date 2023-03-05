@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/\#startup/\#Project/Main\#/Conbent/src/WebUI/Views/Shared/ProgrammingPartial/ASP/Base/Lorem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFByb2dyYW1taW5nUGFydGlhbFxBU1BcQmFzZVxMb3JlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/\#startup/\#Project/Main\#/Conbent/src/WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -103,6 +107,10 @@ build_metadata.AdditionalFiles.CssScope = b-y0q5mg15ch
 [C:/\#startup/\#Project/Main\#/Conbent/src/WebUI/Views/Articles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWNsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jeqcdv47zy
+
+[C:/\#startup/\#Project/Main\#/Conbent/src/WebUI/Views/Content/Programming.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGVudFxQcm9ncmFtbWluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-qf7uooghld
 
 [C:/\#startup/\#Project/Main\#/Conbent/src/WebUI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=

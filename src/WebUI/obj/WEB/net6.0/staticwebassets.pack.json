@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebUi.bundle.scp.css"
     },
     {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\ContentTree.css",
+      "PackagePath": "staticwebassets\\css\\ContentTree.css"
+    },
+    {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\HorizScrollCards.css",
       "PackagePath": "staticwebassets\\css\\HorizScrollCards.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\main.css",
       "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\prism.css",
+      "PackagePath": "staticwebassets\\css\\prism.css"
     },
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\css\\site.css",
@@ -329,6 +337,10 @@
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\programming_fractals.jpg",
+      "PackagePath": "staticwebassets\\img\\programming_fractals.jpg"
+    },
+    {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\img\\revit.jpg",
       "PackagePath": "staticwebassets\\img\\revit.jpg"
     },
@@ -339,6 +351,10 @@
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\4AbilitiesSection.js",
       "PackagePath": "staticwebassets\\js\\4AbilitiesSection.js"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\ContentTree.js",
+      "PackagePath": "staticwebassets\\js\\ContentTree.js"
     },
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\HorizScrollCards.js",
@@ -367,6 +383,10 @@
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\prism.js",
+      "PackagePath": "staticwebassets\\js\\prism.js"
     },
     {
       "Id": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\WebUI\\wwwroot\\js\\site.js",

@@ -22,7 +22,7 @@ function myFunction() {
     }
 }
 
-const listItems = ["Project Examples", "Programming", "Enginering", "Managment"];
+const listItems = [ "Programming", "Enginering", "Managment"];
 
 const iconTemplate = (path) => {
     return `
@@ -48,6 +48,16 @@ const renderListItems = () => {
             return listItemTemplate(item, 100 * index);
         })
         .join("");
+
+    var buttonsInDropdownList = Array.from(document.querySelectorAll(".dropdown-button"));
+    buttonsInDropdownList.forEach(function (dropDownButton) {
+        dropDownButton.addEventListener('click', function () {
+            var i = Array.prototype.indexOf.call(buttonsInDropdownList, dropDownButton);
+            if (i === 0) {
+                window.location.href = "/Content/Programming";
+            }
+        })
+    });
 };
 
 window.addEventListener("load", () => {
