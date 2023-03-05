@@ -10,6 +10,26 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
 
 # NUNIT
 *.VisualState.xml
@@ -23,26 +43,7 @@ dlldata.c
 # DNX
 project.lock.json
 project.fragment.lock.json
-artifacts/
-
-*.cache
-*.assets.cache
-*.dll
-*.exe
-*.pdb
-/build/
-*.suo
-*.user
-_ReSharper.*/
-*.sdf
-*.opensdf
-*.tlog
-*.log
-TestResult.xml
-*.VisualState.xml
-Version.cs
-Version.h
-Version.cpp
+artifacts/  
 
 *_i.c
 *_p.c
@@ -68,28 +69,6 @@ Version.cpp
 *.pidb
 *.svclog
 *.scc
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-
-# Visual Studio 2015 cache/options directory
-.vs/
-# Uncomment if you have tasks that create the project's static files in wwwroot
-#wwwroot/
-
-# MSTest test Results
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
-
 
 # Chutzpah Test files
 _Chutzpah*
@@ -285,3 +264,4 @@ __pycache__/
 _site/
 
 # Files
+OpeningsManager/OpeningsManager/log.txt

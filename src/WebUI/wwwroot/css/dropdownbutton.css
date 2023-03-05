@@ -45,7 +45,9 @@
 	height: 2rem;
 }
 .svg-dropdown-arrow {
-	/*transform: scale(1.5);*/
+	/*transform: scale(1.5);
+		    color: #FFFAFA;
+	*/
 }
 
 .path-dropdown-arrow {
@@ -62,7 +64,6 @@
 .dropdown-button {
     border: none;
     display: inline-block;
-    color: #FFFAFA;
     position: relative;
     z-index: 1;
     font-size: 18px;

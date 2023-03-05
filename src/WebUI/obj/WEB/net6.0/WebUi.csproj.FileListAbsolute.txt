@@ -297,3 +297,4 @@ C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Shar
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Shared\HomePartial\5OutputTextSection.cshtml.rz.scp.css
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\About\Index.cshtml.rz.scp.css
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Shared\AboutPartial\0IntroSection.cshtml.rz.scp.css
+C:\#startup\#Project\Main#\Conbent\src\WebUI\bin\WEB\net6.0\libman.json
