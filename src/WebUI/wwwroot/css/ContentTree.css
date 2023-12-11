@@ -108,6 +108,31 @@ summary::-webkit-details-marker {
     font-size: 1.5rem;
     line-height: 3.2rem;
 }
+    .tree-nav__item-title :before:hover {
+        color: red;
+    }
+
+a {
+    text-decoration:none;
+}
+    a:hover {
+        background-image: linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.6s cubic-bezier(.34,.74,.14,.92);
+        opacity: 0.5;
+    }
+/*.tree-nav__item-title--current {
+    background-image: linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%);
+    color: #666;
+    border-radius: 6px;
+}*/
+.tree-nav__item-title--current {
+    background: linear-gradient(to right, #EF5DA8 0%,#5D5FEF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s ease-in-out;
+}
 
 .tree-nav__item-title .icon {
     display: inline;

@@ -299,3 +299,4 @@ C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Abou
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Shared\AboutPartial\0IntroSection.cshtml.rz.scp.css
 C:\#startup\#Project\Main#\Conbent\src\WebUI\bin\WEB\net6.0\libman.json
 C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\scopedcss\Views\Content\Programming.cshtml.rz.scp.css
+C:\#startup\#Project\Main#\Conbent\src\WebUI\obj\WEB\net6.0\WebUi.sourcelink.json

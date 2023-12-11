@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebUi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("WEB")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a2bcdc363e465808b5220b00b62b2b773c25a91")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebUi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebUi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
