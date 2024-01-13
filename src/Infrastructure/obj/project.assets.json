@@ -857,39 +857,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nikol\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/mikalaisabaleuski/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "/Users/mikalaisabaleuski/Documents/GitHub/Conbent/src/Infrastructure/Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\nikol\\.nuget\\packages\\",
-      "outputPath": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\Infrastructure\\obj\\",
+      "projectPath": "/Users/mikalaisabaleuski/Documents/GitHub/Conbent/src/Infrastructure/Infrastructure.csproj",
+      "packagesPath": "/Users/mikalaisabaleuski/.nuget/packages/",
+      "outputPath": "/Users/mikalaisabaleuski/Documents/GitHub/Conbent/src/Infrastructure/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\nikol\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mikalaisabaleuski/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\#startup\\#Project\\Main#\\Conbent\\src\\Application\\Application.csproj": {
-              "projectPath": "C:\\#startup\\#Project\\Main#\\Conbent\\src\\Application\\Application.csproj"
+            "/Users/mikalaisabaleuski/Documents/GitHub/Conbent/src/Application/Application.csproj": {
+              "projectPath": "/Users/mikalaisabaleuski/Documents/GitHub/Conbent/src/Application/Application.csproj"
             }
           }
         }
@@ -936,13 +929,31 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/mikalaisabaleuski/Documents/GitHub/Conbent/src/Infrastructure/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
