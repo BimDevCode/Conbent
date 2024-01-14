@@ -83,7 +83,7 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var contentContext = scopedProvider.GetRequiredService<ContentDbContext>();
-        await ContentDbContextSeed.SeedAsync(contentContext, app.Logger);
+        //await ContentDbContextSeed.SeedAsync(contentContext, app.Logger);
 
         //var userManager = scopedProvider.GetRequiredService<UserManager<ConbentUser>>();
         //var roleManager = scopedProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -102,12 +102,11 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
 
 #region Identity
-
+app.UseStaticFiles();
 app.UseCookiePolicy();
 app.UseAuthentication();
 app.UseAuthorization();

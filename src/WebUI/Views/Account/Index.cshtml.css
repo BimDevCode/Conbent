@@ -1,9 +1,9 @@
 ﻿/** Inspired by: http://graphicburger.com/flat-design-ui-components/ **/
 /** Line-chart and donut-chart made by @kseso https://codepen.io/Kseso/pen/phiyL **/
 
-/************************************ FONTS ************************************/
-/*@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
-@import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial);*/
+
+/* @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700); */
+/* @import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial); */
 /* entypo */
 [class*="entypo-"]:before {
     font-family: "entypo", sans-serif;
