@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace Conbent.ServiceDefaults;
+namespace Conbent.Service.Defaults;
 
 public static class ClaimsPrincipalExtensions
 {

@@ -7,19 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DF93C282-7B82-479A-AC1C-D6949A01FACA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSPA", "src\Application\WebSPA\WebSPA.csproj", "{DF24BBBB-3C27-473B-8218-E2596A77C608}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.WebSPA", "src\Application\WebSPA\Conbent.WebSPA.csproj", "{DF24BBBB-3C27-473B-8218-E2596A77C608}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Common", "src\Infrastructure\Services.Common\Services.Common.csproj", "{2B8B75A6-D327-4FC8-87FF-9B9E04FBD364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.Services.Common", "src\Infrastructure\Services.Common\Conbent.Services.Common.csproj", "{2B8B75A6-D327-4FC8-87FF-9B9E04FBD364}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationEventLogEF", "src\Infrastructure\IntegrationEventLogEF\IntegrationEventLogEF.csproj", "{A46F01CE-A46E-4E20-919B-AF6F4EC29923}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.IntegrationEventLogEF", "src\Infrastructure\IntegrationEventLogEF\Conbent.IntegrationEventLogEF.csproj", "{A46F01CE-A46E-4E20-919B-AF6F4EC29923}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.API", "src\Infrastructure\Identity.API\Identity.API.csproj", "{34D90FF4-1EA7-4132-A676-60601F9BEF88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "src\Infrastructure\EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{FEA3587C-32C2-4A09-8CC5-7807E6CC61D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.EventBusRabbitMQ", "src\Infrastructure\EventBusRabbitMQ\Conbent.EventBusRabbitMQ.csproj", "{FEA3587C-32C2-4A09-8CC5-7807E6CC61D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\Infrastructure\EventBus\EventBus.csproj", "{F1CC55C8-A7DE-4A7A-8A9B-0FCE9B657681}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.EventBus", "src\Infrastructure\EventBus\Conbent.EventBus.csproj", "{F1CC55C8-A7DE-4A7A-8A9B-0FCE9B657681}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Defaults", "src\Infrastructure\ServiceDefaults\Services.Defaults.csproj", "{3A2A9977-3275-4F69-8CCB-3222D10D1DEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.Service.Defaults", "src\Infrastructure\ServiceDefaults\Conbent.Service.Defaults.csproj", "{3A2A9977-3275-4F69-8CCB-3222D10D1DEE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUi", "src\Application\WebUI\WebUi.csproj", "{2DA2437C-F561-4EA7-8213-E921A4D6CAD9}"
 EndProject

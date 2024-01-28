@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Services.Common;
+namespace Conbent.Services.Common;
 
 public static class JsonDefaults
 {

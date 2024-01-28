@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.JsonWebTokens;
 
-namespace Conbent.ServiceDefaults;
+namespace Conbent.Service.Defaults;
 
 public static class AuthenticationExtensions
 {

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -7,7 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Conbent.ServiceDefaults;
+namespace Conbent.Service.Defaults;
 
 public static partial class Extensions
 {
@@ -127,13 +130,12 @@ public static partial class Extensions
                     }
                 }
             });
-
             options.OperationFilter<AuthorizeCheckOperationFilter>([scopes.Keys.ToArray()]);
         });
 
         return builder;
     }
-
+    
     private sealed class AuthorizeCheckOperationFilter(string[] scopes) : IOperationFilter
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)

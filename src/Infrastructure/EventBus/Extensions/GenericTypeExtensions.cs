@@ -1,4 +1,7 @@
-﻿namespace Conbent.EventBus.Extensions;
+﻿using System;
+using System.Linq;
+
+namespace Conbent.EventBus.Extensions;
 
 public static class GenericTypeExtensions
 {

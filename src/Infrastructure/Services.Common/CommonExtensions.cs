@@ -18,7 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RabbitMQ.Client;
 
-namespace Services.Common;
+namespace Conbent.Services.Common;
 
 public static class CommonExtensions
 {

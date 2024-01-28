@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Services.Common;
+namespace Conbent.Services.Common;
 internal class AuthorizeCheckOperationFilter : IOperationFilter
 {
     private readonly IConfiguration _configuration;

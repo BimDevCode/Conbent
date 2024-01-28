@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 
-namespace Services.Common;
+namespace Conbent.Services.Common;
 
 public class HttpClientAuthorizationDelegatingHandler
     : DelegatingHandler

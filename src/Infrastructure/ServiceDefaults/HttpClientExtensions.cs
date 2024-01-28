@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Authentication;
 
-namespace Conbent.ServiceDefaults;
+namespace Conbent.Service.Defaults;
 
 public static class HttpClientExtensions
 {

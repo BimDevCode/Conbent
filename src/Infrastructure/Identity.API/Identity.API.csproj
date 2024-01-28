@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Conbent.ServiceDefaults\Conbent.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Conbent.Service.Defaults\Conbent.Service.Defaults.csproj" />
   </ItemGroup>
 
   <ItemGroup>

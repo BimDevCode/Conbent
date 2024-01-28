@@ -1,6 +1,6 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults();
+builder.AddService.Defaults();
 
 builder.Services.AddHealthChecks(builder.Configuration);
 builder.Services.Configure<AppSettings>(builder.Configuration);
@@ -13,7 +13,7 @@ builder.Services.AddSpaStaticFiles(options =>
 
 var app = builder.Build();
 
-app.UseServiceDefaults();
+app.UseService.Defaults();
 
 app.UseFileServer();
 

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using Conbent.EventBus.Abstractions;
 using Conbent.EventBus.Extensions;

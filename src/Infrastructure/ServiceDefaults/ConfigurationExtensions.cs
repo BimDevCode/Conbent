@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Extensions.Configuration;
+﻿using System;
+
+// ReSharper disable once CheckNamespace
+namespace Microsoft.Extensions.Configuration;
 
 public static class ConfigurationExtensions
 {
