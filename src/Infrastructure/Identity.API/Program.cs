@@ -1,6 +1,8 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Conbent.Service.Defaults.Extension;
 
-builder.AddService.Defaults();
+var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 
 builder.Services.AddControllersWithViews();
 

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
@@ -9,11 +8,11 @@ using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
-namespace Conbent.Service.Defaults;
+namespace Conbent.Service.Defaults.Extension;
 
-public static partial class Extensions
+public static partial class CommonExtensions
 {
-    static IHostApplicationBuilder AddServiceDefaults(this IHostApplicationBuilder builder)
+    public static IHostApplicationBuilder AddServiceDefaults(this IHostApplicationBuilder builder)
     {
         builder.AddBasicServiceDefaults();
 

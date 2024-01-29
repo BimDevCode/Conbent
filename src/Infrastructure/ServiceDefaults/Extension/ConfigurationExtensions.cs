@@ -1,7 +1,8 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
 
 // ReSharper disable once CheckNamespace
-namespace Microsoft.Extensions.Configuration;
+namespace Conbent.Service.Defaults.Extension;
 
 public static class ConfigurationExtensions
 {

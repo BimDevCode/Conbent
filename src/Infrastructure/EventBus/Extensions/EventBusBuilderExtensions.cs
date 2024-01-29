@@ -1,10 +1,8 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Text.Json;
+﻿using System.Diagnostics.CodeAnalysis;
 using Conbent.EventBus.Abstractions;
-using Conbent.EventBus.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.Extensions.DependencyInjection;
+namespace Conbent.EventBus.Extensions;
 
 public static class EventBusBuilderExtensions
 {

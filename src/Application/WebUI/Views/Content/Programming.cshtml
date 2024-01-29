@@ -71,10 +71,12 @@
                     </p>
                     <pre><code class="language-css">
 
+ @* ReSharper disable once Html.TagNotClosed *@
 public async Task<IActionResult> Index()
 {
      return View(await _context.Articles.ToListAsync());
 }
+ @* ReSharper disable once Html.TagNotClosed *@
                     </code></pre>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut felis et nisi maximus posuere. Fusce posuere et lacus nec condimentum. Sed sed neque a sem blandit tempus. Vivamus eleifend non est nec venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam faucibus vulputate tempus. Integer sagittis massa ac justo rutrum condimentum. Phasellus scelerisque dapibus odio, nec mollis quam scelerisque at. Phasellus semper, metus sit amet porttitor efficitur, nibh libero tempor ante, non hendrerit sem ex vel libero. Nam rutrum egestas erat, vitae finibus mauris suscipit eget. Donec convallis quam eros, ac facilisis elit placerat ac. Integer ut ipsum accumsan, varius enim sed, mattis urna. Maecenas eget dignissim arcu. Cras enim purus, hendrerit a augue eget, tincidunt cursus dolor. Etiam venenatis, mauris sed consectetur venenatis, felis dolor dignissim tellus, sit amet elementum mauris nisl in nisl. Aliquam erat volutpat.

@@ -6,10 +6,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.ConbentOnContainers.BuildingBlocks.EventBus;
-using Microsoft.ConbentOnContainers.BuildingBlocks.EventBus.Abstractions;
-using Microsoft.ConbentOnContainers.BuildingBlocks.EventBusRabbitMQ;
-using Microsoft.ConbentOnContainers.BuildingBlocks.EventBusServiceBus;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -31,10 +28,10 @@ public static class CommonExtensions
         builder.Services.AddApplicationInsights(builder.Configuration);
 
         // Default health checks assume the event bus and self health checks
-        builder.Services.AddDefaultHealthChecks(builder.Configuration);
+        //builder.Services.AddDefaultHealthChecks(builder.Configuration);
 
         // Add the event bus
-        builder.Services.AddEventBus(builder.Configuration);
+        //builder.Services.AddEventBus(builder.Configuration);
 
         builder.Services.AddDefaultAuthentication(builder.Configuration);
 
@@ -295,141 +292,141 @@ public static class CommonExtensions
         return services;
     }
 
-    public static IHealthChecksBuilder AddDefaultHealthChecks(this IServiceCollection services, IConfiguration configuration)
-    {
-        var hcBuilder = services.AddHealthChecks();
+    //public static IHealthChecksBuilder AddDefaultHealthChecks(this IServiceCollection services, IConfiguration configuration)
+    //{
+    //    var hcBuilder = services.AddHealthChecks();
 
-        // Health check for the application itself
-        hcBuilder.AddCheck("self", () => HealthCheckResult.Healthy());
+    //    // Health check for the application itself
+    //    hcBuilder.AddCheck("self", () => HealthCheckResult.Healthy());
 
-        // {
-        //   "EventBus": {
-        //     "ProviderName": "ServiceBus | RabbitMQ",
-        //   }
-        // }
+    //    // {
+    //    //   "EventBus": {
+    //    //     "ProviderName": "ServiceBus | RabbitMQ",
+    //    //   }
+    //    // }
 
-        var eventBusSection = configuration.GetSection("EventBus");
+    //    var eventBusSection = configuration.GetSection("EventBus");
 
-        if (!eventBusSection.Exists())
-        {
-            return hcBuilder;
-        }
+    //    if (!eventBusSection.Exists())
+    //    {
+    //        return hcBuilder;
+    //    }
 
-        return eventBusSection["ProviderName"]?.ToLowerInvariant() switch
-        {
-            "servicebus" => hcBuilder.AddAzureServiceBusTopic(
-                    _ => configuration.GetRequiredConnectionString("EventBus"),
-                    _ => "Conbent_event_bus",
-                    name: "servicebus",
-                    tags: new string[] { "ready" }),
+    //    return eventBusSection["ProviderName"]?.ToLowerInvariant() switch
+    //    {
+    //        "servicebus" => hcBuilder.AddAzureServiceBusTopic(
+    //                _ => configuration.GetRequiredConnectionString("EventBus"),
+    //                _ => "Conbent_event_bus",
+    //                name: "servicebus",
+    //                tags: new string[] { "ready" }),
 
-            _ => hcBuilder.AddRabbitMQ(
-                    _ => $"amqp://{configuration.GetRequiredConnectionString("EventBus")}",
-                    name: "rabbitmq",
-                    tags: new string[] { "ready" })
-        };
-    }
+    //        _ => hcBuilder.AddRabbitMQ(
+    //                _ => $"amqp://{configuration.GetRequiredConnectionString("EventBus")}",
+    //                name: "rabbitmq",
+    //                tags: new string[] { "ready" })
+    //    };
+    //}
 
-    public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
-    {
-        //  {
-        //    "ConnectionStrings": {
-        //      "EventBus": "..."
-        //    },
+    //public static IServiceCollection AddEventBus(this IServiceCollection services, IConfiguration configuration)
+    //{
+    //    //  {
+    //    //    "ConnectionStrings": {
+    //    //      "EventBus": "..."
+    //    //    },
 
-        // {
-        //   "EventBus": {
-        //     "ProviderName": "ServiceBus | RabbitMQ",
-        //     ...
-        //   }
-        // }
+    //    // {
+    //    //   "EventBus": {
+    //    //     "ProviderName": "ServiceBus | RabbitMQ",
+    //    //     ...
+    //    //   }
+    //    // }
 
-        // {
-        //   "EventBus": {
-        //     "ProviderName": "ServiceBus",
-        //     "SubscriptionClientName": "Conbent_event_bus"
-        //   }
-        // }
+    //    // {
+    //    //   "EventBus": {
+    //    //     "ProviderName": "ServiceBus",
+    //    //     "SubscriptionClientName": "Conbent_event_bus"
+    //    //   }
+    //    // }
 
-        // {
-        //   "EventBus": {
-        //     "ProviderName": "RabbitMQ",
-        //     "SubscriptionClientName": "...",
-        //     "UserName": "...",
-        //     "Password": "...",
-        //     "RetryCount": 1
-        //   }
-        // }
+    //    // {
+    //    //   "EventBus": {
+    //    //     "ProviderName": "RabbitMQ",
+    //    //     "SubscriptionClientName": "...",
+    //    //     "UserName": "...",
+    //    //     "Password": "...",
+    //    //     "RetryCount": 1
+    //    //   }
+    //    // }
 
-        var eventBusSection = configuration.GetSection("EventBus");
+    //    var eventBusSection = configuration.GetSection("EventBus");
 
-        if (!eventBusSection.Exists())
-        {
-            return services;
-        }
+    //    if (!eventBusSection.Exists())
+    //    {
+    //        return services;
+    //    }
 
-        if (string.Equals(eventBusSection["ProviderName"], "ServiceBus", StringComparison.OrdinalIgnoreCase))
-        {
-            services.AddSingleton<IServiceBusPersisterConnection>(sp =>
-            {
-                var serviceBusConnectionString = configuration.GetRequiredConnectionString("EventBus");
+    //    if (string.Equals(eventBusSection["ProviderName"], "ServiceBus", StringComparison.OrdinalIgnoreCase))
+    //    {
+    //        services.AddSingleton<IServiceBusPersisterConnection>(sp =>
+    //        {
+    //            var serviceBusConnectionString = configuration.GetRequiredConnectionString("EventBus");
 
-                return new DefaultServiceBusPersisterConnection(serviceBusConnectionString);
-            });
+    //            return new DefaultServiceBusPersisterConnection(serviceBusConnectionString);
+    //        });
 
-            services.AddSingleton<IEventBus, EventBusServiceBus>(sp =>
-            {
-                var serviceBusPersisterConnection = sp.GetRequiredService<IServiceBusPersisterConnection>();
-                var logger = sp.GetRequiredService<ILogger<EventBusServiceBus>>();
-                var eventBusSubscriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
-                string subscriptionName = eventBusSection.GetRequiredValue("SubscriptionClientName");
+    //        services.AddSingleton<IEventBus, EventBusServiceBus>(sp =>
+    //        {
+    //            var serviceBusPersisterConnection = sp.GetRequiredService<IServiceBusPersisterConnection>();
+    //            var logger = sp.GetRequiredService<ILogger<EventBusServiceBus>>();
+    //            var eventBusSubscriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
+    //            string subscriptionName = eventBusSection.GetRequiredValue("SubscriptionClientName");
 
-                return new EventBusServiceBus(serviceBusPersisterConnection, logger,
-                    eventBusSubscriptionsManager, sp, subscriptionName);
-            });
-        }
-        else
-        {
-            services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
-            {
-                var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
+    //            return new EventBusServiceBus(serviceBusPersisterConnection, logger,
+    //                eventBusSubscriptionsManager, sp, subscriptionName);
+    //        });
+    //    }
+    //    else
+    //    {
+    //        services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
+    //        {
+    //            var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
 
-                var factory = new ConnectionFactory()
-                {
-                    HostName = configuration.GetRequiredConnectionString("EventBus"),
-                    DispatchConsumersAsync = true
-                };
+    //            var factory = new ConnectionFactory()
+    //            {
+    //                HostName = configuration.GetRequiredConnectionString("EventBus"),
+    //                DispatchConsumersAsync = true
+    //            };
 
-                if (!string.IsNullOrEmpty(eventBusSection["UserName"]))
-                {
-                    factory.UserName = eventBusSection["UserName"];
-                }
+    //            if (!string.IsNullOrEmpty(eventBusSection["UserName"]))
+    //            {
+    //                factory.UserName = eventBusSection["UserName"];
+    //            }
 
-                if (!string.IsNullOrEmpty(eventBusSection["Password"]))
-                {
-                    factory.Password = eventBusSection["Password"];
-                }
+    //            if (!string.IsNullOrEmpty(eventBusSection["Password"]))
+    //            {
+    //                factory.Password = eventBusSection["Password"];
+    //            }
 
-                var retryCount = eventBusSection.GetValue("RetryCount", 5);
+    //            var retryCount = eventBusSection.GetValue("RetryCount", 5);
 
-                return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
-            });
+    //            return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
+    //        });
 
-            services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
-            {
-                var subscriptionClientName = eventBusSection.GetRequiredValue("SubscriptionClientName");
-                var rabbitMQPersistentConnection = sp.GetRequiredService<IRabbitMQPersistentConnection>();
-                var logger = sp.GetRequiredService<ILogger<EventBusRabbitMQ>>();
-                var eventBusSubscriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
-                var retryCount = eventBusSection.GetValue("RetryCount", 5);
+    //        services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
+    //        {
+    //            var subscriptionClientName = eventBusSection.GetRequiredValue("SubscriptionClientName");
+    //            var rabbitMQPersistentConnection = sp.GetRequiredService<IRabbitMQPersistentConnection>();
+    //            var logger = sp.GetRequiredService<ILogger<EventBusRabbitMQ>>();
+    //            var eventBusSubscriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
+    //            var retryCount = eventBusSection.GetValue("RetryCount", 5);
 
-                return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, sp, eventBusSubscriptionsManager, subscriptionClientName, retryCount);
-            });
-        }
+    //            return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, sp, eventBusSubscriptionsManager, subscriptionClientName, retryCount);
+    //        });
+    //    }
 
-        services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
-        return services;
-    }
+    //    services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
+    //    return services;
+    //}
 
     public static void MapDefaultHealthChecks(this IEndpointRouteBuilder routes)
     {

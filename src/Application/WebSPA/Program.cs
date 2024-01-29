@@ -1,6 +1,10 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿
+using Conbent.Service.Defaults.Extension;
+using Conbent.WebSPA.Server.Infrastructure;
 
-builder.AddService.Defaults();
+var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 
 builder.Services.AddHealthChecks(builder.Configuration);
 builder.Services.Configure<AppSettings>(builder.Configuration);
@@ -13,7 +17,7 @@ builder.Services.AddSpaStaticFiles(options =>
 
 var app = builder.Build();
 
-app.UseService.Defaults();
+app.MapDefaultEndpoints();
 
 app.UseFileServer();
 

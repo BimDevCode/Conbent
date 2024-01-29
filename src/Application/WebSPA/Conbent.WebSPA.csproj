@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnetcorespa-c23d27a4-eb88-4b18-9b77-2a93f3b15119</UserSecretsId>
     <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
@@ -25,14 +25,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.Uris" />
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
+    <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\Conbent.Services.Common\Conbent.Services.Common.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ServiceDefaults\Conbent.Service.Defaults.csproj" />
   </ItemGroup>
   
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

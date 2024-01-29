@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -10,9 +7,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Conbent.Service.Defaults;
+namespace Conbent.Service.Defaults.Extension;
 
-public static partial class Extensions
+public static partial class CommonExtensions
 {
     public static IApplicationBuilder UseDefaultOpenApi(this WebApplication app)
     {

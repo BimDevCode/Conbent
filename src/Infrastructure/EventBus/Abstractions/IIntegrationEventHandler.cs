@@ -1,4 +1,5 @@
-﻿namespace Conbent.EventBus.Abstractions;
+﻿
+namespace Conbent.EventBus.Abstractions;
 
 public interface IIntegrationEventHandler<in TIntegrationEvent> : IIntegrationEventHandler
     where TIntegrationEvent : IntegrationEvent

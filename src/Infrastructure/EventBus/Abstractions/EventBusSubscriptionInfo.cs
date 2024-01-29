@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization.Metadata;
-
-namespace Conbent.EventBus.Abstractions;
+﻿namespace Conbent.EventBus.Abstractions;
 
 public class EventBusSubscriptionInfo
 {

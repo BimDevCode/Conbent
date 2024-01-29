@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace Conbent.EventBus.Abstractions;
 
 public interface IEventBusBuilder
 {

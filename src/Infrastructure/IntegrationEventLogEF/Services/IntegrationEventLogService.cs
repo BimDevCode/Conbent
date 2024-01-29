@@ -1,4 +1,6 @@
-﻿namespace Conbent.IntegrationEventLogEF.Services;
+﻿using System.Linq;
+
+namespace Conbent.IntegrationEventLogEF.Services;
 
 public class IntegrationEventLogService<TContext> : IIntegrationEventLogService, IDisposable
     where TContext : DbContext
