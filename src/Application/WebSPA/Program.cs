@@ -26,7 +26,10 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseSpaStaticFiles();
 }
-
+else{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 app.UseRouting();
 
 #pragma warning disable ASP0014 // Suggest using top level route registrations
@@ -35,6 +38,7 @@ app.UseEndpoints(routes =>
     // TODO: Change this route
     routes.MapGet("/home/configuration", (IOptions<AppSettings> options) => options.Value);
 });
+// Configure the HTTP request pipeline.
 
 // Handles all still unattended (by any other middleware) requests by returning the default page of the SPA (wwwroot/index.html).
 app.UseSpa(spa =>

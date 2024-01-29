@@ -11,10 +11,7 @@ public class WebContextSeed
         var contentRootPath = env.ContentRootPath;
         var webroot = env.WebRootPath;
 
-        if (useCustomizationData)
-        {
-            GetPreconfiguredImages(contentRootPath, webroot, logger);
-        }
+
     }
 
     static void GetPreconfiguredImages(string contentRootPath, string webroot, ILogger logger)
