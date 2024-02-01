@@ -1,5 +1,4 @@
 # Stage 1: Build Angular app
-
 FROM node:16 as angular-build
 EXPOSE 44475
 WORKDIR /app
