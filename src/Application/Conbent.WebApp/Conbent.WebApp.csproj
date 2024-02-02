@@ -5,18 +5,7 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <SpaRoot>Client\</SpaRoot>
-  <Choose>
-      <When Condition="'$(EnvironmentName)' == 'dev'">
-          <PropertyGroup>
-              <SpaProxyServerUrl>https://localhost:4200</SpaProxyServerUrl>
-          </PropertyGroup>
-      </When>
-      <When Condition="'$(EnvironmentName)' == 'poc'">
-          <PropertyGroup>
-              <SpaProxyServerUrl>https://localhost:4201</SpaProxyServerUrl>
-          </PropertyGroup>
-      </When>
-  </Choose>
+    <SpaProxyServerUrl>https://localhost:4200</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>34eec00c-f45c-4a12-abea-2a59a0d37864</UserSecretsId>
