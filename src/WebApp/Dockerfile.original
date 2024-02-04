@@ -1,0 +1,30 @@
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y nodejs \
+    npm
+WORKDIR /app
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.SpaProxy
+EXPOSE 8080
+EXPOSE 8081
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y nodejs \
+    npm
+ARG BUILD_CONFIGURATION=Debug
+WORKDIR /src
+COPY ["Conbent.WebApp/Conbent.WebApp.csproj", "Conbent.WebApp/"]
+RUN dotnet restore "./Conbent.WebApp/./Conbent.WebApp.csproj"
+COPY . .
+WORKDIR "/src/Conbent.WebApp"
+RUN dotnet build "./Conbent.WebApp.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Debug
+RUN dotnet publish "./Conbent.WebApp.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Conbent.WebApp.dll"]

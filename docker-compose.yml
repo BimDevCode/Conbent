@@ -1,12 +1,16 @@
-# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
-
 version: '3.4'
 
 services:
-  conbentwebapp:
-    image: conbentwebapp
+  conbent.webapp:
+    image: ${DOCKER_REGISTRY-}conbentwebapp
     build:
       context: .
       dockerfile: src/Application/Conbent.WebApp/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.SpaProxy
+      - ASPNETCORE_URLS=https://localhost:4201;http://localhost:4202
     ports:
-      - 5286:5286
+      - 4200:4200
+      - 4201:4201
+      - 4202:4202

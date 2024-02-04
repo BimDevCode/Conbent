@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <SpaProxyServerUrl>https://localhost:4200</SpaProxyServerUrl>
+    <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>34eec00c-f45c-4a12-abea-2a59a0d37864</UserSecretsId>
+    <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <BuildServerSideRenderer>true</BuildServerSideRenderer>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <SpaRoot>WebClient</SpaRoot>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+  <!--<PropertyGroup>
+      <DockerfileContext>..\..\..</DockerfileContext>
+      <RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
+      <EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
+      <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+      <PublishProfile>DefaultContainer</PublishProfile>
+      <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:8.0</ContainerBaseImage>
+      <ContainerImageTag>1.0.0</ContainerImageTag>
+      
+      
+      
+      
+  </PropertyGroup>
+    <ItemGroup>
+        <ContainerEnvironmentVariable Include="ASPNETCORE_ENVIRONMENT" Value="Development" />
+        <ContainerEnvironmentVariable Include="LOGGER_VERBOSITY" Value="Trace" />
+        <ContainerEnvironmentVariable Include="ASPNETCORE_HTTP_PORTS" Value="4201" />
+        <ContainerEnvironmentVariable Include="ASPNETCORE_HTTPS_PORTS" Value="4202" />
+        <ContainerEnvironmentVariable Include="ASPNETCORE_URLS" Value="https://localhost:4202;http://localhost:4201" />
+        <ContainerEnvironmentVariable Include="ASPNETCORE_HOSTINGSTARTUPASSEMBLIES" Value="Microsoft.AspNetCore.SpaProxy" />
+        <ContainerPort Include="4202" Type="tcp" />
+        <ContainerPort Include="4200" Type="tcp" />
+        <ContainerPort Include="4201" Type="tcp" />
+    </ItemGroup>-->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="8.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+  </ItemGroup>
+
+  <ItemGroup><!-- Don't publish the SPA source files, but do show them in the project files list
+  <Compile Remove="Client\.vscode\**" />
+  <Compile Remove="Client\node_modules\**" />
+  <Content Remove="$(SpaRoot)**" />
+  <Content Remove="Client\.vscode\**" />
+  <Content Remove="Client\node_modules\**" />
+  <EmbeddedResource Remove="Client\.vscode\**" />
+  <EmbeddedResource Remove="Client\node_modules\**" />
+  <None Remove="$(SpaRoot)**" />
+  <None Remove="Client\.vscode\**" />
+  <None Remove="Client\node_modules\**" />
+  <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />-->
+  
+    <Folder Include="Client\ssl\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ContainerEnvironmentVariable Include="ASPNETCORE_HTTPS_PORTS">
+      <Value>8081</Value>
+    </ContainerEnvironmentVariable>
+  </ItemGroup>
+
+</Project>
