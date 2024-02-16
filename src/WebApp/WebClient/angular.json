@@ -40,7 +40,12 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "assets/main-page/main.js",
+              "assets/main-page/prism.js",
+              "assets/main-page/intro.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -58,7 +63,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"

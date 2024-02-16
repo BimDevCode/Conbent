@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sintony&display=swap');
+
 @media (max-width: 1000px) {
   .navbar-expand-lg {
     flex-direction: column;
@@ -45,4 +47,119 @@
   .navbar-expand-lg .navbar-toggler {
     display: none;
   }
+}
+
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets.
+
+*/
+.btn {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 2.5em;
+  width: 7em;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration:none;
+}
+
+.btn-dark {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 2.5em;
+  width: 7em;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration:none;
+}
+.btn svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+.btn-dark svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+
+.btn svg rect {
+  //stroke: #EC0033;
+  stroke-width: 2;
+  stroke-dasharray: 80, 144;
+  stroke-dashoffset: 80;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  width: 100%;
+  height: 100%;
+  stroke-linecap: round;
+  -webkit-transition: all 1000ms ease;
+  transition: all 1000ms ease;
+}
+.btn-dark svg rect {
+  //stroke: #EC0033;
+  fill: rgb(255, 255, 255, 0);
+
+  stroke-width: 2;
+  stroke-dasharray: 80, 144;
+  stroke-dashoffset: 80;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  width: 100%;
+  height: 100%;
+  stroke-linecap: round;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.btn:hover svg rect {
+  stroke-width: 2;
+  stroke-dasharray: 80,0,144,0,80;
+  stroke-dashoffset: 0;
+}
+
+.btn-dark:hover svg rect {
+  // --secondary-color: #1F493D;
+  stroke-width: 2;
+  stroke-dasharray: 80,0,144,0,80;
+  stroke-dashoffset: 0;
+  fill: var(--secondary-color);
+}
+
+.btn svg text{
+  font-family: 'Sintony', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.btn-dark svg text{
+  font-family: 'Sintony', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.btn-dark:hover svg text{
+  fill: var(--main-backgroubd-color);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color:var(--main-backgroubd-color) ;
+  z-index: 1000; /* optional, to ensure the navbar is above all other elements */
 }

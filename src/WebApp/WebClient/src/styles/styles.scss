@@ -1,16 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
+
 :root {
-  --main-color: #F3EFE8;
-  --secondary-color: #1F493D;
+  scroll-behavior: smooth;
+  --main-backgroubd-color: #f3efe8;
+  --secondary-color: #423629;
+  --light-blue-color: #a7c2cc;
+  --blue-color: #5b7c99;
+  --green-color: #423629;
+  background-color: var(--main-backgroubd-color);
 }
 
+app-root {
+  background-color: var(--main-backgroubd-color);
+}
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--main-color);
+  background-color: transparent !important;
 }
 
-.basement-container {
-  margin: 1em;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+
+.safety-left{
+  left: 10vw;
 }
