@@ -42,6 +42,9 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
+              "assets/academy-page/ContentTree.js",
+              "assets/academy-page/prism.js",
+
               "assets/main-page/main.js",
               "assets/main-page/prism.js",
               "assets/main-page/intro.js"

@@ -11,24 +11,24 @@ public class ArticlesWithTechnologySpecification : BaseSpecification<ArticleEnti
         )
     {
         AddInclude(x => x.Technology);
+        AddInclude(x => x.Texts!);
+        AddInclude(x => x.Tags!);
         AddOrderBy(x => x.Name);
         ApplyPaging(articleParams.PageSize * (articleParams.PageIndex - 1),
             articleParams.PageSize);
 
-        if (!string.IsNullOrEmpty(articleParams.Sort))
+        if (string.IsNullOrEmpty(articleParams.Sort)) return;
+        switch (articleParams.Sort)
         {
-            switch (articleParams.Sort)
-            {
-                case "priceAsc":
-                    AddOrderBy(p => p.RelevantScore);
-                    break;
-                case "priceDesc":
-                    AddOrderByDescending(p => p.RelevantScore);
-                    break;
-                default:
-                    AddOrderBy(n => n.Name);
-                    break;
-            }
+            case "priceAsc":
+                AddOrderBy(p => p.RelevantScore);
+                break;
+            case "priceDesc":
+                AddOrderByDescending(p => p.RelevantScore);
+                break;
+            default:
+                AddOrderBy(n => n.Name);
+                break;
         }
     }
 

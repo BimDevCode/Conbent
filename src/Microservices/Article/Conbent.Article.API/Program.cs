@@ -1,7 +1,6 @@
 using Conbent.Article.API.Extensions;
-using Conbent.Article.Core.Interfaces;
 using Conbent.Article.Infrastructure.Context;
-using Conbent.Article.Infrastructure.Repository;
+using Conbent.CommonInfrastructure.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,12 +10,17 @@ builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddSwaggerDocumentation();
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
+
 app.UseSwaggerDocumentation();
+app.UseStaticFiles();
+app.UseCors("CorsPolicy");
 
 app.MapControllers();
+app.MapFallbackToController("Index", "Fallback");
 
 using var scope = app.Services.CreateScope();
-
 var services = scope.ServiceProvider;
 var articleContext = services.GetRequiredService<ArticleContext>();
 //var logger = services.GetRequiredService<ILogger<Program>>();
@@ -32,6 +36,7 @@ try
 }
 catch (Exception ex)
 {
+    throw ;
     //logger.LogError(ex, "An error occured during migration");
 }
 

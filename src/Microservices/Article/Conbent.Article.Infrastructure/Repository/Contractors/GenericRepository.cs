@@ -1,10 +1,11 @@
 using Conbent.Article.Core.Entities.Contractors;
 using Conbent.Article.Core.Interfaces.Contractors;
 using Conbent.Article.Core.Specifications.Contractors;
+using Conbent.Article.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace Conbent.Article.Infrastructure.Repository.Contractors;
-public class GenericRepository<T>(DbContext context) : IGenericRepository<T> where T : BaseEntity
+public class GenericRepository<T>(ArticleContext context) : IGenericRepository<T> where T : BaseEntity
 {
     public void Add(T entity)
     {

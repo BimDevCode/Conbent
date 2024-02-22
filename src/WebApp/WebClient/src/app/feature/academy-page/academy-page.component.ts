@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './academy-page.component.scss'
 })
 export class AcademyPageComponent {
+  CodeVariable = `public async Task<IActionResult> Index()
+                  {
+                    return View(await _context.Articles.ToListAsync());
+                  }`
 
 }

@@ -6,6 +6,7 @@ using Conbent.Article.Infrastructure.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Conbent.Article.Infrastructure.Context;
+using Conbent.CommonInfrastructure.Errors;
 
 namespace Conbent.Article.API.Extensions;
 
@@ -27,24 +28,24 @@ public static class Extensions
 
         //services.AddScoped<ITokenService, TokenService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-        //services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.Configure<ApiBehaviorOptions>(options =>
         {
-            //options.InvalidModelStateResponseFactory = actionContext =>
-            //{
-            //    var errors = actionContext.ModelState
-            //        .Where(e => e.Value.Errors.Count > 0)
-            //        .SelectMany(x => x.Value.Errors)
-            //        .Select(x => x.ErrorMessage).ToArray();
+            options.InvalidModelStateResponseFactory = actionContext =>
+            {
+                var errors = actionContext.ModelState
+                    .Where(e => e.Value.Errors.Count > 0)
+                    .SelectMany(x => x.Value.Errors)
+                    .Select(x => x.ErrorMessage).ToArray();
 
-            //    var errorResponse = new ApiValidationErrorResponse
-            //    {
-            //        Errors = errors
-            //    };
+                var errorResponse = new ApiValidationErrorResponse
+                {
+                    Errors = errors
+                };
 
-            //    return new BadRequestObjectResult(errorResponse);
-            //};
+                return new BadRequestObjectResult(errorResponse);
+            };
         });
 
         services.AddCors(opt =>

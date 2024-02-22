@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AcademyPageComponent } from './academy-page/academy-page.component';
 import { AccountPageComponent } from './account-page/account-page.component';
@@ -9,6 +9,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { MainPageModule } from './main-page/main-page.module';
 
 @NgModule({
+  schemas: [NO_ERRORS_SCHEMA],
   declarations: [
     AcademyPageComponent,
     AccountPageComponent,

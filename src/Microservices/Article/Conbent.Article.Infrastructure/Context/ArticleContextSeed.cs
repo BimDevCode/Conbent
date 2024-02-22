@@ -1,7 +1,5 @@
 using Conbent.Article.Core.Entities;
 using Conbent.Article.Infrastructure.Parser;
-using System.Collections.Generic;
-using System.Text.Json;
 
 namespace Conbent.Article.Infrastructure.Context;
 public abstract class ArticleContextSeed
@@ -12,14 +10,30 @@ public abstract class ArticleContextSeed
     public static async Task SeedAsync(ArticleContext context)
     {
         var markdownContents = new List<ArticleEntity>();
-        var technology = new Technology() { Name = "C#", HashId = Guid.NewGuid().ToString() };
+        var technology = new Technology() { Name = "Dotnet", HashId = Guid.NewGuid().ToString() };
+        var tags = new List<Tag>()
+        {
+            new() { Name = "Dotnet", HashId = Guid.NewGuid().ToString() },
+            new() { Name = "Initial", HashId = Guid.NewGuid().ToString() },
+            new() { Name = "Generated", HashId = Guid.NewGuid().ToString() },
+        };
+        if (!context.Articles.Any())
+        {
+            ScanDirectoryForArticleEntity(ObsidianNotesPath, tags, technology, ref markdownContents);
+        }
 
-        ScanDirectoryForArticleEntity(ObsidianNotesPath, technology, ref markdownContents);
-        var path = Path.GetDirectoryName(ObsidianNotesPath);
-
+        var textContents = markdownContents.SelectMany(x => x.Texts!);
         if (!context.Technologies.Any())
         {
             context.Technologies.Add(technology);
+        }
+        if (!context.Tags.Any())
+        {
+            context.Tags.AddRange(tags);
+        }
+        if (!context.TextContents.Any())
+        {
+            context.TextContents.AddRange(textContents);
         }
         if (!context.Articles.Any())
         {
@@ -50,7 +64,7 @@ public abstract class ArticleContextSeed
         if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
     }
 
-    private static void ScanDirectoryForArticleEntity(string directoryPath, Technology technology, ref List<ArticleEntity> markdownContents)
+    private static void ScanDirectoryForArticleEntity(string directoryPath, List<Tag> tags,  Technology technology, ref List<ArticleEntity> markdownContents)
     {
         try
         {
@@ -63,7 +77,7 @@ public abstract class ArticleContextSeed
                     HashId = Guid.NewGuid().ToString(),
                     RelevantScore = 0,
                     Technology = technology,
-                    Tags = new List<Tag>() { new Tag() { Name = "C#", HashId = Guid.NewGuid().ToString() } },
+                    Tags = tags
                 };
                 var fileContent = filePath
                     .ParseToStringContent()
@@ -83,7 +97,7 @@ public abstract class ArticleContextSeed
             // Recursively process all subdirectories
             foreach (var subDirectory in Directory.GetDirectories(directoryPath))
             {
-                ScanDirectoryForArticleEntity(subDirectory, technology, ref markdownContents);
+                ScanDirectoryForArticleEntity(subDirectory, tags, technology, ref markdownContents);
             }
         }
         catch (Exception ex)

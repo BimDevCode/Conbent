@@ -3,13 +3,10 @@ using Conbent.Article.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Conbent.Article.Infrastructure.Context;
-public class ArticleContext : DbContext
+public class ArticleContext(DbContextOptions<ArticleContext> options) : DbContext(options)
 {
-    public ArticleContext(DbContextOptions<ArticleContext> options) : base(options)
-    {
-    }
-
     public required DbSet<ArticleEntity> Articles { get; set; }
+    public required DbSet<Tag> Tags { get; set; }
     public required DbSet<Technology> Technologies { get; set; }
     public required DbSet<ImageContent> ImageContents { get; set; }
     public required DbSet<TextContent> TextContents { get; set; }

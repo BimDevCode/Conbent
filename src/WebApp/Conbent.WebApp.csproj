@@ -16,6 +16,11 @@
     <SpaRoot>WebClient</SpaRoot>
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WebClient\assets\academy-page\ContentTree.js" />
+    <None Remove="WebClient\assets\academy-page\prism.js" />
+  </ItemGroup>
   <!--<PropertyGroup>
       <DockerfileContext>..\..\..</DockerfileContext>
       <RuntimeIdentifiers>linux-x64</RuntimeIdentifiers>
@@ -65,6 +70,17 @@
     <ContainerEnvironmentVariable Include="ASPNETCORE_HTTPS_PORTS">
       <Value>8081</Value>
     </ContainerEnvironmentVariable>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="WebClient\assets\academy-page\ContentTree.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="WebClient\assets\academy-page\prism.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
