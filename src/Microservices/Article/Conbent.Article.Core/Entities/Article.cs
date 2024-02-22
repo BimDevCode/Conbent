@@ -7,12 +7,12 @@ public class ArticleEntity : BaseEntity
     public required decimal RelevantScore { get; set; }
 
     public required Technology Technology { get; set; }
-    public required int TechnologyId { get; set; }
+    public  int TechnologyId { get; set; }
 
     public required ICollection<Tag> Tags { get; set; }
 
-    public required ICollection<TextContent> Texts { get; set; }
-    public required ICollection<ImageContent> Images { get; set; }
+    public ICollection<TextContent>? Texts { get; set; }
+    public ICollection<ImageContent>? Images { get; set; }
 
     //TODO: Implement Following Release Features
     //public string Path { get; set; }

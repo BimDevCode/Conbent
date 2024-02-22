@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Parser\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

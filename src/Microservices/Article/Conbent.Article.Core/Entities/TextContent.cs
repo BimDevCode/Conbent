@@ -4,7 +4,9 @@ namespace Conbent.Article.Core.Entities;
 
  public class TextContent : BaseEntity
  {
-     public required string Content { get; set; }
-     public required ArticleEntity Article { get; set; }
-     public required int ArticleId { get; set; }
+     public bool IsCode { get; set; } = false;
+     public bool IsHighlighted { get; set; } = false;
+     public required string Content { get; set; } = string.Empty;
+     public ArticleEntity? Article { get; set; } = null;
+     public int ArticleId { get; set; }
  }
