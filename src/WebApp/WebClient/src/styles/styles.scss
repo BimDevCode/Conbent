@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+  --main-backgroubd-color: #f3efe8;
+  --secondary-color: #423629;
+  --light-blue-color: #a7c2cc;
+  --blue-color: #5b7c99;
+  --green-color: #423629;
+  background-color: var(--main-backgroubd-color);
+}
+
+app-root {
+  background-color: var(--main-backgroubd-color);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent !important;
+}
+
+
+
+.safety-left{
+  left: 10vw;
+}

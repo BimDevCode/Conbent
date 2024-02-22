@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  conbent.webapp:
+    image: ${DOCKER_REGISTRY-}conbentwebapp
+    build:
+      context: .
+      dockerfile: src/Application/Conbent.WebApp/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.SpaProxy
+      - ASPNETCORE_URLS=https://localhost:4201;http://localhost:4202
+    ports:
+      - 4200:4200
+      - 4201:4201
+      - 4202:4202
