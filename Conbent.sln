@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.EventBus", "src\Inf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.Service.Defaults", "src\Infrastructure\ServiceDefaults\Conbent.Service.Defaults.csproj", "{3A2A9977-3275-4F69-8CCB-3222D10D1DEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUi", "src\Application\WebUI\WebUi.csproj", "{2DA2437C-F561-4EA7-8213-E921A4D6CAD9}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FB816AFC-83F5-426E-9B31-D9229A1DC725}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.WebApp", "src\WebApp\Conbent.WebApp.csproj", "{28006DE1-5BE2-4118-996E-684D4DC75611}"
@@ -35,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.Article.Core", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.Article.Infrastructure", "src\Microservices\Article\Conbent.Article.Infrastructure\Conbent.Article.Infrastructure.csproj", "{05A8A46C-EB63-4F58-8875-CAFA2CECDCB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conbent.CommonInfrastructure", "src\Infrastructure\Conbent.CommonInfrastructure\Conbent.CommonInfrastructure.csproj", "{45A062AB-883F-4E03-B1FD-E5B9E8A9F82B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conbent.CommonInfrastructure", "src\Infrastructure\Conbent.CommonInfrastructure\Conbent.CommonInfrastructure.csproj", "{45A062AB-883F-4E03-B1FD-E5B9E8A9F82B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,10 +61,6 @@ Global
 		{3A2A9977-3275-4F69-8CCB-3222D10D1DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A2A9977-3275-4F69-8CCB-3222D10D1DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A2A9977-3275-4F69-8CCB-3222D10D1DEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2DA2437C-F561-4EA7-8213-E921A4D6CAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2DA2437C-F561-4EA7-8213-E921A4D6CAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2DA2437C-F561-4EA7-8213-E921A4D6CAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2DA2437C-F561-4EA7-8213-E921A4D6CAD9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB816AFC-83F5-426E-9B31-D9229A1DC725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB816AFC-83F5-426E-9B31-D9229A1DC725}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB816AFC-83F5-426E-9B31-D9229A1DC725}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -105,7 +99,6 @@ Global
 		{FEA3587C-32C2-4A09-8CC5-7807E6CC61D9} = {DF93C282-7B82-479A-AC1C-D6949A01FACA}
 		{F1CC55C8-A7DE-4A7A-8A9B-0FCE9B657681} = {DF93C282-7B82-479A-AC1C-D6949A01FACA}
 		{3A2A9977-3275-4F69-8CCB-3222D10D1DEE} = {DF93C282-7B82-479A-AC1C-D6949A01FACA}
-		{2DA2437C-F561-4EA7-8213-E921A4D6CAD9} = {99322108-8913-43E5-99FB-563A8911840B}
 		{28006DE1-5BE2-4118-996E-684D4DC75611} = {99322108-8913-43E5-99FB-563A8911840B}
 		{B0EC4682-A6AE-48BA-A4F3-1A7AA21C9CFC} = {9ED03872-C04B-4B8D-9F3C-C8FD99863D8A}
 		{9B7C4513-6315-49ED-B079-0E05E7100ED1} = {B0EC4682-A6AE-48BA-A4F3-1A7AA21C9CFC}
