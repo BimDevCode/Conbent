@@ -132,11 +132,11 @@ for details on configuring this project to bundle and minify static web assets.
 }
 
 .btn-dark:hover svg rect {
-  // --secondary-color: #1F493D;
+  // --brown-color: #1F493D;
   stroke-width: 2;
   stroke-dasharray: 80,0,144,0,80;
   stroke-dashoffset: 0;
-  fill: var(--secondary-color);
+  fill: var(--brown-color);
 }
 
 .btn svg text{

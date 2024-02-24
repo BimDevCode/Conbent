@@ -2,7 +2,7 @@
   padding: 1em 0 1em 0;
   word-wrap: break-word;
   text-align: justify;
-  color: var(--secondary-color);
+  color: var(--brown-color);
   margin: 0 auto;
   font-family: 'Open Sans';
   font-style: normal;
@@ -55,7 +55,7 @@ summary::-webkit-details-marker {
 .tree-nav__item {
   display: block;
   white-space: nowrap;
-  color: var(--secondary-color);
+  color: var(--brown-color);
   position: relative;
 }
 
@@ -87,7 +87,7 @@ summary::-webkit-details-marker {
   will-change: transform;
   transition: transform 300ms ease;
   font-family: "ionicons";
-  color: var(--secondary-color);
+  color: var(--brown-color);
   font-size: 1.1rem;
   content: "\f125";
   left: 0;
@@ -100,7 +100,7 @@ summary::-webkit-details-marker {
   cursor: pointer;
   display: block;
   outline: 0;
-  color: var(--secondary-color);
+  color: var(--brown-color);
   font-size: 1.5rem;
   line-height: 3.2rem;
 }
@@ -158,7 +158,7 @@ a:hover {
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+aspnet+csharp+cshtml+regex+sql */
 code[class*=language-], pre[class*=language-] {
-  color: var(--secondary-color);
+  color: var(--brown-color);
   background: 0 0;
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
   font-size: 1em;
@@ -194,35 +194,35 @@ pre[class*=language-] {
 }
 
 .token.block-comment, .token.cdata, .token.comment, .token.doctype, .token.prolog {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.punctuation {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.attr-name, .token.deleted, .token.namespace, .token.tag {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.function-name {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.boolean, .token.function, .token.number {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.class-name, .token.constant, .token.property, .token.symbol {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.atrule, .token.builtin, .token.important, .token.keyword, .token.selector {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.attr-value, .token.char, .token.regex, .token.string, .token.variable {
-  color: var(--secondary-color);
+  color: var(--brown-color);
 }
 
 .token.entity, .token.operator, .token.url {

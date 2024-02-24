@@ -3,13 +3,20 @@
 :root {
   scroll-behavior: smooth;
   --main-backgroubd-color: #f3efe8;
-  --secondary-color: #423629;
+  --brown-color: #423629;
   --light-blue-color: #a7c2cc;
   --blue-color: #5b7c99;
-  --green-color: #423629;
+  --green-color: #4b543b;
   background-color: var(--main-backgroubd-color);
 }
-
+.grain {
+  position: fixed; /* Position the canvas fixed within the viewport */
+  top: 0; /* Align the canvas to the top */
+  left: 0; /* Align the canvas to the left */
+  width: 100vw; /* Set the width to 100% of the viewport width */
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  z-index: -1; /* Place the canvas behind other content */
+}
 app-root {
   background-color: var(--main-backgroubd-color);
 }
