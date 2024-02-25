@@ -149,17 +149,28 @@ for details on configuring this project to bundle and minify static web assets.
   font-family: 'Sintony', sans-serif;
   font-size: 16px;
   font-weight: 200;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
+
 .btn-dark:hover svg text{
-  fill: var(--main-backgroubd-color);
+  fill: var(--main-background-color);
 }
 
 .navbar {
   position: sticky;
   top: 0;
-  background-color:var(--main-backgroubd-color) ;
+  background-color:var(--main-background-color) ;
   z-index: 1000; /* optional, to ensure the navbar is above all other elements */
+}
+.btn{
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.btn.active {
+  border-radius: 10px;
+  background-color: var(--brown-color);
+  fill: var(--main-background-color);
+  border: 0px;
 }

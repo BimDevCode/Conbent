@@ -5,7 +5,6 @@ export interface Tag {
 }
 
 export class Tag implements Tag, BaseEntity {
-  id!: number;
-  name!: string;
-
+  id: number = 0;
+  name: string = 'Tag';
 }

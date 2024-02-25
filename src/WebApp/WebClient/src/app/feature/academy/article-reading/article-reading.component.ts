@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ArticleEntity } from '../../../core/models/articleEntity';
 
 @Component({
   selector: 'app-article-reading',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './article-reading.component.scss'
 })
 export class ArticleReadingComponent {
-
+  @Input() article?: ArticleEntity;
 }

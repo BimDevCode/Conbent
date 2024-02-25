@@ -7,9 +7,6 @@ import { AncientGreekPartComponent } from './components/ancient-greek-part/ancie
 import { NextStepPartComponent } from './components/next-step-part/next-step-part.component';
 import { ParallaxADirective } from './components/parallax-a.directive';
 
-
-
-
 @NgModule({
   declarations: [
     MainPageComponent,
@@ -17,7 +14,6 @@ import { ParallaxADirective } from './components/parallax-a.directive';
     AncientGreekPartComponent,
     NextStepPartComponent,
     ParallaxADirective
-
   ],
   imports: [
     CommonModule,
@@ -29,7 +25,6 @@ import { ParallaxADirective } from './components/parallax-a.directive';
     AncientGreekPartComponent,
     NextStepPartComponent,
     ParallaxADirective
-
   ]
 })
 export class MainPageModule { }

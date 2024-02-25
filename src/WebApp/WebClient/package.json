@@ -28,6 +28,7 @@
     "express": "^4.18.2",
     "jquery": "^3.7.1",
     "modernizr": "^3.13.0",
+    "ngx-bootstrap": "^12.0.0",
     "postcss": "^8.4.35",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -34,14 +34,14 @@
   to { opacity: 1; }
 }
 
-.parallax-item{
-  display: block;
-  will-change: transform;
-  animation: fadeIn 1s ease-out;
-  /* Transition for smooth movement */
-  transition: transform 1s ease-out;
-  position:relative;
-  z-index: 100;
-}
+// .parallax-item{
+//   display: block;
+//   will-change: transform;
+//   animation: fadeIn 1s ease-out;
+//   /* Transition for smooth movement */
+//   transition: transform 1s ease-out;
+//   position:relative;
+//   z-index: 100;
+// }
 
 

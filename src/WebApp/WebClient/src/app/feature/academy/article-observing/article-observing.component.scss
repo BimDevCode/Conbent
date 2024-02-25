@@ -1,0 +1,69 @@
+.brown-text-title{
+    color: var(--brown-color);
+}
+
+.select-otion-dropdown{
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.list-group-custom 
+    .list-group-item {
+        background-color: transparent;
+        border: 1px solid var(--brown-color);
+        color: var(--brown-color);
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s  ease-in-out;
+
+        
+    }
+.list-group-custom 
+    .list-group-item:hover {
+        background-color: var(--brown-color-dark);
+        color: var(--main-background-color);
+        cursor: pointer;
+    }
+
+.list-group-custom .active {
+    background-color: var(--brown-color);
+    color: var(--main-background-color);
+}
+.carousel-container{
+    width: 100%;
+    height: 100%;
+    border: 20px solid var(--brown-color);
+}
+.description-text{
+    width: 100%;
+    height: 100%;
+}
+.custom-text-input{
+    border-radius: 10px;
+    border: 1px solid var(--brown-color);
+    padding-left: 1em;
+    background-color: var(--brown-color);
+    color: var(--main-background-color);
+    cursor: pointer;
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: var(--main-background-color);
+        opacity: 1; /* Firefox */
+}
+}
+.custom-button-onlight{
+    background-color: var(--main-background-color);
+    color: var(--green-color);
+    border-radius: 10px;
+    margin-bottom: 0px;
+    border: 1px solid var(--green-color);
+    font-size: 16px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s  ease-in-out;
+    &:hover{
+        background-color: var(--green-color);
+        color: var(--main-background-color);
+    }
+    &:active{
+        background-color: var(--green-color-dark);
+    }
+  }

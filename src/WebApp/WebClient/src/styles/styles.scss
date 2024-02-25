@@ -2,16 +2,18 @@
 
 :root {
   scroll-behavior: smooth;
-  --main-backgroubd-color: #f3efe8;
+  --main-background-color: #f3efe8;
   --brown-color: #423629;
+  --brown-color-dark: #332a20;
   --light-blue-color: #a7c2cc;
   --blue-color: #5b7c99;
   --green-color: #4b543b;
-  background-color: var(--main-backgroubd-color);
+  --green-color-dark: #323827;
+  background-color: var(--main-background-color);
 }
 
 app-root {
-  background-color: var(--main-backgroubd-color);
+  background-color: var(--main-background-color);
 }
 body {
   margin: 0;
@@ -22,3 +24,4 @@ body {
 .safety-left{
   left: 10vw;
 }
+

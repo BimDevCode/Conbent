@@ -5,6 +5,6 @@ export interface Technology {
 }
 
 export class Technology implements Technology, BaseEntity {
-  id!: number;
-  name!: string;
+  id: number = 0;
+  name: string = 'Technology';
 }

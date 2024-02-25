@@ -1,0 +1,37 @@
+.card{
+    border: 0px;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out; 
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+.card-body{
+    background-color: transparent;
+}
+
+.custom-button{
+    background-color: var(--main-background-color);
+    color: var(--brown-color-dark);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s  ease-in-out;
+    &:hover{
+        background-color: var(--brown-color-dark);
+        color: var(--main-background-color);
+        border: 1px solid var(--main-background-color);
+        
+    }
+  }
+
+.card-title{
+    color: var(--main-background-color);
+    font-size: 20px;
+}
+
+.relevant-text{
+    color: var(--main-background-color);
+    font-size: 16px;
+}
