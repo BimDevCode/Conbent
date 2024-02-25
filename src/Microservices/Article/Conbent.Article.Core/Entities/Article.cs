@@ -5,12 +5,9 @@ namespace Conbent.Article.Core.Entities;
 public class ArticleEntity : BaseEntity
 {
     public required decimal RelevantScore { get; set; }
-
     public required Technology Technology { get; set; }
     public  int TechnologyId { get; set; }
-
     public required ICollection<Tag> Tags { get; set; }
-
     public ICollection<TextContent>? Texts { get; set; }
     public ICollection<ImageContent>? Images { get; set; }
 
