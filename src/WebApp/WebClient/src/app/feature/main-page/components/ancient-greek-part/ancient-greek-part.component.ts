@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ColorType } from '../../../../shared/ColorTypeEnum';
 
 @Component({
   selector: 'app-ancient-greek-part',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './ancient-greek-part.component.scss'
 })
 export class AncientGreekPartComponent {
+[x: string]: any;
   imageUrlA = '../../../../../assets/Image/OrderPartA.jpeg';
   imageUrlB = '../../../../../assets/Image/OrderPartB.jpeg';
   imageUrlC = '../../../../../assets/Image/OrderPartC.jpeg';

@@ -9,14 +9,7 @@
   --green-color: #4b543b;
   background-color: var(--main-backgroubd-color);
 }
-.grain {
-  position: fixed; /* Position the canvas fixed within the viewport */
-  top: 0; /* Align the canvas to the top */
-  left: 0; /* Align the canvas to the left */
-  width: 100vw; /* Set the width to 100% of the viewport width */
-  height: 100vh; /* Set the height to 100% of the viewport height */
-  z-index: -1; /* Place the canvas behind other content */
-}
+
 app-root {
   background-color: var(--main-backgroubd-color);
 }
@@ -25,8 +18,6 @@ body {
   padding: 0;
   background-color: transparent !important;
 }
-
-
 
 .safety-left{
   left: 10vw;

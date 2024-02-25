@@ -9,11 +9,9 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 
 export class AppComponent {
   title = 'WebClient';
-
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       // Now you can use the document object
-      var grian = document.querySelector('.grain');
 
     }
   }

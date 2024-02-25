@@ -6,5 +6,6 @@ import $ from 'jquery';//Leave for JS sript
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss'
 })
+
 export class IntroComponent {
 }

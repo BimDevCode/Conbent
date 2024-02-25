@@ -11,14 +11,14 @@ export class CardContentComponent implements AfterViewInit{
   readonly cardClassName : string = 'card-rectangle';
   @Input('description') description = '';
   @Input('borderRadius') borderRadius = '10,0,10,0';
-  @Input('colorType') colorType: ColorType = ColorType.Green;
+  @Input('colorBackground') colorBackground = '#4b543b';
 
   constructor(private elementRef: ElementRef,
     private renderer: Renderer2
   ) {}
   ngAfterViewInit(): void {
     var htmlRectangle = this.elementRef.nativeElement.querySelector('.' + this.cardClassName) as HTMLElement;
-    htmlRectangle.style.backgroundColor = this.colorType;
+    htmlRectangle.style.backgroundColor = this.colorBackground;
     this.borderRadius.split(',').forEach((value,index) => {
       var valuePixel = value + 'px';
       if(index === 0) htmlRectangle.style.borderTopLeftRadius = valuePixel;
