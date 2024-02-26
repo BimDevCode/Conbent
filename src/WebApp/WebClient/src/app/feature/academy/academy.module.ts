@@ -5,12 +5,14 @@ import { ArticleObservingComponent } from './article-observing/article-observing
 import { AcademyRoutingModule } from './academy-routing.module';
 import { ArticleCardItemComponent } from './article-card-item/article-card-item.component';
 import { SharedModule } from '../../shared/shared.module';
+import { AcademyComponent } from './academy.component';
 
 @NgModule({
   declarations: [
     ArticleReadingComponent,
     ArticleObservingComponent,
     ArticleCardItemComponent,
+    AcademyComponent,
   ],
   imports: [
     CommonModule,
@@ -23,4 +25,4 @@ import { SharedModule } from '../../shared/shared.module';
 })
 export class AcademyModule {
 
- }
+}

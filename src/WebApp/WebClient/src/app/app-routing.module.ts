@@ -9,7 +9,7 @@ import { SignInComponent } from './feature/sign-in/sign-in.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  {path: 'academy', loadChildren: () => import('./feature/academy/academy.module').then(m => m.AcademyModule)},
+  { path: 'academy', loadChildren: () => import('./feature/academy/academy.module').then(m => m.AcademyModule)},
   { path: 'account', component: AccountPageComponent},
   { path: 'sign-in', component: SignInComponent},
   { path: 'project', component: ProjectPageComponent},

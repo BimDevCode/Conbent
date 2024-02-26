@@ -35,3 +35,9 @@
     color: var(--main-background-color);
     font-size: 16px;
 }
+
+.text-preview{
+    height: 200px; /* Adjust as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
