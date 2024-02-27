@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="cards-read-container">
-        <app-card-content class="block mt-5 article-container" *ngFor="let text of article?.texts" colorBackground="var(--green-color)" 
+        <app-card-content #cardRead class="block mt-5 article-container" *ngFor="let text of article?.texts"
         description={{text}}
         borderRadius="10,10,10,10">
         </app-card-content>

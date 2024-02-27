@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostBinding, Renderer2, Input, ViewChild } from '@angular/core';
 import { ArticleEntity } from '../../../core/models/articleEntity';
+import { RandomColorService } from '../../../core/random-color.service copy';
 
 @Component({
   selector: 'app-article-card-item',
@@ -10,16 +11,13 @@ export class ArticleCardItemComponent implements AfterViewInit{
   
   @Input() article?: ArticleEntity;
   @ViewChild('card') card!: ElementRef;
-  
-  colors = ['#4b543b', '#5b7c99', '#423629'];
 
-  @HostBinding('style.backgroundColor') backgroundColor = this.getRandomColor();
+  @HostBinding('style.backgroundColor') backgroundColor = this.randomColorService.getRandomColor();
+  
+  constructor(private randomColorService: RandomColorService) {}
   
   ngAfterViewInit(): void {
-    if(this.card !== undefined) this.card.nativeElement.style.backgroundColor = this.getRandomColor();
-  }
-  getRandomColor() {
-    return this.colors[Math.floor(Math.random() * this.colors.length)];
+    if(this.card !== undefined) this.card.nativeElement.style.backgroundColor = this.randomColorService.getRandomColor();
   }
 
 }

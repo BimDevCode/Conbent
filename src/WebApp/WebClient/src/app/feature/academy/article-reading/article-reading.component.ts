@@ -1,17 +1,29 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ArticleEntity } from '../../../core/models/articleEntity';
 import { AcademyService } from '../academy.service';
 import { ActivatedRoute } from '@angular/router';
+import { RandomColorService } from '../../../core/random-color.service copy';
+import { CardContentComponent } from '../../../shared/card-content/card-content.component';
 
 @Component({
   selector: 'app-article-reading',
   templateUrl: './article-reading.component.html',
   styleUrl: './article-reading.component.scss'
 })
-export class ArticleReadingComponent implements OnInit {
+export class ArticleReadingComponent implements OnInit, AfterViewInit {
   @Input() article?: ArticleEntity;
 
-  constructor(private academyService: AcademyService, private activatedRoute: ActivatedRoute) {
+  @ViewChild('cardRead', { static: false }) cardRead!: ElementRef;
+
+  @ViewChild(CardContentComponent, { static: false })
+  cardContentComponent!: CardContentComponent;
+
+
+  constructor(private academyService: AcademyService, private activatedRoute: ActivatedRoute, private randomColorService: RandomColorService) {
+  }
+  ngAfterViewInit(): void {
+    if(this.cardContentComponent !== undefined) 
+      this.cardContentComponent.setRandomCardColor();
   }
 
   ngOnInit(): void {

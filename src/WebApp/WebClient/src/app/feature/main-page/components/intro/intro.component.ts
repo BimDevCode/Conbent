@@ -19,7 +19,6 @@ export class IntroComponent implements OnInit {
     const modernizr = this.renderer.createElement('script');
     modernizr.type = 'text/javascript';
     modernizr.src = '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'; // replace with the 
-    
     this.renderer.appendChild(this.document.body, s);
     this.renderer.appendChild(this.document.body, modernizr);
   }
