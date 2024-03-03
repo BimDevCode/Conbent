@@ -11,7 +11,7 @@ export class CardContentComponent implements AfterViewInit{
   title: any;
   readonly cardClassName : string = 'card-rectangle';
   @Input('description') description = '';
-  @Input('borderRadius') borderRadius = '10,0,10,0';
+  @Input('borderRadius') borderRadius = '10,10,10,10';
   @Input('colorBackground') colorBackground = 'var(--green-color)';
   htmlRectangle!: HTMLElement;
 

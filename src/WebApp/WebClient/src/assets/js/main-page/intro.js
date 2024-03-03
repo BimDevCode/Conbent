@@ -32,7 +32,7 @@
 					y: 0
 				},
 				width: window.innerWidth,
-				height: window.innerHeight,
+				height: window.innerHeight*0.7,
 				velocity: 0.2,
 				length: 200,
 				distance: 100,

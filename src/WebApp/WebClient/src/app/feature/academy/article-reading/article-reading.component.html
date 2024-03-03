@@ -1,8 +1,12 @@
-<div class="container mt-5">
-    <div class="cards-read-container">
-        <app-card-content #cardRead class="block mt-5 article-container" *ngFor="let text of article?.texts"
-        description={{text}}
-        borderRadius="10,10,10,10">
-        </app-card-content>
+
+<div class="container">
+    <div class="card-rectangle grain">
+        <div class="cards-read-container">
+            <div class="block article-container " >
+                <p class="text-part" *ngFor="let text of article?.texts">
+                {{text}}
+                </p>
+            </div>
+        </div>
     </div>
 </div>

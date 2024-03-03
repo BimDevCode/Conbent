@@ -2,13 +2,19 @@
 
 :root {
   scroll-behavior: smooth;
+  // https://www.color-hex.com/color/f3efe8
   --main-background-color: #f3efe8;
+  --background-complementary-light-color: #f7f5f1;
+  --background-complementary-blue-color: #e8ecf3;
+  --background-complementary-dark-color: #55595c;
+  --background-border-color: #DEE2E6;
   --brown-color: #423629;
   --brown-color-dark: #332a20;
   --light-blue-color: #a7c2cc;
   --blue-color: #5b7c99;
   --green-color: #4b543b;
   --green-color-dark: #323827;
+  --color-dark: black;
   background-color: var(--main-background-color);
 }
 

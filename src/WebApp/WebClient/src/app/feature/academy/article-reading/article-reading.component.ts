@@ -10,20 +10,10 @@ import { CardContentComponent } from '../../../shared/card-content/card-content.
   templateUrl: './article-reading.component.html',
   styleUrl: './article-reading.component.scss'
 })
-export class ArticleReadingComponent implements OnInit, AfterViewInit {
+export class ArticleReadingComponent implements OnInit {
   @Input() article?: ArticleEntity;
 
-  @ViewChild('cardRead', { static: false }) cardRead!: ElementRef;
-
-  @ViewChild(CardContentComponent, { static: false })
-  cardContentComponent!: CardContentComponent;
-
-
   constructor(private academyService: AcademyService, private activatedRoute: ActivatedRoute, private randomColorService: RandomColorService) {
-  }
-  ngAfterViewInit(): void {
-    if(this.cardContentComponent !== undefined) 
-      this.cardContentComponent.setRandomCardColor();
   }
 
   ngOnInit(): void {
