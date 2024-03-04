@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './carousel.component.scss'
 })
 export class CarouselComponent {
-
+  isBrowser: boolean;
+  constructor(@Inject(PLATFORM_ID) platformId: string) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 }

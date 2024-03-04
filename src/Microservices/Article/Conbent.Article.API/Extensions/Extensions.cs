@@ -47,13 +47,17 @@ public static class Extensions
                 return new BadRequestObjectResult(errorResponse);
             };
         });
-
+        services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+                options.HttpsPort = 4200;
+            });
         services.AddCors(opt =>
         {
-            opt.AddPolicy("CorsPolicy", policy =>
-            {
-                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
-            });
+            opt.AddPolicy("AllowSpecificOrigin",
+                builder => builder.WithOrigins("https://localhost:4200")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
         });
 
         return services;

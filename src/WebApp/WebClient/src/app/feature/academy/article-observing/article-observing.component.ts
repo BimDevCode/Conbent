@@ -25,7 +25,7 @@ export class ArticleObservingComponent implements OnInit {
   tags: Tag[] = [];
   pagination?: Pagination<ArticleEntity[]>;
   articleParameters = new ArticleSpecParams();
-  
+
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
     {name: 'Relative Score: Low to high', value: 'priceAsc'},
@@ -50,7 +50,6 @@ export class ArticleObservingComponent implements OnInit {
     });
   }
 
-  
   toggleMenu() {
     if(this.isMobile){
       this.sidenav.toggle();
@@ -60,7 +59,7 @@ export class ArticleObservingComponent implements OnInit {
       this.isCollapsed = !this.isCollapsed;
     }
   }
-  
+
   getArticles() {
     this.academyService.getArticleEntities().subscribe({
       next: response => {
@@ -78,7 +77,7 @@ export class ArticleObservingComponent implements OnInit {
         error: error => console.log(error)
       })
     } catch (error) {
-      
+
     }
   }
 

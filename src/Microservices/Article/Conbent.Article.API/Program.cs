@@ -15,29 +15,22 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseSwaggerDocumentation();
 app.UseStaticFiles();
-app.UseCors("CorsPolicy");
+app.UseCors("AllowSpecificOrigin");
 
 app.MapControllers();
 app.MapFallbackToController("Index", "Fallback");
+app.UseHttpsRedirection();
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 var articleContext = services.GetRequiredService<ArticleContext>();
 //var logger = services.GetRequiredService<ILogger<Program>>();
-
+//
 //dotnet ef database update  -p Conbent.Article.Infrastructure -s Conbent.Article.API -c ArticleContext 
 //dotnet ef migrations add ArticleContextInitial -p Conbent.Article.Infrastructure -s Conbent.Article.API -c ArticleContext -o ArticlesMigration
 //dotnet ef migrations remove -p Conbent.Article.Infrastructure -s Conbent.Article.API -c ArticleContext
-
-try
-{
-    await articleContext.Database.MigrateAsync();
-    await ArticleContextSeed.SeedAsync(articleContext);
-}
-catch (Exception ex)
-{
-    throw ;
-    //logger.LogError(ex, "An error occured during migration");
-}
-
+await articleContext.Database.MigrateAsync();
+await ArticleContextSeed.SeedAsync(articleContext);
+//await ArticleContextSeed.SeedAsyncWithoutParsing(articleContext);
+//dotnet run --configuration Debug --launch-profile https 
 app.Run();

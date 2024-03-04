@@ -56,6 +56,97 @@ public abstract class ArticleContextSeed
         if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
     }
 
+    public static async Task SeedAsyncWithoutParsing(ArticleContext context)
+    {
+        var markdownContents = new List<ArticleEntity>();
+        var technology1 = new Technology() { Name = "Dotnet", HashId = "Dotnet".ComputeSha256Hash()};
+        var technology2 = new Technology() { Name = "ASPCore", HashId = "ASPCore".ComputeSha256Hash()};
+        var texts = new List<TextContent>(){
+                        new(){
+                            Name = "TestTexts",
+                            HashId = "TestTexts".ToString(),
+                            Content = "Occaecat ut exercitation officia cillum reprehenderit eiusmod sit exercitation nisi fugiat. Elit adipisicing in anim laborum culpa sunt tempor aute incididunt tempor. Exercitation quis pariatur sit ipsum sunt nulla. Do ut ut mollit elit anim pariatur elit ad fugiat adipisicing anim."
+                        }
+                    };
+        var tags1 = new HashSet<Tag>(){
+                        new() { Name = "TestTag0", HashId = "TestTag0".ComputeSha256Hash(), Description = "TestTag0" },
+                        new() { Name = "TestTag1", HashId = "TestTag1".ComputeSha256Hash(), Description = "TestTag1" },
+                        new() { Name = "TestTag2", HashId = "TestTag2".ComputeSha256Hash(), Description = "TestTag2" },
+                    };
+        var tags2 = new HashSet<Tag>(){
+                        new() { Name = "TestTag00", HashId = "TestTag00".ComputeSha256Hash(), Description = "TestTag00" },
+                        new() { Name = "TestTag11", HashId = "TestTag11".ComputeSha256Hash(), Description = "TestTag11" },
+                        new() { Name = "TestTag22", HashId = "TestTag22".ComputeSha256Hash(), Description = "TestTag22" },
+                    };
+        if (!context.Articles.Any())
+        {
+            markdownContents = new List<ArticleEntity>(){
+                new(){
+                    Name = "Test0",
+                    HashId = "Test0".ComputeSha256Hash(),
+                    RelevantScore = _random.Next(0,100),
+                    TreePath = "TestTag0/TestTag1/TestTag2",
+                    Technology = technology1,
+                    Tags = tags1,
+                    
+                },
+                new(){
+                    Name = "Test1",
+                    HashId = "Test1".ComputeSha256Hash(),
+                    RelevantScore = _random.Next(0,100),
+                    TreePath = "TestTag0/TestTag1/TestTag2",
+                    Technology = technology1,
+                    Tags = tags1,
+                    
+                },
+                new(){
+                    Name = "Test2",
+                    HashId = "Test2".ComputeSha256Hash(),
+                    RelevantScore = _random.Next(0,100),
+                    TreePath = "TestTag00/TestTag11/TestTag22",
+                    Technology = technology2,
+                    Tags = tags2,
+                    
+                },
+                new(){
+                    Name = "Test3",
+                    HashId = "Test3".ComputeSha256Hash(),
+                    RelevantScore = _random.Next(0,100),
+                    TreePath = "TestTag00/TestTag11/TestTag22",
+                    Technology = technology2,
+                    Tags = tags2,
+                    
+                }
+            };
+
+            context.Articles.AddRange(markdownContents);
+
+        }
+     
+
+        //if (!context.ProductTypes.Any())
+        //{
+        //    var typesData = File.ReadAllText(path + @"/Data/SeedData/types.json");
+        //    var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
+        //    context.ProductTypes.AddRange(types);
+        //}
+
+        //if (!context.Products.Any())
+        //{
+        //    var productsData = File.ReadAllText(path + @"/Data/SeedData/products.json");
+        //    var products = JsonSerializer.Deserialize<List<Product>>(productsData);
+        //    context.Products.AddRange(products);
+        //}
+
+        //if (!context.DeliveryMethods.Any())
+        //{
+        //    var deliveryData = File.ReadAllText(path + @"/Data/SeedData/delivery.json");
+        //    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
+        //    context.DeliveryMethods.AddRange(methods);
+        //}
+
+        await context.SaveChangesAsync();
+    }
     private static void ScanDirectoryForArticleEntity(string directoryPath, Technology technology, ref List<ArticleEntity> markdownContents)
     {
         try

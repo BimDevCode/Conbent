@@ -47,7 +47,8 @@ export class AcademyService {
     }
 
     let params = new HttpParams();
-
+    let headers = new Headers();
+    headers.append('Origin', 'https://localhost:4200');
     if (this.articleParameters.technologyId > 0) params = params.append('technologyId', this.articleParameters.technologyId);
     //TODO: Add tag
     //if (this.articleParameters.tag) params = params.append('typeId', this.articleParameters.tag);
@@ -55,8 +56,9 @@ export class AcademyService {
     params = params.append('pageIndex', this.articleParameters.pageIndex);
     params = params.append('pageSize', this.articleParameters.pageSize);
     if (this.articleParameters.search) params = params.append('search', this.articleParameters.search);
-
-    return this.http.get<Pagination<ArticleEntity[]>>(this.baseUrl + this.academyControllerUrl, {params}).pipe(
+    return this.http.get<Pagination<ArticleEntity[]>>(this.baseUrl + this.academyControllerUrl, {
+      params : params,
+    }).pipe(
       map(response => {
         this.articleCache.set(Object.values(this.articleParameters).join('-'), response)
         this.pagination = response;

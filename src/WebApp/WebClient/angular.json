@@ -42,7 +42,7 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              
+
               "src/assets/js/academy-page/ContentTree.js",
               "src/assets/js/academy-page/prism.js",
 
@@ -62,7 +62,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
