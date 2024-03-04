@@ -5,6 +5,8 @@ import { ArticleEntity } from '../../../core/models/articleEntity';
 import { Tag } from '../../../core/models/tag';
 import { Technology } from '../../../core/models/technology';
 import { Pagination } from '../../../core/models-shared/pagination';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-article-observing',
@@ -13,7 +15,11 @@ import { Pagination } from '../../../core/models-shared/pagination';
 })
 export class ArticleObservingComponent implements OnInit {
   @ViewChild('search') searchTerm?: ElementRef;
-  
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
+  isCollapsed = true;
+  isMobile= true;
+
   articleEntities: ArticleEntity[] = [];
   technologies: Technology[] = [];
   tags: Tag[] = [];
@@ -27,7 +33,7 @@ export class ArticleObservingComponent implements OnInit {
   ];
   totalCount = 0;
 
-  constructor(private academyService: AcademyService) {
+  constructor(private academyService: AcademyService,private observer: BreakpointObserver) {
     this.articleParameters = academyService.getArticleParameters();
   }
 
@@ -35,7 +41,26 @@ export class ArticleObservingComponent implements OnInit {
     this.getArticles();
     this.getTags();
     this.getTechnologies();
+    this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
+      if(screenSize.matches){
+        this.isMobile = true;
+      } else {
+        this.isMobile = false;
+      }
+    });
   }
+
+  
+  toggleMenu() {
+    if(this.isMobile){
+      this.sidenav.toggle();
+      this.isCollapsed = false; // On mobile, the menu can never be collapsed
+    } else {
+      this.sidenav.open(); // On desktop/tablet, the menu can never be fully closed
+      this.isCollapsed = !this.isCollapsed;
+    }
+  }
+  
   getArticles() {
     this.academyService.getArticleEntities().subscribe({
       next: response => {

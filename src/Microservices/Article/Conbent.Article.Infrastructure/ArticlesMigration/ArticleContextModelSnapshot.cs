@@ -59,6 +59,10 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                     b.Property<int>("TechnologyId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("TreePath")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TechnologyId");

@@ -12,7 +12,7 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Tag",
+                name: "Tags",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -23,7 +23,7 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tag", x => x.Id);
+                    table.PrimaryKey("PK_Tags", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,6 +49,7 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     RelevantScore = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
                     TechnologyId = table.Column<int>(type: "integer", nullable: false),
+                    TreePath = table.Column<string>(type: "text", nullable: false),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     HashId = table.Column<string>(type: "text", nullable: false)
                 },
@@ -80,9 +81,9 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ArticlesTags_Tag_TagsId",
+                        name: "FK_ArticlesTags_Tags_TagsId",
                         column: x => x.TagsId,
-                        principalTable: "Tag",
+                        principalTable: "Tags",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -118,6 +119,8 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    IsCode = table.Column<bool>(type: "boolean", nullable: false),
+                    IsHighlighted = table.Column<bool>(type: "boolean", nullable: false),
                     Content = table.Column<string>(type: "text", nullable: false),
                     ArticleId = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
@@ -168,7 +171,7 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                 name: "TextContents");
 
             migrationBuilder.DropTable(
-                name: "Tag");
+                name: "Tags");
 
             migrationBuilder.DropTable(
                 name: "Articles");

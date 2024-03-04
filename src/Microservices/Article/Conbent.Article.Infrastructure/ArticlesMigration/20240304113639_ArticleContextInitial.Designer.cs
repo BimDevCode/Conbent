@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Conbent.Article.Infrastructure.ArticlesMigration
 {
     [DbContext(typeof(ArticleContext))]
-    [Migration("20240221235304_ChangeTextContent")]
-    partial class ChangeTextContent
+    [Migration("20240304113639_ArticleContextInitial")]
+    partial class ArticleContextInitial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,6 +61,10 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
 
                     b.Property<int>("TechnologyId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("TreePath")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -129,7 +133,7 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tag");
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("Conbent.Article.Core.Entities.Technology", b =>

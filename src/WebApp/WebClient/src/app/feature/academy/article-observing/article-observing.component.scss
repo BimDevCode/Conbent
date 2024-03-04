@@ -63,3 +63,60 @@
         background-color: var(--green-color-dark);
     }
   }
+
+
+
+//TODO: Jsoin with the same at academy component
+//Start todo
+
+mat-sidenav-container {
+    height:100%;
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav {
+    // padding-top: 3.5rem;
+    // @media screen and (min-width: 600px) {
+    //   padding-top: 4rem;
+    // }
+
+    .entry{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding:0.75rem;
+    }
+  }
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav-content{
+    // @media screen and (min-width: 600px) {
+    //     padding-top: 4rem;
+    // }
+}
+
+.overlay-container {
+    position: relative;
+  }
+
+.overlay {
+position: absolute;
+top: 4rem;
+left: 0;
+width: 100%;
+display:block ;
+justify-content: start;
+align-items: start;
+text-align: start;
+z-index: 99;
+}
+
+.toggle-button-container {
+    position: relative;
+    z-index: 999;  // Ensure the button is above the sidenav
+    text-align: start;
+}
+.expanded {
+    width: 200px;   
+}
+//End todo

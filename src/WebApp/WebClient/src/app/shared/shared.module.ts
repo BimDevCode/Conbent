@@ -12,9 +12,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DropdownButtonComponent } from './dropdown-button/dropdown-button.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CarouselComponent } from './carousel/carousel.component';
+import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 
-@NgModule({
-  declarations: [
+
+@NgModule({ 
+  declarations: [ //Connected to core.module.ts
     NavbarComponent,
     FooterComponent,
     CardContentComponent,
@@ -22,17 +24,19 @@ import { CarouselComponent } from './carousel/carousel.component';
     PageHeaderComponent,
     DropdownButtonComponent,
     CarouselComponent,
+    SanitizeHtmlPipe
   ],
   imports: [
     PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
+  
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
     RouterModule
   ],
-  exports: [
+  exports: [ //Connected to core.module.ts
     NavbarComponent,
     PaginationModule,
     PageContentComponent,
@@ -43,7 +47,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     BsDropdownModule,
     CardContentComponent,
     DropdownButtonComponent,
-    CarouselComponent
+    CarouselComponent,
+    SanitizeHtmlPipe
   ]
 })
 export class SharedModule { }

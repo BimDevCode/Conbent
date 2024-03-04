@@ -25,7 +25,7 @@ var services = scope.ServiceProvider;
 var articleContext = services.GetRequiredService<ArticleContext>();
 //var logger = services.GetRequiredService<ILogger<Program>>();
 
-//dotnet ef database update  -p Conbent.Article.Infrastructure -s Conbent.Article.API -c ArticleContext -o ArticlesMigration
+//dotnet ef database update  -p Conbent.Article.Infrastructure -s Conbent.Article.API -c ArticleContext 
 //dotnet ef migrations add ArticleContextInitial -p Conbent.Article.Infrastructure -s Conbent.Article.API -c ArticleContext -o ArticlesMigration
 //dotnet ef migrations remove -p Conbent.Article.Infrastructure -s Conbent.Article.API -c ArticleContext
 

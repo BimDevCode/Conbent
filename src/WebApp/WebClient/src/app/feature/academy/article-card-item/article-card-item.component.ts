@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostBinding, Renderer2, Input, ViewChild } from '@angular/core';
 import { ArticleEntity } from '../../../core/models/articleEntity';
 import { RandomColorService } from '../../../core/random-color.service copy';
-
 @Component({
   selector: 'app-article-card-item',
   templateUrl: './article-card-item.component.html',

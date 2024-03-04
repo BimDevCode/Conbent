@@ -1,25 +1,24 @@
 using Conbent.Article.Core.Entities;
 using Conbent.Article.Infrastructure.Parser;
+using Conbent.CommonInfrastructure.Helpers;
 
 namespace Conbent.Article.Infrastructure.Context;
 public abstract class ArticleContextSeed
 {
     private const string ObsidianNotesPath = @"W:\Obsidian\Conbent\Conbent Development\Content";
-    private const string SearchPattern = "*.md";
+    private const string SearchPattern = "*" + SourceFileExtension;
+    private const string SourceFileExtension = ".md";
+    private static Dictionary<string, Tag> _hashTags = new();
+    private static readonly Random _random = new();
 
     public static async Task SeedAsync(ArticleContext context)
     {
         var markdownContents = new List<ArticleEntity>();
-        var technology = new Technology() { Name = "Dotnet", HashId = Guid.NewGuid().ToString() };
-        var tags = new List<Tag>()
-        {
-            new() { Name = "Dotnet", HashId = Guid.NewGuid().ToString() },
-            new() { Name = "Initial", HashId = Guid.NewGuid().ToString() },
-            new() { Name = "Generated", HashId = Guid.NewGuid().ToString() },
-        };
+        var technology = new Technology() { Name = "Dotnet", HashId = "Dotnet".ComputeSha256Hash()};
+  
         if (!context.Articles.Any())
         {
-            ScanDirectoryForArticleEntity(ObsidianNotesPath, tags, technology, ref markdownContents);
+            ScanDirectoryForArticleEntity(ObsidianNotesPath, technology, ref markdownContents);
         }
 
         var textContents = markdownContents.SelectMany(x => x.Texts!);
@@ -27,14 +26,7 @@ public abstract class ArticleContextSeed
         {
             context.Technologies.Add(technology);
         }
-        if (!context.Tags.Any())
-        {
-            context.Tags.AddRange(tags);
-        }
-        if (!context.TextContents.Any())
-        {
-            context.TextContents.AddRange(textContents);
-        }
+
         if (!context.Articles.Any())
         {
             context.Articles.AddRange(markdownContents);
@@ -64,31 +56,44 @@ public abstract class ArticleContextSeed
         if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
     }
 
-    private static void ScanDirectoryForArticleEntity(string directoryPath, List<Tag> tags,  Technology technology, ref List<ArticleEntity> markdownContents)
+    private static void ScanDirectoryForArticleEntity(string directoryPath, Technology technology, ref List<ArticleEntity> markdownContents)
     {
         try
         {
             // Process all files in the current directory
             foreach (var filePath in Directory.GetFiles(directoryPath, SearchPattern))
             {
+                var relativePath = Path.GetRelativePath(ObsidianNotesPath, filePath);
+               
                 var articleEntity = new ArticleEntity()
                 {
                     Name = Path.GetFileNameWithoutExtension(filePath),
                     HashId = Guid.NewGuid().ToString(),
-                    RelevantScore = 0,
+                    RelevantScore = _random.Next(0,100),
+                    TreePath = relativePath,
                     Technology = technology,
-                    Tags = tags
                 };
+                var tags = relativePath.Split('\\')
+                    .Where(x => !x.Contains(SourceFileExtension))
+                    .Select(t => new Tag()
+                    { Name = t, HashId = t.ComputeSha256Hash(), Description = t }).ToList();
+               
+                var staticObjectTags = new HashSet<Tag>();
+                foreach (var tag in tags)
+                {
+                    if(_hashTags.TryGetValue(tag.HashId, out var value))
+                        staticObjectTags.Add(value);
+                    else
+                    {
+                        _hashTags.Add(tag.HashId, tag);
+                        staticObjectTags.Add(tag);
+                    }
+                }
+                articleEntity.Tags = staticObjectTags;
                 var fileContent = filePath
                     .ParseToStringContent()
-                    .Select(x => new TextContent()
-                    {
-                        Name = Path.GetFileNameWithoutExtension(filePath),
-                        HashId = Guid.NewGuid().ToString(),
-                        Content = x,
-                        Article = articleEntity
-                    }).ToList();
-
+                    .ToList();
+                fileContent.ForEach(t => t.Article = articleEntity);
                 articleEntity.Texts = fileContent;
 
                 markdownContents.Add(articleEntity);
@@ -96,9 +101,8 @@ public abstract class ArticleContextSeed
 
             // Recursively process all subdirectories
             foreach (var subDirectory in Directory.GetDirectories(directoryPath))
-            {
-                ScanDirectoryForArticleEntity(subDirectory, tags, technology, ref markdownContents);
-            }
+                ScanDirectoryForArticleEntity(subDirectory, technology, ref markdownContents);
+            
         }
         catch (Exception ex)
         {

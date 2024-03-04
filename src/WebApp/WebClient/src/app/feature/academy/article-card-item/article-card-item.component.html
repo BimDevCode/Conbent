@@ -5,7 +5,7 @@
         </h1>
         <span class="mb-2 relevant-text">Relevant position: {{article.relevantScore | number}}</span>
         <span class="mb-2 relevant-text text-preview">
-            {{article.texts}}
+            <div class="text-part" [innerHTML]="article.texts.join('') | sanitizeHtml"></div>
         </span>
     </div>
 

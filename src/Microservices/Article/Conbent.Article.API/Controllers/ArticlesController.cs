@@ -5,7 +5,7 @@ using Conbent.Article.Core.Entities;
 using Conbent.Article.Core.Interfaces.Contractors;
 using Conbent.Article.Core.Specifications;
 using Conbent.CommonInfrastructure.Errors;
-using Conbent.CommonInfrastructure.Helpers;
+using Conbent.CommonInfrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Conbent.Article.API.Controllers;
