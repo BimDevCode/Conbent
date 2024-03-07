@@ -26,6 +26,8 @@
           "options": {
             "styles": [
               "src/styles/styles.scss",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "outputPath": "dist/web-client",
@@ -42,12 +44,13 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "assets/academy-page/ContentTree.js",
-              "assets/academy-page/prism.js",
 
-              "assets/main-page/main.js",
-              "assets/main-page/prism.js",
-              "assets/main-page/intro.js"
+              "src/assets/js/academy-page/ContentTree.js",
+              "src/assets/js/academy-page/prism.js",
+
+              "src/assets/js/main-page/main.js",
+              "src/assets/js/main-page/prism.js",
+              "src/assets/js/main-page/intro.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -61,7 +64,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -123,6 +126,7 @@
             ],
             "styles": [
               "src/styles.scss"
+
             ],
             "scripts": []
           }

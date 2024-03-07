@@ -1,0 +1,23 @@
+.right-card{
+    background-color: var(--background-complementary-light-color);
+    h2{
+        color: var(--color-dark)
+    }
+    p{
+        color: var(--color-dark)
+    }
+}
+.left-card{
+    background-color: var(--background-complementary-dark-color);
+    h2{
+        color: var(--main-background-color)
+    }
+    p{
+        color: var(--main-background-color)
+    }
+}
+
+.next-step-container{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--background-border-color);
+}

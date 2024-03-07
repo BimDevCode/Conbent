@@ -33,8 +33,7 @@ public class ArticleSpecParams
     #region Embedded Parameters
     
     public int? TechnologyId { get; set; }
+    public int? TagId { get; set; }
 
     #endregion
-
-
 }

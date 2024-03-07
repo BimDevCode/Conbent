@@ -2,11 +2,9 @@
   display: flex;
   text-align: center;
   margin: 0;
-  padding: 0;
-  width: 90%;
-  height: 80vh;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 1rem;
+  width: 100%;
+  height: 30rem;
   display: block;
 }
 
@@ -17,71 +15,53 @@
   text-align: center;
   position: relative;
   margin-left: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
 }
 
-.intro-conteiner-sturtup {
-  height: 95vh;
-}
 
-.outside {
-  position: relative;
-}
-
-.inside {
-  width: 150%;
-}
 
 .intro-conteiner-slogan {
   position: absolute;
-  margin-right: auto;
-  margin-left: auto;
-  height: 100%;
-  left: 10vw;
-  margin: 0;
+
+  /* From https://css.glass */
+  background: rgba(247, 245, 241, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+  border: 1px solid rgba(247, 245, 241, 0.42);
+
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 1rem;
   text-align: left;
   display: block;
 }
 
-.intro-conteiner__maintence {
-  display: flex;
-}
-
-.intro-conteiner-slogan__maintence {
-  color: var(--green-color);
-  margin: 0;
-  font-family: 'Manrope';
-  font-size: 82px;
-}
-
 .intro-conteiner__about {
-  margin: 0 auto;
+  span{
+    margin: 3rem;
+  }
+}
+
+.canvas-dots{
+  background-color: var(--background-complementary-light-color);
 }
 
 .intro-conteiner-slogan__about {
-  color: var(--secondary-color);
-  margin: 0 auto;
-  font-family: 'Manrope';
+  border-radius: 10px;
+  margin: 0rem;
+  padding: 0rem;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 32px;
   line-height: 49px;
 }
 
-.intro-conteiner__by {
-  display: flex;
-}
 
-.intro-conteiner-slogan__by {
-  color: var(--secondary-color);
-  margin: 0 0 60px 0;
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 54px;
-  display: flex;
-  align-items: center;
-}
 
 .bottom-conteiner {
   position: absolute;
@@ -89,8 +69,6 @@
 }
 
 .about-conteiner {
-  width: 100%;
-  height: 100vh;
 }
 
 .about-conteiner-content {
@@ -107,20 +85,9 @@
   line-height: 49px;
 }
 
-.container-about-text_h{
-  text-align:center;
-}
 
-.container-about-text__main {
-  color: black;
-  margin: 10px 0 0 0;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
-  letter-spacing: 0.5px;
-}
+
+
 
 .content {
   position: absolute;
@@ -131,12 +98,5 @@
   margin-left: auto;
 }
 
-.about-technologies {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.787);
-  overflow: hidden;
-}
+
+

@@ -132,11 +132,11 @@ for details on configuring this project to bundle and minify static web assets.
 }
 
 .btn-dark:hover svg rect {
-  // --secondary-color: #1F493D;
+  // --brown-color: #1F493D;
   stroke-width: 2;
   stroke-dasharray: 80,0,144,0,80;
   stroke-dashoffset: 0;
-  fill: var(--secondary-color);
+  fill: var(--brown-color);
 }
 
 .btn svg text{
@@ -149,17 +149,44 @@ for details on configuring this project to bundle and minify static web assets.
   font-family: 'Sintony', sans-serif;
   font-size: 16px;
   font-weight: 200;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 .btn-dark:hover svg text{
-  fill: var(--main-backgroubd-color);
+  fill: var(--main-background-color);
 }
-
-.navbar {
+.navbar-custom{
   position: sticky;
   top: 0;
-  background-color:var(--main-backgroubd-color) ;
-  z-index: 1000; /* optional, to ensure the navbar is above all other elements */
+  border-radius: 10px;
+  background-color:var(--main-background-color) ;
+  z-index: 9999; /* optional, to ensure the navbar is above all other elements */
+}
+
+.btn{
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+.btn.active {
+  border-radius: 10px;
+  background-color: var(--brown-color);
+  fill: var(--main-background-color);
+  border: 0px;
+}
+
+.company-name{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-size: 2rem;
+}
+
+.custom-border-bottom{
+  border-bottom: 1px solid var(--brown-color);
+}
+
+.toast-custom{
+  position: absolute;
+  z-index: 9999;
+  height: 10rem;
+  width: 100%;
 }

@@ -1,17 +1,16 @@
 import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AcademyPageComponent } from './academy-page/academy-page.component';
 import { AccountPageComponent } from './account-page/account-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { DetailProjectPageComponent } from './detail-project-page/detail-project-page.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { MainPageModule } from './main-page/main-page.module';
+import { AcademyModule } from './academy/academy.module';
 
 @NgModule({
-  schemas: [NO_ERRORS_SCHEMA],
+
   declarations: [
-    AcademyPageComponent,
     AccountPageComponent,
     ContactPageComponent,
     DetailProjectPageComponent,
@@ -20,10 +19,10 @@ import { MainPageModule } from './main-page/main-page.module';
   ],
   imports: [
     CommonModule,
+    AcademyModule,
     MainPageModule
   ],
   exports: [
-    AcademyPageComponent,
     AccountPageComponent,
     ContactPageComponent,
     DetailProjectPageComponent,

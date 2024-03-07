@@ -11,17 +11,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ArticlesMigration\" />
     <Folder Include="Parser\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.35.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.1.24081.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0-preview.1.24080.9" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-preview.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\Conbent.CommonInfrastructure\Conbent.CommonInfrastructure.csproj" />
     <ProjectReference Include="..\Conbent.Article.Core\Conbent.Article.Core.csproj" />
   </ItemGroup>
 
