@@ -5,7 +5,8 @@ using Conbent.CommonInfrastructure.Helpers;
 namespace Conbent.Article.Infrastructure.Context;
 public abstract class ArticleContextSeed
 {
-    private const string ObsidianNotesPath = @"W:\Obsidian\Conbent\Conbent Development\Content";
+    private const string ObsidianNotesPath =  @"/Users/mikalaisabaleuski/Library/Mobile Documents/iCloud~md~obsidian/Documents/Conbent/Conbent Development/Content";//@"W:\Obsidian\Conbent\Conbent Development\Content";
+    private const string ObsidianNotesPathMacOs = @"/Users/mikalaisabaleuski/Library/Mobile Documents/iCloud~md~obsidian/Documents/Conbent/Conbent Development/Content";
     private const string SearchPattern = "*" + SourceFileExtension;
     private const string SourceFileExtension = ".md";
     private static Dictionary<string, Tag> _hashTags = new();
@@ -58,7 +59,6 @@ public abstract class ArticleContextSeed
 
     public static async Task SeedAsyncWithoutParsing(ArticleContext context)
     {
-        var markdownContents = new List<ArticleEntity>();
         var technology1 = new Technology() { Name = "Dotnet", HashId = "Dotnet".ComputeSha256Hash()};
         var technology2 = new Technology() { Name = "ASPCore", HashId = "ASPCore".ComputeSha256Hash()};
         var texts = new List<TextContent>(){
@@ -80,7 +80,7 @@ public abstract class ArticleContextSeed
                     };
         if (!context.Articles.Any())
         {
-            markdownContents = new List<ArticleEntity>(){
+            var markdownContents = new List<ArticleEntity>(){
                 new(){
                     Name = "Test0",
                     HashId = "Test0".ComputeSha256Hash(),
@@ -88,7 +88,7 @@ public abstract class ArticleContextSeed
                     TreePath = "TestTag0/TestTag1/TestTag2",
                     Technology = technology1,
                     Tags = tags1,
-                    
+                    Texts = texts
                 },
                 new(){
                     Name = "Test1",
@@ -97,6 +97,7 @@ public abstract class ArticleContextSeed
                     TreePath = "TestTag0/TestTag1/TestTag2",
                     Technology = technology1,
                     Tags = tags1,
+                    Texts = texts
                     
                 },
                 new(){
@@ -106,6 +107,7 @@ public abstract class ArticleContextSeed
                     TreePath = "TestTag00/TestTag11/TestTag22",
                     Technology = technology2,
                     Tags = tags2,
+                    Texts = texts
                     
                 },
                 new(){
@@ -115,7 +117,7 @@ public abstract class ArticleContextSeed
                     TreePath = "TestTag00/TestTag11/TestTag22",
                     Technology = technology2,
                     Tags = tags2,
-                    
+                    Texts = texts
                 }
             };
 
@@ -144,8 +146,7 @@ public abstract class ArticleContextSeed
         //    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
         //    context.DeliveryMethods.AddRange(methods);
         //}
-
-        await context.SaveChangesAsync();
+        if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
     }
     private static void ScanDirectoryForArticleEntity(string directoryPath, Technology technology, ref List<ArticleEntity> markdownContents)
     {

@@ -7,15 +7,15 @@ public class ArticlesWithTechnologySpecification : BaseSpecification<ArticleEnti
     public ArticlesWithTechnologySpecification(ArticleSpecParams articleParams)
         : base(x =>
         (string.IsNullOrEmpty(articleParams.Search) || x.Name.Contains(articleParams.Search, StringComparison.CurrentCultureIgnoreCase)) &&
-        (!articleParams.TechnologyId.HasValue || x.TechnologyId == articleParams.TechnologyId)
+        (!articleParams.TechnologyId.HasValue || x.TechnologyId == articleParams.TechnologyId) && 
+        (!articleParams.TagId.HasValue || (x.Tags!.FirstOrDefault(a => a.Id == articleParams.TagId) != null))
         )
     {
         AddInclude(x => x.Technology);
         AddInclude(x => x.Texts!);
         AddInclude(x => x.Tags!);
         AddOrderBy(x => x.Name);
-        ApplyPaging(articleParams.PageSize * (articleParams.PageIndex - 1),
-            articleParams.PageSize);
+        ApplyPaging(articleParams.PageSize * (articleParams.PageIndex - 1), articleParams.PageSize);
 
         if (string.IsNullOrEmpty(articleParams.Sort)) return;
         switch (articleParams.Sort)

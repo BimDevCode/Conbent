@@ -4,4 +4,5 @@ export class ArticleSpecParams {
   search: string ='';
   technologyId: number = 0;
   pageIndex: number = 1;
+  tagId: number = 0;
 }

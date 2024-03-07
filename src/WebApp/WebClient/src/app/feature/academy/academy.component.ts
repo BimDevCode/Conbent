@@ -13,9 +13,14 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class AcademyComponent {
   title = 'material-responsive-sidenav';
+  hideButtonText : string = 'Hide About';
+  showButtonText : string = 'Show About';
+  buttonText = this.hideButtonText;
+
+
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  isCollapsed = true;
+  isCollapsed = false;
   isMobile= false;
 
   constructor(private observer: BreakpointObserver) {}
@@ -38,5 +43,6 @@ export class AcademyComponent {
       this.sidenav.open(); // On desktop/tablet, the menu can never be fully closed
       this.isCollapsed = !this.isCollapsed;
     }
+    this.buttonText = this.buttonText === this.showButtonText ? this.hideButtonText:this.showButtonText  ;
   }
 }

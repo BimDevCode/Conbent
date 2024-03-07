@@ -3,6 +3,8 @@ import { BaseEntity } from "./contractors/BaseEntity";
 export interface ArticleEntity {
   texts: string[];
   relevantScore: number;
+  treePath: string ;
+  createDateTime : string ;
 }
 
 export class ArticleEntity implements ArticleEntity, BaseEntity {

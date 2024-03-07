@@ -7,5 +7,8 @@ public class ArticleDto
     public  string? HashId { get; set; }
     public  decimal RelevantScore { get; set; }
     public int TechnologyId { get; set; }
+    public string? Tag { get; set; }
+    public DateTime CreateDateTime { get; set; }
+    public string? TreePath { get; set; } 
     public ICollection<string>? Texts { get; set; }
 }

@@ -13,9 +13,10 @@ import { DropdownButtonComponent } from './dropdown-button/dropdown-button.compo
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CarouselComponent } from './carousel/carousel.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
+import { ToastModule } from 'primeng/toast';
 
 
-@NgModule({ 
+@NgModule({
   declarations: [ //Connected to core.module.ts
     NavbarComponent,
     FooterComponent,
@@ -23,6 +24,7 @@ import { SanitizeHtmlPipe } from './sanitize-html.pipe';
     PageContentComponent,
     PageHeaderComponent,
     DropdownButtonComponent,
+
     CarouselComponent,
     SanitizeHtmlPipe
   ],
@@ -30,7 +32,7 @@ import { SanitizeHtmlPipe } from './sanitize-html.pipe';
     PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
-  
+    ToastModule,
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
@@ -45,6 +47,7 @@ import { SanitizeHtmlPipe } from './sanitize-html.pipe';
     CarouselModule,
     FooterComponent,
     BsDropdownModule,
+    ToastModule,
     CardContentComponent,
     DropdownButtonComponent,
     CarouselComponent,

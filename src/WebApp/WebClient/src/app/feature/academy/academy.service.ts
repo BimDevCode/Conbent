@@ -7,14 +7,15 @@ import { Pagination } from '../../core/models-shared/pagination';
 import { ArticleSpecParams } from '../../core/models/articleSpecParams';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, map, of } from 'rxjs';
+import { TreeNode } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AcademyService {
-  readonly academyControllerUrl = 'articles';
-  readonly tagsControllerUrl = this.academyControllerUrl + '/tags';
-  readonly technologiesControllerUrl = this.academyControllerUrl + '/technologies';
+  readonly academyControllerUrl = 'articles/';
+  readonly tagsControllerUrl = this.academyControllerUrl + 'tags';
+  readonly technologiesControllerUrl = this.academyControllerUrl + 'technologies';
 
   baseUrl = environment.apiUrl;
   articleEntities: ArticleEntity[] = [];
@@ -50,8 +51,7 @@ export class AcademyService {
     let headers = new Headers();
     headers.append('Origin', 'https://localhost:4200');
     if (this.articleParameters.technologyId > 0) params = params.append('technologyId', this.articleParameters.technologyId);
-    //TODO: Add tag
-    //if (this.articleParameters.tag) params = params.append('typeId', this.articleParameters.tag);
+    if (this.articleParameters.tagId > 0) params = params.append('tagId', this.articleParameters.tagId);
     params = params.append('sort', this.articleParameters.sort);
     params = params.append('pageIndex', this.articleParameters.pageIndex);
     params = params.append('pageSize', this.articleParameters.pageSize);
@@ -66,6 +66,44 @@ export class AcademyService {
       })
     )
   }
+
+  getTreePathNodes(articles: ArticleEntity[],tags: Tag[]): TreeNode[] {
+    const tagsDict = tags.reduce((dict, tag) => {
+      dict[tag.name] = tag.id;
+      return dict;
+    }, {} as { [key: string]: number });
+    const treePaths = articles.map(article => article.treePath);
+    const rootNode: TreeNode = {
+      label: 'root',
+      data: 0,
+      children: []
+    };
+
+    for (const path of treePaths) {
+      const pathParts = path.split('/');
+      let currentSubTree = rootNode;
+
+      for (const part of pathParts) {
+        let childNode = currentSubTree.children?.find(child => child.label === part);
+
+        if (!childNode) {
+          childNode = {
+            label: part,
+            data: tagsDict[part],
+            children: []
+          };
+          if (!currentSubTree.children) {
+            currentSubTree.children = [];
+          }
+          currentSubTree.children.push(childNode);
+        }
+
+        currentSubTree = childNode;
+      }
+    }
+    return rootNode.children || [];
+    }
+
   getArticle(id: number) {
     const article = [...this.articleCache.values()]
       .reduce((acc, paginatedResult) => {
@@ -86,7 +124,7 @@ export class AcademyService {
   getTags() {
     if (this.tags.length > 0) return of(this.tags);
     return this.http.get<Tag[]>(this.baseUrl + this.tagsControllerUrl).pipe(
-      map(tags => this.technologies = tags)
+      map(tags => this.tags = tags)
     );
   }
 

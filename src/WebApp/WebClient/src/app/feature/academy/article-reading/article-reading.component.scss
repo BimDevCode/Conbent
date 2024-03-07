@@ -35,33 +35,30 @@
     border-radius: 0;
     background-color: var(--brown-color);
   }
-  
+
   .grain {
     height: 100%;
     width: 100%;
-    z-index: 300;
     transform: translateZ(0);
     position: relative;
-    
     &:before {
       content: "";
       position: absolute;
       height: 100%;
       width: 100%;
-      z-index: 9999;
       top: 0;
       background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
       border-radius: 10px; // adjust as needed
-      overflow: hidden; 
+      overflow: hidden;
       opacity: 0.15;
       //-webkit-animation: noise 1s steps(2) infinite;
       //animation: noise 1s steps(2) infinite;
     }
-  
+
     @-webkit-keyframes noise {
       to { transform: translate3d(-1rem,0,0) }
     }
-  
+
     @keyframes noise {
       0% { transform: translate3d(0,1rem,0) }
       10% { transform: translate3d(-1rem,-1rem,0) }
@@ -76,4 +73,3 @@
       to { transform: translate3d(-1rem,0,0) }
     }
   }
-  
