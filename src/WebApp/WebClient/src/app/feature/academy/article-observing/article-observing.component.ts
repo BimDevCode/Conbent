@@ -6,9 +6,9 @@ import { Tag } from '../../../core/models/tag';
 import { Technology } from '../../../core/models/technology';
 import { Pagination } from '../../../core/models-shared/pagination';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { MatSidenav } from '@angular/material/sidenav';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MessageService, TreeNode } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-observing',
@@ -21,10 +21,8 @@ export class ArticleObservingComponent implements OnInit {
   showButtonText : string = 'Show Sort';
   buttonText = this.hideButtonText;
   @ViewChild('search') searchTerm?: ElementRef;
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
-  isCollapsed = false;
-  isMobile= true;
+  // isCollapsed = false;
+  // isMobile= true;
   nodes!: any[];
   formGroup!: FormGroup;
   selectedNodes!: TreeNode;
@@ -40,10 +38,12 @@ export class ArticleObservingComponent implements OnInit {
     {name: 'Relative Score: High to low', value: 'priceDesc'},
   ];
   totalCount = 0;
+  visible: any;
 
   constructor(private academyService: AcademyService,
     private observer: BreakpointObserver,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
     ) {
     this.articleParameters = academyService.getArticleParameters();
   }
@@ -52,28 +52,11 @@ export class ArticleObservingComponent implements OnInit {
     this.getArticles();
     this.getPaths();
     this.getTechnologies();
-    this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
-      if(screenSize.matches){
-        this.isMobile = true;
-      } else {
-        this.isMobile = false;
-      }
-    });
-    this.formGroup = new FormGroup({
-      selectedNodes: new FormControl()
-  });
   }
 
   toggleMenu() {
-    if(this.isMobile){
-      this.sidenav.toggle();
-      this.isCollapsed = false; // On mobile, the menu can never be collapsed
-    } else {
-      this.sidenav.open(); // On desktop/tablet, the menu can never be fully closed
-      this.isCollapsed = !this.isCollapsed;
-    }
+    this.visible = !this.visible;
     this.buttonText = this.buttonText === this.showButtonText ? this.hideButtonText:this.showButtonText  ;
-
   }
 
   getArticles() {
@@ -85,11 +68,12 @@ export class ArticleObservingComponent implements OnInit {
       error: error => console.log(error)
     })
   }
+
   getPaths() {
     this.getTags();
-    this.academyService.getArticleEntities().subscribe({
+    this.academyService.getPaths().subscribe({
       next: response => {
-        this.nodes = this.academyService.getTreePathNodes(response.data,this.tags);
+        this.nodes = this.academyService.getTreePathNodes(response, this.tags);
       },
       error: error => console.log(error)
     })
@@ -101,7 +85,6 @@ export class ArticleObservingComponent implements OnInit {
         error: error => console.log(error)
       })
     } catch (error) {
-
     }
   }
 
@@ -149,6 +132,7 @@ export class ArticleObservingComponent implements OnInit {
   }
 
   onSearch() {
+
     const params = this.academyService.getArticleParameters();
     params.search = this.searchTerm?.nativeElement.value;
     params.pageIndex = 1;
@@ -158,6 +142,7 @@ export class ArticleObservingComponent implements OnInit {
   }
 
   onReset() {
+
     if (this.searchTerm) this.searchTerm.nativeElement.value = '';
     this.articleParameters = new ArticleSpecParams();
     this.academyService.setArticleParameters(this.articleParameters);
@@ -166,15 +151,27 @@ export class ArticleObservingComponent implements OnInit {
 
 
   nodeSelect(event: any) {
+      this.toggleMenu();
       this.messageService.add({ severity: 'info', summary: 'Tag Selected', detail: event.node.label });
       let selectedTagData = event.node.data;
-      const params = this.academyService.getArticleParameters();
-      params.tagId = selectedTagData;
-      this.academyService.setArticleParameters(params);
-      this.articleParameters = params;
-      this.getArticles();
+      if(typeof selectedTagData === 'string' )
+      {
+        if (selectedTagData) this.academyService.getArticleByName(selectedTagData).subscribe({
+          next: element => {
+            let articleId = element.id;
+            this.router.navigate(['/', articleId]);
+          },
+          error: error => console.log(error)
+        });
+      }
+      else if (typeof selectedTagData === 'number') {
+        const params = this.academyService.getArticleParameters();
+        params.tagId = selectedTagData;
+        this.academyService.setArticleParameters(params);
+        this.articleParameters = params;
+        this.getArticles();
+      }
   }
-
   nodeUnselect(event: any) {
       this.messageService.add({ severity: 'info', summary: 'Tag Unselected', detail: event.node.label });
   }

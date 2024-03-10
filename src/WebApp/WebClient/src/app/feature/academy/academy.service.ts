@@ -15,12 +15,14 @@ import { TreeNode } from 'primeng/api';
 export class AcademyService {
   readonly academyControllerUrl = 'articles/';
   readonly tagsControllerUrl = this.academyControllerUrl + 'tags';
+  readonly pathsControllerUrl = this.academyControllerUrl + 'paths';
   readonly technologiesControllerUrl = this.academyControllerUrl + 'technologies';
 
   baseUrl = environment.apiUrl;
   articleEntities: ArticleEntity[] = [];
   technologies: Technology[] = [];
   tags: Tag[] = [];
+  paths: string[] = [];
   pagination?: Pagination<ArticleEntity[]>;
   articleParameters = new ArticleSpecParams();
   articleCache = new Map<string, Pagination<ArticleEntity[]>>();
@@ -67,12 +69,11 @@ export class AcademyService {
     )
   }
 
-  getTreePathNodes(articles: ArticleEntity[],tags: Tag[]): TreeNode[] {
+  getTreePathNodes(treePaths: string[],tags: Tag[]): TreeNode[] {
     const tagsDict = tags.reduce((dict, tag) => {
       dict[tag.name] = tag.id;
       return dict;
     }, {} as { [key: string]: number });
-    const treePaths = articles.map(article => article.treePath);
     const rootNode: TreeNode = {
       label: 'root',
       data: 0,
@@ -80,16 +81,18 @@ export class AcademyService {
     };
 
     for (const path of treePaths) {
-      const pathParts = path.split('/');
+      //const pathParts = path.split('/');For MacOS
+      const pathParts = path.split('\\');
       let currentSubTree = rootNode;
 
-      for (const part of pathParts) {
+      for (let part of pathParts) {
+        part = part.replace('.md','')
         let childNode = currentSubTree.children?.find(child => child.label === part);
-
+        let dataNode = tagsDict[part] ?? part;
         if (!childNode) {
           childNode = {
             label: part,
-            data: tagsDict[part],
+            data: dataNode,
             children: []
           };
           if (!currentSubTree.children) {
@@ -114,18 +117,34 @@ export class AcademyService {
     return this.http.get<ArticleEntity>(this.baseUrl + this.academyControllerUrl + id);
   }
 
-  getTechnologies() {
+  getArticleByName(name: string) {
+    const article = [...this.articleCache.values()]
+      .reduce((acc, paginatedResult) => {
+        return {...acc, ...paginatedResult.data.find(x => x.name === name)}
+      }, {} as ArticleEntity)
+
+    if (Object.keys(article).length !== 0) return of(article);
+    return this.http.get<ArticleEntity>(this.baseUrl + this.academyControllerUrl +"HashId/" + name);
+  }
+
+  getTechnologies() : Observable<Technology[]> {
     if (this.technologies.length > 0) return of(this.technologies);
     return this.http.get<Technology[]>(this.baseUrl + this.technologiesControllerUrl).pipe(
       map(technologies => this.technologies = technologies)
     );
   }
 
-  getTags() {
+  getTags() : Observable<Tag[]> {
     if (this.tags.length > 0) return of(this.tags);
     return this.http.get<Tag[]>(this.baseUrl + this.tagsControllerUrl).pipe(
       map(tags => this.tags = tags)
     );
   }
 
+  getPaths() : Observable<string[]> {
+    if (this.paths.length > 0) return of(this.paths);
+    return this.http.get<string[]>(this.baseUrl + this.pathsControllerUrl).pipe(
+      map(paths => this.paths = paths)
+    );
+  }
 }

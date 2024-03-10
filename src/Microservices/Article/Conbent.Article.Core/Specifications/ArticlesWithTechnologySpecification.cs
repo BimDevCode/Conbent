@@ -6,7 +6,8 @@ public class ArticlesWithTechnologySpecification : BaseSpecification<ArticleEnti
 {
     public ArticlesWithTechnologySpecification(ArticleSpecParams articleParams)
         : base(x =>
-        (string.IsNullOrEmpty(articleParams.Search) || x.Name.Contains(articleParams.Search, StringComparison.CurrentCultureIgnoreCase)) &&
+        (string.IsNullOrEmpty(articleParams.Search) || x.Texts!.FirstOrDefault(t =>
+            t.Content == articleParams.Search) != null) &&
         (!articleParams.TechnologyId.HasValue || x.TechnologyId == articleParams.TechnologyId) && 
         (!articleParams.TagId.HasValue || (x.Tags!.FirstOrDefault(a => a.Id == articleParams.TagId) != null))
         )

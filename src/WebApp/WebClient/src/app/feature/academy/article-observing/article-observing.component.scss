@@ -54,6 +54,8 @@
 .custom-button-onlight-reward{
   background-color: var(--green-color);
   color: var(--main-background-color);
+  overflow: visible;
+  margin-top: -1rem;
   border-radius: 10px;
   margin-bottom: 0px;
   font-size: 16px;
@@ -63,7 +65,6 @@
       background-color: var(--main-background-color);
       color: var(--green-color);
       border: 1px solid var(--green-color);
-
   }
   &:active{
       background-color: var(--green-color-dark);
@@ -111,14 +112,17 @@ mat-sidenav-container {
   height:100%;
   border: 0;
   border-radius: 10px;
+  overflow: visible;
+  transition:none;
 }
 .side-container{
-  margin-left: 1em;
   padding-right: 1em;
+  width: 100%;
 }
 // Move the content down so that it won't be hidden by the toolbar
 mat-sidenav {
-  padding-top: 3.5rem;
+  overflow: visible;
+  transition:none;
   @media screen and (min-width: 600px) {
     padding-top: 4rem;
   }
@@ -135,9 +139,11 @@ mat-sidenav {
 // Move the content down so that it won't be hidden by the toolbar
 mat-sidenav-content{
   margin-top: 4rem;
-  overflow: visible;
   border: 0;
   border-radius: 10px;
+  overflow: visible;
+  transition:none;
+
   // @media screen and (min-width: 600px) {
   //     padding-top: 4rem;
   // }
@@ -166,7 +172,6 @@ z-index: 99;
     width: 20em;
 }
 //End todo
-
 
 ::ng-deep .p-tree .p-tree-container {
   padding-left: 0;
@@ -248,4 +253,11 @@ z-index: 99;
 
 .text-brown{
   color: var(--brown-color);
+}
+
+.vertical-alignment{
+  margin-bottom: 1rem;
+  float: right;
+  margin-right: 1rem;
+  margin-top: 2rem;
 }

@@ -11,6 +11,8 @@
 mat-sidenav-container {
     height:100%;
     border: 0;
+    overflow: visible;
+    transition:none;
     border-radius: 10px;
 }
 .mat-drawer.mat-drawer-side{
@@ -19,11 +21,10 @@ mat-sidenav-container {
 // Move the content down so that it won't be hidden by the toolbar
 mat-sidenav {
     border: 0 !important;
-    padding-top: 3.5rem;
     z-index: 1;
-    @media screen and (min-width: 600px) {
-      padding-top: 4rem;
-    }
+    overflow: visible;
+    transition : none;
+   
     border-radius: 10px;
     background-color: var(--main-background-color);
     .entry{
@@ -43,10 +44,14 @@ mat-sidenav {
 mat-sidenav-content{
   border: 0;
   border-radius: 10px;
+  overflow: visible;
+  transition:none;
+  margin-top:0;
     // @media screen and (min-width: 600px) {
     //     padding-top: 4rem;
     // }
 }
+
 
 .overlay-container {
     position: relative;
@@ -73,7 +78,6 @@ mat-sidenav-content{
 }
 //End todo
 .button-square{
-  right: 0;
   z-index: 2;
   position: absolute;
 }
@@ -101,11 +105,20 @@ mat-sidenav-content{
   font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2rem;
   margin-bottom: 1rem;
+
   margin-top: 2rem;
 }
 .description-text{
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-size: 1rem;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
+}
+.vertical-alignment{
+  margin-bottom: 1rem;
+  float: right;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+.float-right{
+  float: left;
+  margin-left: 1rem;
 }

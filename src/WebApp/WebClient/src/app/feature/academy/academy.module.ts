@@ -13,6 +13,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { TreeModule } from 'primeng/tree';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { DialogModule } from 'primeng/dialog';
+
 @NgModule({
   declarations: [
     ArticleReadingComponent,
@@ -24,7 +27,8 @@ import { TreeModule } from 'primeng/tree';
     CommonModule,
     TreeModule,
     SharedModule,
-
+    DialogModule,
+    ConfirmPopupModule,
     TreeSelectModule,
     AcademyRoutingModule,
     MatIconModule,

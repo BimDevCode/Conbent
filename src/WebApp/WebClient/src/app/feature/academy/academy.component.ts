@@ -4,6 +4,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ArticleObservingComponent } from './article-observing/article-observing.component';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -17,6 +19,8 @@ export class AcademyComponent {
   showButtonText : string = 'Show About';
   buttonText = this.hideButtonText;
 
+  @ViewChild(RouterOutlet)
+  routerOutlet!: RouterOutlet;
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
@@ -33,6 +37,15 @@ export class AcademyComponent {
         this.isMobile = false;
       }
     });
+  }
+  toggleSort() {
+    if (this.routerOutlet) {
+      const component = this.routerOutlet.component as ArticleObservingComponent;
+      if (component) {
+        component.toggleMenu();
+      } 
+      
+    }
   }
 
   toggleMenu() {

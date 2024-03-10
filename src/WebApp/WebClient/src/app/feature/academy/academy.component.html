@@ -2,22 +2,32 @@
   <div class="carousel-container">
     <app-carousel></app-carousel>
   </div>
-  <div class="row">
-    <div class="col text-center">
-      <h1 class="section-header-title" >
-        SELECT ARTICLE
-      </h1>
-    </div>
-  </div>
   <div class="description-text">
       <app-card-content class="block" colorBackground="#5b7c99" borderRadius="0,0,0,0"
         description="Sit dolore duis commodo et cillum Lorem Lorem aliquip ex deserunt. Do officia elit commodo non voluptate nulla ex cillum. Commodo est tempor est proident commodo excepteur Lorem nulla exercitation Lorem id ipsum minim dolore. Deserunt fugiat nulla nostrud deserunt. Laboris ea cupidatat laborum dolore. Aute sit occaecat eiusmod pariatur consectetur consectetur nisi ex qui ipsum dolor et irure sint. Officia enim dolor voluptate et quis commodo velit.">
         </app-card-content>
   </div>
-
-  <div class="overlay-container mt-2">
-    <button (click)="toggleMenu()" class="toggle-button m-3 btn button-square custom-button-onlight-reward">{{buttonText}}</button>
-
+  <div class="row">
+    <div class="col">
+      <div class="vertical-alignment float-right">
+        <button (click)="toggleSort()" class="toggle-button btn custom-button-onlight-reward">{{buttonText}}</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="text-center">
+        <h1 class="section-header-title" >
+          SELECT ARTICLE
+        </h1>
+      </div>
+    </div>
+    <div class="col">
+      <div class="vertical-alignment">
+        <button (click)="toggleMenu()" class="toggle-button btn custom-button-onlight-reward">{{buttonText}}</button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    
     <mat-sidenav-container autosize class="rounded" style="background-color: var(--background-complementary-light-color);">
       <mat-sidenav-content>
         <router-outlet></router-outlet>

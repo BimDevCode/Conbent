@@ -22,12 +22,6 @@ public abstract class ArticleContextSeed
             ScanDirectoryForArticleEntity(ObsidianNotesPath, technology, ref markdownContents);
         }
 
-        var textContents = markdownContents.SelectMany(x => x.Texts!);
-        if (!context.Technologies.Any())
-        {
-            context.Technologies.Add(technology);
-        }
-
         if (!context.Articles.Any())
         {
             context.Articles.AddRange(markdownContents);
@@ -139,7 +133,7 @@ public abstract class ArticleContextSeed
                 var articleEntity = new ArticleEntity()
                 {
                     Name = Path.GetFileNameWithoutExtension(filePath),
-                    HashId = Guid.NewGuid().ToString(),
+                    HashId = Path.GetFileNameWithoutExtension(filePath).ComputeSha256Hash(),
                     RelevantScore = _random.Next(0,100),
                     TreePath = relativePath,
                     Technology = technology,

@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Conbent.Article.Infrastructure.ArticlesMigration
 {
     [DbContext(typeof(ArticleContext))]
-    [Migration("20240304210101_ChangeProperties")]
-    partial class ChangeProperties
+    [Migration("20240310162126_ArticleContextInitial")]
+    partial class ArticleContextInitial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
