@@ -5,7 +5,7 @@ using Conbent.CommonInfrastructure.Helpers;
 namespace Conbent.Article.Infrastructure.Context;
 public abstract class ArticleContextSeed
 {
-    private const string ObsidianNotesPath =  @"/Users/mikalaisabaleuski/Library/Mobile Documents/iCloud~md~obsidian/Documents/Conbent/Conbent Development/Content";//@"W:\Obsidian\Conbent\Conbent Development\Content";
+    private const string ObsidianNotesPath = @"W:\Obsidian\Conbent\Conbent Development\Content";
     private const string ObsidianNotesPathMacOs = @"/Users/mikalaisabaleuski/Library/Mobile Documents/iCloud~md~obsidian/Documents/Conbent/Conbent Development/Content";
     private const string SearchPattern = "*" + SourceFileExtension;
     private const string SourceFileExtension = ".md";
@@ -32,27 +32,6 @@ public abstract class ArticleContextSeed
         {
             context.Articles.AddRange(markdownContents);
         }
-
-        //if (!context.ProductTypes.Any())
-        //{
-        //    var typesData = File.ReadAllText(path + @"/Data/SeedData/types.json");
-        //    var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
-        //    context.ProductTypes.AddRange(types);
-        //}
-
-        //if (!context.Products.Any())
-        //{
-        //    var productsData = File.ReadAllText(path + @"/Data/SeedData/products.json");
-        //    var products = JsonSerializer.Deserialize<List<Product>>(productsData);
-        //    context.Products.AddRange(products);
-        //}
-
-        //if (!context.DeliveryMethods.Any())
-        //{
-        //    var deliveryData = File.ReadAllText(path + @"/Data/SeedData/delivery.json");
-        //    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
-        //    context.DeliveryMethods.AddRange(methods);
-        //}
 
         if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
     }
