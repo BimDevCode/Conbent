@@ -18,6 +18,11 @@
 }
 
 .next-step-container{
-    padding-bottom: 1rem;
     border-bottom: 1px solid var(--background-border-color);
 }
+
+.section-header-title{
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
