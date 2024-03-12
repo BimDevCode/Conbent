@@ -1,4 +1,6 @@
-﻿const { gsap, imagesLoaded } = window;
+
+
+const { gsap, imagesLoaded } = window;
 
 const buttons = {
 	prev: document.querySelector(".btn--left"),
@@ -251,3 +253,4 @@ const waitForImages = () => {
 };
 
 waitForImages();
+

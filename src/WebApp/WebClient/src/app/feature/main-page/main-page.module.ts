@@ -6,6 +6,7 @@ import { IntroComponent } from './components/intro/intro.component';
 import { AncientGreekPartComponent } from './components/ancient-greek-part/ancient-greek-part.component';
 import { NextStepPartComponent } from './components/next-step-part/next-step-part.component';
 import { ParallaxADirective } from './components/parallax-a.directive';
+import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ParallaxADirective } from './components/parallax-a.directive';
     IntroComponent,
     AncientGreekPartComponent,
     NextStepPartComponent,
-    ParallaxADirective
+    ParallaxADirective,
+    CardCarouselComponent
   ],
   imports: [
     CommonModule,

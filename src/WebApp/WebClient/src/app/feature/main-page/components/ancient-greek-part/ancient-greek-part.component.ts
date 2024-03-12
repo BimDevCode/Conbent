@@ -10,7 +10,7 @@ import $ from 'jquery';//Leave for JS sript
   templateUrl: './ancient-greek-part.component.html',
   styleUrl: './ancient-greek-part.component.scss'
 })
-export class AncientGreekPartComponent implements AfterViewInit {
+export class AncientGreekPartComponent implements OnInit {
 [x: string]: any;
   imageUrlA = '../../../../../assets/Image/OrderPartA.jpeg';
   imageUrlB = '../../../../../assets/Image/OrderPartB.jpeg';
@@ -22,19 +22,9 @@ export class AncientGreekPartComponent implements AfterViewInit {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {
   }
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     if(isPlatformBrowser(this.platformId)) {
-      this.loadScript('https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js');
-      this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js');
-      //this.loadScript('../../../../../assets/js/main-page/carousel.js');
     }
-  }
-
-  loadScript(urnName: string){
-    const s = this.renderer.createElement('script');
-    s.type = 'text/javascript';
-    s.src = urnName; // replace with the actual path to your script
-    this.renderer.appendChild(this.document.body, s);
   }
 
 }

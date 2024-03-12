@@ -1,11 +1,13 @@
 using Conbent.Article.Core.Entities;
 using Conbent.Article.Infrastructure.Parser;
 using Conbent.CommonInfrastructure.Helpers;
+using System.Runtime.InteropServices;
 
 namespace Conbent.Article.Infrastructure.Context;
 public abstract class ArticleContextSeed
 {
-    private const string ObsidianNotesPath = @"W:\Obsidian\Conbent\Conbent Development\Content";
+    private static readonly string ObsidianNotesPath = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? ObsidianNotesPathWinows : ObsidianNotesPathMacOs;
+    private const string ObsidianNotesPathWinows = @"W:\Obsidian\Conbent\Conbent Development\Content";
     private const string ObsidianNotesPathMacOs = @"/Users/mikalaisabaleuski/Library/Mobile Documents/iCloud~md~obsidian/Documents/Conbent/Conbent Development/Content";
     private const string SearchPattern = "*" + SourceFileExtension;
     private const string SourceFileExtension = ".md";

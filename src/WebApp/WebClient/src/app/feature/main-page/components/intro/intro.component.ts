@@ -13,13 +13,15 @@ export class IntroComponent implements OnInit {
   constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
+    this.loadScript('../../../../../assets/js/main-page/intro.js');
+    this.loadScript('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js');
+  }
+
+
+  loadScript(urnName: string){
     const s = this.renderer.createElement('script');
     s.type = 'text/javascript';
-    s.src = '../../../../../assets/js/main-page/intro.js'; // replace with the actual path to your script
-    const modernizr = this.renderer.createElement('script');
-    modernizr.type = 'text/javascript';
-    modernizr.src = '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'; // replace with the 
+    s.src = urnName; // replace with the actual path to your script
     this.renderer.appendChild(this.document.body, s);
-    this.renderer.appendChild(this.document.body, modernizr);
   }
 }

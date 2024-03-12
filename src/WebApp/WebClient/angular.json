@@ -48,8 +48,7 @@
               "node_modules/imagesloaded/imagesloaded.pkgd.min.js",
               "src/assets/js/academy-page/ContentTree.js",
               "src/assets/js/academy-page/prism.js",
-              
-              "src/assets/js/main-page/carousel.js",
+
               "src/assets/js/main-page/main.js",
               "src/assets/js/main-page/prism.js",
               "src/assets/js/main-page/intro.js"
