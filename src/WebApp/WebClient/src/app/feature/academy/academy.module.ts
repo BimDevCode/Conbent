@@ -15,6 +15,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { TreeModule } from 'primeng/tree';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
+import { DataViewModule } from 'primeng/dataview';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DialogModule } from 'primeng/dialog';
   ],
   imports: [
     CommonModule,
+    DataViewModule,
     TreeModule,
     SharedModule,
     DialogModule,
@@ -38,7 +40,7 @@ import { DialogModule } from 'primeng/dialog';
     MatListModule,
   ],
   exports: [
-    SharedModule
+    SharedModule,
   ]
 })
 export class AcademyModule {

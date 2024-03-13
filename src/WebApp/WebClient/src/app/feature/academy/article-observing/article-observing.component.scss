@@ -172,6 +172,9 @@ z-index: 0;
     width: 20em;
 }
 //End todo
+::ng-deep .p-dataview-content{
+  background: var(--background-complementary-light-color);
+}
 
 ::ng-deep .p-tree .p-tree-container {
   padding-left: 0;

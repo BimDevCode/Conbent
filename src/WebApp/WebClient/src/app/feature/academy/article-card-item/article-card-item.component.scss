@@ -1,20 +1,30 @@
 .card{
-    border: 0px;
+    border: 1px solid var(--main-background-color);
     border-radius: 10px;
     transition: transform 0.5s ease-in-out; 
+    margin: 1rem;
     &:hover{
         transform: scale(1.05);
     }
 }
+.card-container{
+    display: flex;
+}
 .card-body{
     background-color: transparent;
+}
+.read-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .custom-button{
     background-color: var(--main-background-color);
     color: var(--brown-color-dark);
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-right: 1em;
+    justify-self: end;
     font-size: 16px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s  ease-in-out;
@@ -33,11 +43,20 @@
 
 .relevant-text{
     color: var(--main-background-color);
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .text-preview{
-    height: 200px; /* Adjust as needed */
+    height: 3rem; /* Adjust as needed */
     overflow: hidden;
     text-overflow: ellipsis;
+    .text-part h1{
+        font-size: 1em;
+    }
+}
+
+.text-part{
+    h1{
+        font-size: 1em !important;
+    }
 }

@@ -14,6 +14,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './academy.component.scss'
 })
 export class AcademyComponent {
+
+  cookbookImage = "../../../../../assets/images/cookbook.jpg";
   title = 'material-responsive-sidenav';
   hideButtonText : string = 'Hide About';
   showButtonText : string = 'Show About';

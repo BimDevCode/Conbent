@@ -18,6 +18,13 @@
   }
 }
 
+.card-rectangle__title{
+  font-weight:normal;
+  color: white;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
 .grain {
   height: 100%;
   width: 100%;
@@ -61,10 +68,5 @@
 .card-rectangle__description{
   font-size: 18px;
   font-weight:lighter;
-  color: white;
-}
-.card-rectangle__title{
-  font-size: 18px;
-  font-weight:normal;
   color: white;
 }
