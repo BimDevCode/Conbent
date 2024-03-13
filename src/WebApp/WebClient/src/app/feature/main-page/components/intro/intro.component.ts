@@ -13,10 +13,10 @@ export class IntroComponent implements OnInit {
   constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
+    this.animateScript();
     this.loadScript('../../../../../assets/js/main-page/intro.js');
     this.loadScript('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js');
   }
-
 
   loadScript(urnName: string){
     const s = this.renderer.createElement('script');
@@ -24,4 +24,35 @@ export class IntroComponent implements OnInit {
     s.src = urnName; // replace with the actual path to your script
     this.renderer.appendChild(this.document.body, s);
   }
+
+  animateScript() {
+    this.document.addEventListener("DOMContentLoaded", (event) => {
+      this.animationText("#text-anim");
+    });
+
+
+  }
+
+  animationText(element: string): void {
+    let newText = "";
+    const theText = this.document.querySelector<HTMLElement>(element);
+    if (!theText) return; // Guard clause to handle cases where the element is not found
+    for (let i = 0; i < theText.innerText.length; i++) {
+      newText += "<div style=\"display:inline-block;\">";
+      if (theText.innerText[i] == " ") {
+        newText += "&nbsp;";
+      } else {
+        newText += theText.innerText[i];
+      }
+      newText += "</div>";
+    }
+    theText.innerHTML = newText;
+    const targetsDiv = this.document.querySelectorAll<HTMLElement>(element + " div");
+    gsap.timeline().staggerFromTo(
+      targetsDiv,
+      2,
+      {opacity: 0, y: 90},
+      {opacity: 1, y: 0, ease: "elastic.out(1.2, 0.5)"}, 0.03);
+  }
+
 }

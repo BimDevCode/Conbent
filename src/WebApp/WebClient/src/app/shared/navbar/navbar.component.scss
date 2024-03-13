@@ -55,6 +55,7 @@ for details on configuring this project to bundle and minify static web assets.
 
 */
 .btn {
+  z-index: 1;
   position: relative;
   display: inline-block;
   text-align: center;
@@ -156,14 +157,42 @@ for details on configuring this project to bundle and minify static web assets.
 .btn-dark:hover svg text{
   fill: var(--main-background-color);
 }
-.navbar-custom{
+:host{
   position: sticky;
-  top: 0;
-  border-radius: 10px;
-  background-color:var(--main-background-color) ;
-  z-index: 9999; /* optional, to ensure the navbar is above all other elements */
-}
+  z-index: 2;
+  top: 0;}
 
+.navbar-custom{
+  top: 0;
+
+  border-radius: 10px;
+  z-index: 1;
+}
+.grain-nav {
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+
+  background-color:var(--main-background-color) ;
+
+  &:before {
+    content: "";
+    z-index: 1;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+    border-radius: 10px; // adjust as needed
+    overflow: hidden;
+    opacity: 0.10;
+    //-webkit-animation: noise 1s steps(2) infinite;
+    //animation: noise 1s steps(2) infinite;
+  }
+
+
+}
 .btn{
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
@@ -176,6 +205,8 @@ for details on configuring this project to bundle and minify static web assets.
 }
 
 .company-name{
+  position: relative;
+  z-index: 1;
   font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2rem;
 }
@@ -186,7 +217,7 @@ for details on configuring this project to bundle and minify static web assets.
 
 .toast-custom{
   position: absolute;
-  z-index: 9999;
   height: 10rem;
   width: 100%;
 }
+

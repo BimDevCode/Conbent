@@ -201,6 +201,7 @@
 	height: var(--card-height);
 	pointer-events: none;
 
+
 	.info__wrapper {
 		position: relative;
 		width: 100%;
@@ -220,9 +221,12 @@
 	--card-transition-easing: ease;
   --text-size-offset: 0.065;
 
+
 	margin-bottom: calc(var(--card-height) / 10);
 	margin-left: calc(var(--card-width) / 1);
+  padding: 1em;
 	transform: translateZ(2rem);
+  transition: width --card-transition-duration ease, height --card-transition-duration ease;
 	transition: transform var(--card-transition-duration)
 		var(--card-transition-easing);
 	.text {

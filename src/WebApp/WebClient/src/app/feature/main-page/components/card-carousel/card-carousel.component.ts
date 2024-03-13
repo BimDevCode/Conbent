@@ -176,6 +176,7 @@ carouselElement(){
       const currentInfoEl = cardInfosContainerEl.querySelector(".current--info") as HTMLElement;
       gsap.set(currentInfoEl, {
         rotateY: `${angle}deg`,
+
       });
     }
 
@@ -184,6 +185,7 @@ carouselElement(){
       const currentInfoEl = cardInfosContainerEl.querySelector(".current--info") as HTMLElement;
       gsap.set(card, {
         "--current-card-rotation-offset": 0,
+
       });
       gsap.set(currentInfoEl, {
         rotateY: 0,
@@ -216,6 +218,8 @@ carouselElement(){
         gsap.set(currentInfoTextElements, {
           translateY: "40px",
           opacity: 0,
+
+
         });
       }
 
@@ -236,6 +240,7 @@ carouselElement(){
           amount: 0.1,
         },
         "--card-translateY-offset": "0%",
+
       })
         .to(cardInfosContainerEl.querySelector(".current--info")!.querySelectorAll(".text"), {
           delay: 0.5,

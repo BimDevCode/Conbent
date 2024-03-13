@@ -1,0 +1,39 @@
+.section-header-title{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.section-header-title{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.section-header{
+  width: 100%;
+  height: 100%;
+}
+.card-content{
+  min-width: 20rem;
+}
+.section-header h1{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-weight:100;
+  font-size: 26px;
+  font-style: normal;
+}
+.block {
+  flex: 1;
+  min-width: 15rem;
+  box-sizing: border-box;
+}
+.section-part{
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-for-parts{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.fade-in-element {
+  opacity: 0; /* Start with opacity 0 */
+}

@@ -15,7 +15,6 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 import { ToastModule } from 'primeng/toast';
 
-
 @NgModule({
   declarations: [ //Connected to core.module.ts
     NavbarComponent,

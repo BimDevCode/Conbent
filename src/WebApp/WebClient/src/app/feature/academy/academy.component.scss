@@ -16,15 +16,15 @@ mat-sidenav-container {
     border-radius: 10px;
 }
 .mat-drawer.mat-drawer-side{
-  z-index: auto;
+  z-index: 0;
 }
 // Move the content down so that it won't be hidden by the toolbar
 mat-sidenav {
     border: 0 !important;
-    z-index: 1;
+    z-index: 0;
     overflow: visible;
     transition : none;
-   
+
     border-radius: 10px;
     background-color: var(--main-background-color);
     .entry{
@@ -36,7 +36,7 @@ mat-sidenav {
 
 
     .mat-drawer{
-      z-index: 1;
+      z-index: 0;
     }
   }
 
@@ -78,7 +78,7 @@ mat-sidenav-content{
 }
 //End todo
 .button-square{
-  z-index: 2;
+  z-index: 0;
   position: absolute;
 }
 

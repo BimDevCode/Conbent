@@ -7,6 +7,8 @@ import { AncientGreekPartComponent } from './components/ancient-greek-part/ancie
 import { NextStepPartComponent } from './components/next-step-part/next-step-part.component';
 import { ParallaxADirective } from './components/parallax-a.directive';
 import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
+import { AboutPageFadeComponent } from './components/about-page-fade/about-page-fade.component';
+import { IntersectionObserverDirective } from '../../directives/intersection-observer.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { CardCarouselComponent } from './components/card-carousel/card-carousel.
     AncientGreekPartComponent,
     NextStepPartComponent,
     ParallaxADirective,
-    CardCarouselComponent
+    IntersectionObserverDirective,
+    CardCarouselComponent,
+    AboutPageFadeComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +30,7 @@ import { CardCarouselComponent } from './components/card-carousel/card-carousel.
     IntroComponent,
     AncientGreekPartComponent,
     NextStepPartComponent,
+    IntersectionObserverDirective,
     ParallaxADirective
   ]
 })
