@@ -7,16 +7,16 @@ import { RandomColorService } from '../../../core/random-color.service copy';
   styleUrl: './article-card-item.component.scss'
 })
 export class ArticleCardItemComponent implements AfterViewInit{
-  
+
   @Input() article?: ArticleEntity;
   @ViewChild('card') card!: ElementRef;
 
-  @HostBinding('style.backgroundColor') backgroundColor = this.randomColorService.getRandomColor();
-  
+  @HostBinding('style.backgroundColor') backgroundColor = `1px solid ${this.randomColorService.getRandomColor()}`;
+
   constructor(private randomColorService: RandomColorService) {}
-  
+
   ngAfterViewInit(): void {
-    if(this.card !== undefined) this.card.nativeElement.style.backgroundColor = this.randomColorService.getRandomColor();
+    if(this.card !== undefined) this.card.nativeElement.style.border = `1px solid ${this.randomColorService.getRandomColor()}`;
   }
 
 }

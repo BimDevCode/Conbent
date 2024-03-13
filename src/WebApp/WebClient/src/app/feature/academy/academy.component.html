@@ -26,13 +26,13 @@
     </div>
     <div class="col">
       <div class="vertical-alignment">
-        <button (click)="toggleMenu()" class="toggle-button btn custom-button-onlight-reward">{{buttonText}}</button>
+        <button (click)="toggleMenu()" class="toggle-button btn custom-button-light">{{buttonText}}</button>
       </div>
     </div>
   </div>
   <div class="row mt-2">
-    
-    <mat-sidenav-container autosize class="rounded" style="background-color: var(--background-complementary-light-color);">
+
+    <mat-sidenav-container autosize class="rounded" style="background-color: var(--main-background-color);">
       <mat-sidenav-content>
         <router-outlet></router-outlet>
       </mat-sidenav-content>

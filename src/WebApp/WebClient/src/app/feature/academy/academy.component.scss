@@ -18,6 +18,7 @@ mat-sidenav-container {
 .mat-drawer.mat-drawer-side{
   z-index: 0;
 }
+
 // Move the content down so that it won't be hidden by the toolbar
 mat-sidenav {
     border: 0 !important;
@@ -100,7 +101,21 @@ mat-sidenav-content{
       background-color: var(--green-color-dark);
   }
 }
+.custom-button-light{
+  background-color: var(--main-background-color);
+  color: var(--green-color-dark);
+  border-radius: 10px;
+  text-decoration: underline;
+  margin-bottom: 0px;
+  font-size: 16px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s  ease-in-out;
+  &:hover{
+      border: 1px solid var(--green-color);
 
+  }
+
+}
 .section-header-title{
   font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2rem;
@@ -117,7 +132,7 @@ mat-sidenav-content{
   width: 80%;
   top:22em;
   left: 50%; // Add this line
-  transform: translate(-50%); 
+  transform: translate(-50%);
 }
 .vertical-alignment{
   margin-bottom: 1rem;

@@ -13,7 +13,8 @@
 
 .list-group-custom
     .list-group-item {
-        background-color: var(--background-complementary-light-color);
+        background-color: var(--main-background-color);
+
         color: var(--brown-color);
         border: 0;
         -webkit-transition: all 0.5s ease-in-out;
@@ -173,7 +174,7 @@ z-index: 0;
 }
 //End todo
 ::ng-deep .p-dataview-content{
-  background: var(--background-complementary-light-color);
+  background: var(--main-background-color);
 }
 
 ::ng-deep .p-tree .p-tree-container {
@@ -187,6 +188,7 @@ z-index: 0;
 ::ng-deep .p-highlight{
   background-color: var(--brown-color);
   color: var(--background-complementary-light-color);
+
   -webkit-transition: all 0.2s ease-in-out;
   border: 0;
   transition: all 0.2s  ease-in-out;
