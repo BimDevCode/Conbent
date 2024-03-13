@@ -1,4 +1,6 @@
 .right-card{
+    z-index: 1;
+    border-radius: 10px;
     background-color: var(--background-complementary-light-color);
     h2{
         color: var(--color-dark)
@@ -6,23 +8,35 @@
     p{
         color: var(--color-dark)
     }
+    border: 1px solid var(--background-border-color);
+
 }
 .left-card{
-    background-color: var(--background-complementary-dark-color);
+    z-index: 1;
+    border-radius: 10px;
+    background-color: var(--blue-color);
     h2{
         color: var(--main-background-color)
     }
     p{
         color: var(--main-background-color)
     }
+    border: 1px solid var(--background-border-color);
+    cursor: pointer;
 }
 
 .next-step-container{
-    border-bottom: 1px solid var(--background-border-color);
 }
 
 .section-header-title{
     font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
     font-size: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .fade-in-element-left {
+    opacity: 1; 
+  }
+  .fade-in-element-right {
+    opacity: 1; 
   }

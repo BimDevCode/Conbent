@@ -6,16 +6,21 @@
         </h1>
       </div>
     </div>
-    <div class="row mt-4 align-items-md-stretch">
+    <div class="row mt-4 align-items-md-stretch "  
+    >
         <div class="col-md-6">
-          <div class="h-100 p-5 rounded-3 left-card">
+          <div class="h-100 p-5  left-card fade-in-element-left "
+          appIntersectionObserver (intersectionVisible)="fadeInOnScrollLeft($event)" 
+          >
             <h2>Explore project</h2>
             <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
             <button class="btn btn-outline-light" type="button">Example button</button>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="h-100 p-5 border rounded-3 right-card">
+          <div class="h-100 p-5 3 right-card  fade-in-element-right "
+          appIntersectionObserver (intersectionVisible)="fadeInOnScrollRight($event)"    
+          >
             <h2>Explore articles</h2>
             <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
             <button class="btn btn-outline-secondary" type="button">Example button</button>

@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, Renderer2 } from '@angular/core';
 import $ from 'jquery';//Leave for JS sript
 import { ScriptLoaderService } from '../../../../core/script-loader.service';
 import { DOCUMENT } from '@angular/common';
@@ -52,7 +52,23 @@ export class IntroComponent implements OnInit {
       targetsDiv,
       2,
       {opacity: 0, y: 90},
-      {opacity: 1, y: 0, ease: "elastic.out(1.2, 0.5)"}, 0.03);
+      {opacity: 1, y: 0, ease: 'bounce.out(1.2, 0.5)'}, 0.03);
   }
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    this.parallaxEffect();
+  }
+
+  private parallaxEffect(): void {
+    const divs = document.querySelectorAll('.parallax-div');
+    divs.forEach(div => {
+      const speed = div.getAttribute('data-speed');
+      if (speed !== null) {
+        const speedValue = parseFloat(speed)/10;
+        const yOffset = window.scrollY;
+        gsap.to(div, { y:(yOffset * speedValue), ease: 'power1.inOut'});
+      }
+    });
+  }
 }

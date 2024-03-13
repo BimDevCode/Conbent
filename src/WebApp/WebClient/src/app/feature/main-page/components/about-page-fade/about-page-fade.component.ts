@@ -20,18 +20,114 @@ export class AboutPageFadeComponent implements OnInit{
       );
     }
   }
-
-
-  fadeInOnScroll(visible: boolean): void {
+//TODO:Make normal function Name - addn argument to the function
+  fadeInOnScrollLeft1(visible: boolean): void {
+    const element = this.elementRef.nativeElement.querySelector('.fade-in-element-left1');
     if (visible) {
-      const element = this.elementRef.nativeElement.querySelector('.fade-in-element');
       gsap.fromTo(
         element,
-        { opacity: 0, x: -50 }, // Start from left (-50px)
+        { opacity: element.style.opacity, x: -80 }, // Start from left (-50px)
         {
           opacity: 1,
           x: 0, // Move to center
           duration: 2,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
+            end: 'bottom 20%', // Adjust this value based on when you want the animation to end
+            scrub: true // Smoothing the animation when scrolling
+          }
+        }
+      );
+    }
+    else {
+      gsap.fromTo(
+        element,
+        { opacity:  element.style.opacity, x: 0 }, 
+        {
+          opacity: 0,
+          x: -80, // Move to center
+          duration: 0.5,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
+            end: 'bottom 20%', // Adjust this value based on when you want the animation to end
+            scrub: true // Smoothing the animation when scrolling
+          }
+        }
+      );
+    }
+  }
+  fadeInOnScrollLeft(visible: boolean): void {
+    const element = this.elementRef.nativeElement.querySelector('.fade-in-element-left');
+    if (visible) {
+      gsap.fromTo(
+        element,
+        { opacity: element.style.opacity, x: -80 }, // Start from left (-50px)
+        {
+          opacity: 1,
+          x: 0, // Move to center
+          duration: 2,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
+            end: 'bottom 20%', // Adjust this value based on when you want the animation to end
+            scrub: true // Smoothing the animation when scrolling
+          }
+        }
+      );
+    }
+    else {
+      gsap.fromTo(
+        element,
+        { opacity:  element.style.opacity, x: 0 }, 
+        {
+          opacity: 0,
+          x: -80, // Move to center
+          duration: 0.5,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
+            end: 'bottom 20%', // Adjust this value based on when you want the animation to end
+            scrub: true // Smoothing the animation when scrolling
+          }
+        }
+      );
+    }
+  }
+  fadeInOnScrollRight(visible: boolean): void {
+    const element = this.elementRef.nativeElement.querySelector('.fade-in-element-right');
+    if (visible) {
+      gsap.fromTo(
+        element,
+        { opacity: element.style.opacity, x: 80 }, // Start from left (-50px)
+        {
+          opacity: 1,
+          x: 0, // Move to center
+          duration: 2,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
+            end: 'bottom 20%', // Adjust this value based on when you want the animation to end
+            scrub: true // Smoothing the animation when scrolling
+          }
+        }
+      );
+    }
+    else {
+      gsap.fromTo(
+        element,
+        { opacity:  element.style.opacity, x: 0 }, 
+        {
+          opacity: 0,
+          x: 80, // Move to center
+          duration: 0.5,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
           scrollTrigger: {
             trigger: element,
             start: 'top 80%', // Adjust this value based on when you want the animation to start

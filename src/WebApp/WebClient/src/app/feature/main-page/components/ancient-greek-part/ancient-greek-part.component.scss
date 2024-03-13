@@ -26,7 +26,12 @@
 .card-content{
   min-width: 20rem;
 }
-
+.post-cards{
+  border-radius: 10px;
+  z-index: 0;
+  border: 1px solid var(--background-border-color);
+  background-color: var(--background-complementary-light-color);
+}
 .section-header h1{
   font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-weight:100;
@@ -114,7 +119,12 @@
 .intro-conteiner__about {
   margin: 0 auto;
 }
-
+.fade-in-element1 {
+  opacity: 0; 
+}
+.fade-in-element2 {
+  opacity: 0; 
+}
 .intro-conteiner-slogan__about {
   color: #FFFAFA;
   margin: 0 auto;
