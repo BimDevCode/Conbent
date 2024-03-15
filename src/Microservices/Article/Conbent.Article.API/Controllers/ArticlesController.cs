@@ -17,7 +17,7 @@ public class ArticlesController(
     IGenericRepository<Technology> technologyRepo,
     IGenericRepository<Tag> tagRepo,
     IMapper mapper)
-    : BaseApiController
+    :BaseApiController
 {
     //[Cached(600)]
     [HttpGet]
@@ -48,7 +48,7 @@ public class ArticlesController(
             article => article.Images!
         };
         var article = await articlesRepo.GetByIdAsync(id, includes);
-        if (article == null) return NotFound(new ApiResponse(404));
+        if (article is null) return NotFound(new ApiResponse(404));
         return mapper.Map<ArticleEntity, ArticleDto>(article);
     }
 

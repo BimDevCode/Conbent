@@ -18,37 +18,38 @@ export class NextStepPartComponent implements OnInit{
         }
       );
     }
-  }
-
-  fadeInOnScrollLeft(visible: boolean): void {
+  }fadeInOnScrollLeft(visible: boolean): void {
     const element = this.elementRef.nativeElement.querySelector('.fade-in-element-left');
     if (visible) {
       gsap.fromTo(
         element,
-        { x: -200 }, // Start from left (-50px)
+        { opacity: element.style.opacity, x: -80 }, // Start from left (-50px)
         {
+          opacity: 1,
           x: 0, // Move to center
-          duration: 1.5,
+          duration: 2,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
           scrollTrigger: {
             trigger: element,
-            start: 'top 81%', // Adjust this value based on when you want the animation to start
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
             end: 'bottom 20%', // Adjust this value based on when you want the animation to end
             scrub: true // Smoothing the animation when scrolling
-          },
-          ease: 'bounce.out'
+          }
         }
       );
     }
     else {
       gsap.fromTo(
         element,
-        {  x: 0 }, 
+        { opacity:  element.style.opacity, x: 0 }, 
         {
-          x: -200, // Move to center
+          opacity: 0,
+          x: -80, // Move to center
           duration: 0.5,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
           scrollTrigger: {
             trigger: element,
-            start: 'top 81%', // Adjust this value based on when you want the animation to start
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
             end: 'bottom 20%', // Adjust this value based on when you want the animation to end
             scrub: true // Smoothing the animation when scrolling
           }
@@ -61,36 +62,37 @@ export class NextStepPartComponent implements OnInit{
     if (visible) {
       gsap.fromTo(
         element,
-        {  x: 200 }, // Start from left (-50px)
+        { opacity: element.style.opacity, x: 80 }, // Start from left (-50px)
         {
+          opacity: 1,
           x: 0, // Move to center
-          duration: 1.5,
+          duration: 2,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
           scrollTrigger: {
             trigger: element,
-            start: 'top 81%', // Adjust this value based on when you want the animation to start
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
             end: 'bottom 20%', // Adjust this value based on when you want the animation to end
             scrub: true // Smoothing the animation when scrolling
           }
-          ,
-          ease: 'bounce.out'
         }
       );
     }
     else {
       gsap.fromTo(
         element,
-        { x: 0 }, 
+        { opacity:  element.style.opacity, x: 0 }, 
         {
-          x: 200, // Move to center
+          opacity: 0,
+          x: 80, // Move to center
           duration: 0.5,
+          overwrite: "auto", // Add this line to prevent the animation from being overwritten
           scrollTrigger: {
             trigger: element,
-            start: 'top 81%', // Adjust this value based on when you want the animation to start
+            start: 'top 80%', // Adjust this value based on when you want the animation to start
             end: 'bottom 20%', // Adjust this value based on when you want the animation to end
             scrub: true // Smoothing the animation when scrolling
           }
-
-        },
+        }
       );
     }
   }

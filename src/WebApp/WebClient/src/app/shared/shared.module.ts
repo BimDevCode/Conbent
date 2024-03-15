@@ -6,14 +6,12 @@ import { RouterModule } from '@angular/router';
 import { CardContentComponent } from './card-content/card-content.component';
 import { PageContentComponent } from './pager/page-content/page-content.component';
 import { PageHeaderComponent } from './pager/page-header/page-header.component';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DropdownButtonComponent } from './dropdown-button/dropdown-button.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CarouselComponent } from './carousel/carousel.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 import { ToastModule } from 'primeng/toast';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [ //Connected to core.module.ts
@@ -23,15 +21,11 @@ import { ToastModule } from 'primeng/toast';
     PageContentComponent,
     PageHeaderComponent,
     DropdownButtonComponent,
-
     CarouselComponent,
     SanitizeHtmlPipe
   ],
   imports: [
-    PaginationModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    CarouselModule.forRoot(),
-    ToastModule,
+    ToastModule,//.forRoot(),
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
@@ -39,13 +33,10 @@ import { ToastModule } from 'primeng/toast';
   ],
   exports: [ //Connected to core.module.ts
     NavbarComponent,
-    PaginationModule,
     PageContentComponent,
     PageHeaderComponent,
     ReactiveFormsModule,
-    CarouselModule,
     FooterComponent,
-    BsDropdownModule,
     ToastModule,
     CardContentComponent,
     DropdownButtonComponent,

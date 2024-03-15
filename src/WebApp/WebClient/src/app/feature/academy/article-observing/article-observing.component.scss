@@ -109,46 +109,14 @@
 //TODO: Jsoin with the same at academy component
 //Start todo
 
-mat-sidenav-container {
-  height:100%;
-  border: 0;
-  border-radius: 10px;
-  overflow: visible;
-  transition:none;
-}
+
 .side-container{
   padding-right: 1em;
   width: 100%;
 }
 // Move the content down so that it won't be hidden by the toolbar
-mat-sidenav {
-  overflow: visible;
-  transition:none;
-  @media screen and (min-width: 600px) {
-    padding-top: 4rem;
-  }
-  border: 0;
-  background-color: var(--main-background-color);
-  .entry{
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding:0.75rem;
-  }
-}
 
-// Move the content down so that it won't be hidden by the toolbar
-mat-sidenav-content{
-  margin-top: 4rem;
-  border: 0;
-  border-radius: 10px;
-  overflow: visible;
-  transition:none;
 
-  // @media screen and (min-width: 600px) {
-  //     padding-top: 4rem;
-  // }
-}
 .overlay-container {
     position: relative;
   }
@@ -166,9 +134,10 @@ z-index: 0;
 
 .toggle-button-container {
     position: relative;
-    z-index: 0;  // Ensure the button is above the sidenav
+    z-index: 0; 
     text-align: start;
 }
+
 .expanded {
     width: 20em;
 }

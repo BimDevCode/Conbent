@@ -1,0 +1,59 @@
+
+
+
+:root {
+  // https://www.color-hex.com/color/f3efe8
+  --main-background-color: transparent ;
+  --app-primary-color:#f7f5f1 ;
+  --app-text-color-non-in-use:#c5c4c0 ;
+  --background-complementary-light-color: #f7f5f1;
+  --background-complementary-blue-color: #e8ecf3;
+  --background-complementary-dark-color: #55595c;
+  --text-color: #c5c4c0;
+
+  --background-border-color: #DEE2E6;
+  --brown-color: #423629;
+  --brown-color-dark: #332a20;
+  --light-blue-color: #a7c2cc;
+  --blue-color: #5b7c99;
+  --green-color: #4b543b;
+  --green-color-dark: #323827;
+  --color-dark: black;
+  background-color: var(--main-background-color);
+}
+@import "assets/layout/styles/theme/md-dark-indigo/theme.css";
+@import "assets/layout/styles/layout/layout.scss";
+
+/* PrimeNG */
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeicons/primeicons.css";
+
+/* Demos */
+@import "assets/demo/styles/flags/flags.css";
+@import "assets/demo/styles/badges.scss";
+@import "assets/demo/styles/code.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+app-root {
+  scroll-behavior: smooth;
+  background-color: var(--main-background-color);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: transparent !important;
+}
+
+.safety-left{
+  left: 10vw;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+

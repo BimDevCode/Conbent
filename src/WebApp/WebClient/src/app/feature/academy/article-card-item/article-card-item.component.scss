@@ -3,21 +3,36 @@
     border-radius: 10px;
     background-color: var(--background-complementary-light-color);
     transition: transform 0.5s ease-in-out;
-    margin: 1rem;
+    margin-bottom: 1rem;
+    height: 8em;
+    margin-right: 1rem;
     &:hover{
         transform: scale(1.05);
     }
 }
-.card-container{
-    display: flex;
+
+.bg-main{
+    margin: 0;
+    padding-left: 1px;
+    padding-right: 1px;
+    background-color: var(--main-background-color);
 }
 .card-body{
-    background-color: transparent;
+    border-radius: 10px 0px 10px 10px;
+    background-color: var(--main-background-color);
+}
+.button-r{
+    display: flex;
+    justify-content: center;
 }
 .read-button{
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .custom-button{
@@ -61,3 +76,13 @@
         font-size: 1em !important;
     }
 }
+.card-row{
+}
+.image-banner{
+    overflow: hidden;
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+  }
+  }

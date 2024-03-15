@@ -7,6 +7,13 @@ import { ProjectPageComponent } from './project-page/project-page.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { MainPageModule } from './main-page/main-page.module';
 import { AcademyModule } from './academy/academy.module';
+import { ChartModule } from 'primeng/chart';
+import { MenuModule } from 'primeng/menu';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { StyleClassModule } from 'primeng/styleclass';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 
@@ -20,7 +27,15 @@ import { AcademyModule } from './academy/academy.module';
   imports: [
     CommonModule,
     AcademyModule,
-    MainPageModule
+    MainPageModule,
+    CommonModule,
+    FormsModule,
+    ChartModule,
+    MenuModule,
+    TableModule,
+    StyleClassModule,
+    PanelMenuModule,
+    ButtonModule
   ],
   exports: [
     AccountPageComponent,
