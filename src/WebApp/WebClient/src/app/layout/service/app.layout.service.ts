@@ -28,19 +28,19 @@ export class LayoutService {
         ripple: false,
         inputStyle: 'outlined',
         menuMode: 'static',
-        colorScheme: 'light',
-        theme: 'tailwind-light-conbent',
+        colorScheme: 'dark',
+        theme: 'md-dark-indigo',
         scale: 14,
     };
 
     config = signal<AppConfig>(this._config);
 
     state: LayoutState = {
-        staticMenuDesktopInactive: false,
+        staticMenuDesktopInactive: true,
         overlayMenuActive: false,
         profileSidebarVisible: false,
         configSidebarVisible: false,
-        staticMenuMobileActive: false,
+        staticMenuMobileActive: true,
         menuHoverActive: false,
     };
 
@@ -55,9 +55,7 @@ export class LayoutService {
     constructor(@Inject(DOCUMENT) private document: Document) {
         effect(() => {
             const config = this.config();
-            if (this.updateStyle(config)) {
-                this.changeTheme();
-            }
+          
             this.changeScale(config.scale);
             this.onConfigUpdate();
         });

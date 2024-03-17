@@ -16,6 +16,9 @@ import { TreeModule } from 'primeng/tree';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
 import { DataViewModule } from 'primeng/dataview';
+import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -26,17 +29,20 @@ import { DataViewModule } from 'primeng/dataview';
   ],
   imports: [
     CommonModule,
-    DataViewModule,
     TreeModule,
+    PaginatorModule,
     SharedModule,
     DialogModule,
     ConfirmPopupModule,
     TreeSelectModule,
+    ButtonModule,
     AcademyRoutingModule,
+    DropdownModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
+    DataViewModule,
     MatListModule,
   ],
   exports: [

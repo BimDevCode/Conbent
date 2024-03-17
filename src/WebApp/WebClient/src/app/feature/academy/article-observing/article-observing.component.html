@@ -1,21 +1,82 @@
-
 <!-- <div class="vertical-alignment">
     <button (click)="toggleMenu()" class="btn button-square custom-button-onlight-reward">{{buttonText}}</button>
 </div> -->
+
+<div class="grid">
+    <div class="col-12">
+        <div class="tittle">
+            <div class="text-center ">
+              <h1 class="section-header-title mt-1">SELECT ARTICLE</h1>
+            </div>
+          </div>
+        <p-dataView #dv [paginator]="false" [value]="articleEntities" filterBy="createDateTime" [sortField]="sortField" [sortOrder]="sortOrder" layout="list">
+            <ng-template pTemplate="header">
+                <div class="flex flex-column md:flex-row md:justify-content-between gap-2">
+                    <p-dropdown [options]="sortDateOptions" placeholder="Sort By Date"
+                        (onChange)="onSortChange($event)"></p-dropdown>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input type="search" pinputtext=""
+                            placeholder="Search by Name" class="p-inputtext p-component p-element" (input)="onFilter(dv, $event)"></span>
+                    <button pButton pRipple type="button" label="FILTER ARTICLES" (click)="toggleMenu()"></button>
+                    <!-- <p-dataViewLayoutOptions></p-dataViewLayoutOptions> -->
+                </div>
+            </ng-template>
+
+            <ng-template let-products pTemplate="listItem">
+                <div class="col-12" *ngFor="let item of products; let first = first">
+                    <app-article-card-item [article]="item" (nodeSelected)="nodeSelect($event)" ></app-article-card-item>
+                </div>
+            </ng-template>
+
+            <!-- TODO: add grid Item -->
+            <!-- <ng-template let-products pTemplate="gridItem">
+                <div class="grid grid-nogutter">
+                    <div class="col-12 md:col-4" *ngFor="let product of products">
+                        <div class="card m-3 border-1 surface-border">
+                            <div class="flex flex-wrap gap-2 align-items-center justify-content-between mb-2">
+                                <div class="flex align-items-center">
+                                    <i class="pi pi-tag mr-2"></i>
+                                    <span class="font-semibold">{{product.category}}</span>
+                                </div>
+                                <span
+                                    [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+                            </div>
+                            <div class="flex flex-column align-items-center text-center mb-3">
+                                <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.name"
+                                    class="w-9 shadow-2 my-3 mx-0" />
+                                <div class="text-2xl font-bold">{{product.name}}</div>
+                                <div class="mb-3">{{product.description}}</div>
+                            </div>
+                            <div class="flex align-items-center justify-content-between">
+                                <span class="text-2xl font-semibold">${{product.price}}</span>
+                                <p-button icon="pi pi-shopping-cart"
+                                    [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> -->
+        </p-dataView>
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalCount" [rowsPerPageOptions]="[7, 14, 28, 56]" ></p-paginator>
+    </div>
+</div>
+
 <div class="overlay-container">
     <div *ngIf="tags.length> 0 && technologies.length > 0">
-        <p-dialog header="Header" [visible]="visible" [modal]="true" [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+        <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50rem', height: '50rem', maxHeight: '50rem'}"
+            [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
             <ng-template pTemplate="header">
-                <div class="side-container">
-                    <section >
-                      <div class="">
-                        <h5 class="brown-text-title">Select Tree Tag</h5>
-                      </div>
-                        <div class="justify-content-center tree-view-container" >
+                <div class="side-container" style="max-height: 50rem;">
+                    <section>
+                        <div class="">
+                            <h5 class="brown-text-title">Select Tree Tag</h5>
+                        </div>
+                        <div class="justify-content-center tree-view-container">
                             <p-toast [baseZIndex]="100" [autoZIndex]="true">
                                 <ng-template let-message pTemplate="headless" let-closeFn="closeFn">
                                     <section class="flex p-3 gap-3 w-full toast-card" style="border-radius: 10px; ">
-                                        <i class="pi pi-cloud-upload text-2xl"></i>
+                                        
                                         <div class="flex flex-column gap-3 w-full">
                                             <p class="m-0 font-semibold text-base text-brown">{{ message.summary }}</p>
                                             <p class="m-0 text-base text-700 text-brown">{{ message.detail }}</p>
@@ -23,95 +84,13 @@
                                     </section>
                                 </ng-template>
                             </p-toast>
-                            <p-tree [value]="nodes" class="w-full" selectionMode="single"
-                                [propagateSelectionUp]="false" [propagateSelectionDown]="false"
-                                [selection]="selectedNodes"
-                                (onNodeSelect)="nodeSelect($event)"(onNodeUnselect)="nodeUnselect($event)"></p-tree>
+                            <p-tree [value]="nodes" class="w-full" selectionMode="single" [propagateSelectionUp]="false"
+                                [propagateSelectionDown]="false" [selection]="selectedNodes"
+                                (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"></p-tree>
                         </div>
-                        <div class="">
-                            <h5 class="brown-text-title">Sort</h5>
-                        </div>
-                        <app-dropdown-button
-                            [items]="sortOptions"
-                            (selectedItemChange)="onSortSelected($event)">Loading...</app-dropdown-button>
-                        <div class="mt-4">
-                            <h5 class="brown-text-title">Tecnologies</h5>
-                        </div>
-                        <ul class="list-group list-group-custom my-3">
-                            <li class="list-group-item"
-                                *ngFor="let technology of technologies"
-                                [class.active]="technology.id === articleParameters.technologyId"
-                                [value]="technology.id"
-                                (click)="onTechnologySelected(technology.id)">{{technology.name}}</li>
-                        </ul>
-                        <!-- <h5 class="text-warning ms-3">Tags</h5>
-                        <ul class="list-group my-3">
-                            <li class="list-group-item"
-                                *ngFor="let tag of tags"
-                                [class.active]="tag.id === articleParameters.tags"
-                                [value]="tag.id"
-                                (click)="onTypeSelected(tag.id)">{{tag.name}}</li>
-                        </ul> -->
                     </section>
-                    </div>
+                </div>
             </ng-template>
         </p-dialog>
-        <div class=" d-flex justify-content-between align-items-center pb-2">
-            <app-page-header
-                [totalCount]="totalCount"
-                [pageIndex]="articleParameters.pageIndex"
-                [pageSize]="articleParameters.pageSize">
-            </app-page-header>
-
-            <div class="d-flex mt-2">
-                <input (keyup.enter)="onSearch()" type="text" placeholder="Search text" class="custom-text-input me-2" #search>
-                <button (click)="onSearch()" class="btn custom-button-onlight mx-2 burron-border">Search</button>
-                <button (click)="onReset()" class="btn custom-button-onlight burron-border" >Reset</button>
-            </div>
-        </div>
-
-        <!-- <div class="row row-cols-3 g-3 mb-4">
-            <div class="col" *ngFor="let article of articleEntities">
-                <app-article-card-item [article]="article"></app-article-card-item>
-            </div>
-
-        </div> -->
-        <div>
-            <p-dataView #dv [value]="articleEntities" [rows]="6" [paginator]="false">
-                <ng-template let-products pTemplate="list">
-                    <div class="grid grid-nogutter">
-                        <div *ngFor="let item of products; let first = first">
-                            <app-article-card-item [article]="item"></app-article-card-item>
-                            <!-- <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4" [ngClass]="{ 'border-top-1 surface-border': !first }">
-                                <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + item.image" [alt]="item.name" />
-                                <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
-                                    <div class="flex flex-column align-items-center sm:align-items-start gap-3">
-                                        <div class="text-2xl font-bold text-900">{{ item.name }}</div>
-                                        <div class="flex align-items-center gap-3">
-                                            <span class="flex align-items-center gap-2">
-                                                <i class="pi pi-tag"></i>
-                                                <span class="font-semibold">{{ item.category }}</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-                                        <span class="text-2xl font-semibold">{{ '$' + item.price }}</span>
-                                        <button pButton icon="pi pi-shopping-cart" class="md:align-self-end mb-2 p-button-rounded" [disabled]="item.inventoryStatus === 'OUTOFSTOCK'"></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </ng-template>
-            </p-dataView>
-        </div>
-        <div class="d-flex justify-content-center" *ngIf="totalCount > 0">
-            <app-page-content
-                [totalCount]="totalCount"
-                [pageSize]="articleParameters.pageSize"
-                [pageIndex]="articleParameters.pageIndex"
-                (pageChanged)="onPageChanged($event)"
-            ></app-page-content>
-        </div>
     </div>
 </div>

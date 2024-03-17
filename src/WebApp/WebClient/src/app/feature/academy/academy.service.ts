@@ -26,6 +26,7 @@ export class AcademyService {
   pagination?: Pagination<ArticleEntity[]>;
   articleParameters = new ArticleSpecParams();
   articleCache = new Map<string, Pagination<ArticleEntity[]>>();
+  tagsDict!: { [key: string]: number; };
 
   constructor(private http: HttpClient) { }
 
@@ -70,7 +71,7 @@ export class AcademyService {
   }
 
   getTreePathNodes(treePaths: string[],tags: Tag[]): TreeNode[] {
-    const tagsDict = tags.reduce((dict, tag) => {
+    this.tagsDict = tags.reduce((dict, tag) => {
       dict[tag.name] = tag.id;
       return dict;
     }, {} as { [key: string]: number });
@@ -88,7 +89,7 @@ export class AcademyService {
       for (let part of pathParts) {
         part = part.replace('.md','')
         let childNode = currentSubTree.children?.find(child => child.label === part);
-        let dataNode = tagsDict[part] ?? part;
+        let dataNode = this.tagsDict[part] ?? part;
         if (!childNode) {
           childNode = {
             label: part,
@@ -141,6 +142,13 @@ export class AcademyService {
     );
   }
 
+  setTags(article: ArticleEntity) : void {
+    let parts = article.treePath.split('\\');
+    if (parts[parts.length - 1].endsWith('.md')) {
+      parts.pop();
+    }
+    article.tags = parts;
+  }
   getPaths() : Observable<string[]> {
     if (this.paths.length > 0) return of(this.paths);
     return this.http.get<string[]>(this.baseUrl + this.pathsControllerUrl).pipe(

@@ -5,5 +5,7 @@ namespace Conbent.Article.Core.Specifications;
 
 public class ArticlesWithFiltersForCountSpecification(ArticleSpecParams articleParams)
     : BaseSpecification<ArticleEntity>(x =>
-        (string.IsNullOrEmpty(articleParams.Search) || x.Name.ToLower().Contains(articleParams.Search)) &&
-        (!articleParams.TechnologyId.HasValue || x.TechnologyId == articleParams.TechnologyId));
+    (string.IsNullOrEmpty(articleParams.Search) || x.Name.ToLower().Contains(articleParams.Search)) &&
+    (!articleParams.TechnologyId.HasValue || x.TechnologyId == articleParams.TechnologyId) && 
+    (!articleParams.TagId.HasValue || (x.Tags!.FirstOrDefault(a => a.Id == articleParams.TagId) != null))
+);

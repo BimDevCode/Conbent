@@ -6,8 +6,7 @@ public class ArticlesWithTechnologySpecification : BaseSpecification<ArticleEnti
 {
     public ArticlesWithTechnologySpecification(ArticleSpecParams articleParams)
         : base(x =>
-        (string.IsNullOrEmpty(articleParams.Search) || x.Texts!.FirstOrDefault(t =>
-            t.Content == articleParams.Search) != null) &&
+        (string.IsNullOrEmpty(articleParams.Search) || x.Name.ToLower().Contains(articleParams.Search)) &&
         (!articleParams.TechnologyId.HasValue || x.TechnologyId == articleParams.TechnologyId) && 
         (!articleParams.TagId.HasValue || (x.Tags!.FirstOrDefault(a => a.Id == articleParams.TagId) != null))
         )
@@ -21,11 +20,11 @@ public class ArticlesWithTechnologySpecification : BaseSpecification<ArticleEnti
         if (string.IsNullOrEmpty(articleParams.Sort)) return;
         switch (articleParams.Sort)
         {
-            case "priceAsc":
-                AddOrderBy(p => p.RelevantScore);
+            case "dateAsc":
+                AddOrderBy(p => p.CreateDateTime);
                 break;
-            case "priceDesc":
-                AddOrderByDescending(p => p.RelevantScore);
+            case "dateDesc":
+                AddOrderByDescending(p => p.CreateDateTime);
                 break;
             default:
                 AddOrderBy(n => n.Name);

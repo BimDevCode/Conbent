@@ -1965,12 +1965,12 @@
     border-radius: 4px;
   }
   .p-button:not(:disabled):hover {
-    background: rgba(159, 168, 218, 0.92);
+    background: var(--light-blue-color);
     color: #121212;
     border-color: transparent;
   }
   .p-button:not(:disabled):active {
-    background: rgba(159, 168, 218, 0.68);
+    background: var(--blue-color );
     color: #121212;
     border-color: transparent;
   }
@@ -4489,7 +4489,7 @@
     right: -1.25rem;
   }
   .p-overlaypanel .p-overlaypanel-close:enabled:hover {
-    background: rgba(159, 168, 218, 0.92);
+    background: var(--light-blue-color);
     color: #121212;
   }
   .p-overlaypanel:after {
@@ -4611,12 +4611,12 @@
   }
 
   .p-fileupload-choose:not(.p-disabled):hover {
-    background: rgba(159, 168, 218, 0.92);
+    background: var(--light-blue-color);
     color: #121212;
     border-color: transparent;
   }
   .p-fileupload-choose:not(.p-disabled):active {
-    background: rgba(159, 168, 218, 0.68);
+    background: var(--blue-color);
     color: #121212;
     border-color: transparent;
   }
@@ -6427,7 +6427,7 @@
     background: rgba(159, 168, 218, 0.76);
   }
   .p-button:enabled:active {
-    background: rgba(159, 168, 218, 0.68);
+    background: var(--light-blue-color);
   }
   .p-button .p-ink {
     background-color: rgba(255, 255, 255, 0.32);

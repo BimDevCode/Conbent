@@ -141,6 +141,7 @@ for details on configuring this project to bundle and minify static web assets.
 .btn svg text{
   font-family: 'Sintony', sans-serif;
   font-size: 16px;
+  fill: var(--app-primary-color);
   font-weight: 200;
 }
 
@@ -150,6 +151,7 @@ for details on configuring this project to bundle and minify static web assets.
   font-weight: 200;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
+  fill: var(--app-primary-color);
 }
 
 .btn-dark:hover svg text{
@@ -197,14 +199,14 @@ for details on configuring this project to bundle and minify static web assets.
 }
 .btn.active {
   border-radius: 10px;
-  background-color: var(--brown-color);
-  fill: var(--app-primary-color);
+  background-color: var(--surface-ground);
   border: 0px;
 }
 
 .company-name{
   position: relative;
   z-index: 1;
+  color: var(--app-primary-color);
   font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2rem;
 }
@@ -218,4 +220,3 @@ for details on configuring this project to bundle and minify static web assets.
   height: 10rem;
   width: 100%;
 }
-

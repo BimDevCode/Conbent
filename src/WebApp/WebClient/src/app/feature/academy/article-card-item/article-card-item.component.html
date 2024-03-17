@@ -1,36 +1,37 @@
-<div #card class="card" *ngIf="article">
-    <div class="card-container">
-        <div class="row card-row">
-            <div class="col-8">
-                <div class="card-body d-flex flex-column">
-                    <h1 class="card-title">
-                        {{article.name}}
-                    </h1>
+<div class="align-items-center p-2 ">
+    <div class="card p-2 grid" *ngIf="article">
+            <div class="md:col-5">
+                <h1 class="card-title">
+                    {{article.name}}
+                </h1>
+                <div>
                     <span class="mb-2 relevant-text">Relevant position: {{article.relevantScore | number}}</span>
+                </div>
+                <div>
                     <span class="mb-2 relevant-text">Date: {{article.createDateTime}}</span>
-                    <!-- <span class="mb-2 relevant-text text-preview">
-                        <div class="text-part" [innerHTML]="article.texts.join('') | sanitizeHtml"></div>
-                    </span> -->
                 </div>
-            </div>
-           
-            <div class="col-2 bg-main">
-                <div class="image-banner">
-                    <img src="{{imagePath}}" alt="{{article.name}}" >
-                </div>
-            </div>
-            <div class="col-2 button-r">
-                <div class="read-button" style="cursor: pointer;">
-                    <!-- <img src="{{product.pictureUrl}}" alt="{{article.name}}" class="img-fluid bg-info"> -->
-                    <div class="hover-overlay">
-                        <!-- <button (click)="addItemToBasket()"  class="btn btn-primary fa fa-shopping-cart me-2"></button>-->
-                        <button routerLink="/academy/{{article.id}}" class="btn custom-button">Read</button>
+                <div class="flex flex-wrap gap-1 align-items-start justify-content-start mb-1 mt-2">
+                    <div class="flex align-items-center" *ngFor="let tag of article.tags;">
+                        <p-button styleClass="p-button-link p-1"  class="ml-1" label="{{tag}}" icon="pi pi-tag mr-2" (onClick)="onTagSelected($event)"></p-button>
                     </div>
                 </div>
             </div>
-        </div>
-      
-       
+            <div class="md:col-4">
+                <div  style="max-height: 100px; overflow: hidden;">
+                    <div class="text-part" [innerHTML]="article.texts.join('') | sanitizeHtml"></div>
+                </div>
+                
+            </div>
+            <div class="md:col-2 m-0 p-1" style="min-width: 4em;">
+                <div class="image-banner">
+                    <img src="https://picsum.photos/200/200/" alt="{{article.name}}" >
+                </div>
+            </div>
+            <div class="md:col-1 m-0 p-1" style="min-width: 4em; ">
+                <div class="read-button" style="cursor: pointer;">
+                    <button #card  pButton pRipple type="button" routerLink="/academy/{{article.id}}" icon="pi pi-angle-double-right" class="p-button-rounded"></button>
+                </div>
+            </div>
     </div>
-   
 </div>
+

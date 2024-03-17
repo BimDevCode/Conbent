@@ -1,84 +1,48 @@
-<div class="image-banner">
-  <img src="{{cookbookImage}}" class="img-fluid" alt="Responsive image">
+<div class="card mt-4 mb-4">
+  <div class="banner-container">
+    <div class="image-banner">
+      <img src="{{cookbookImage}}" class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
+  <div class="description-text text-center">
+    <app-card-content class="block" colorBackground="#5b7c99" borderRadius="10,10,10,10"
+      title="CODE COOKBOOK"
+      description="Sit dolore duis commodo et cillum Lorem Lorem aliquip ex deserunt. Do officia elit commodo non voluptate nulla ex cillum. Commodo est tempor est proident commodo excepteur Lorem nulla exercitation Lorem id ipsum minim dolore. Deserunt fugiat nulla nostrud deserunt. Laboris ea cupidatat laborum dolore. Aute sit occaecat eiusmod pariatur consectetur consectetur nisi ex qui ipsum dolor et irure sint. Officia enim dolor voluptate et quis commodo velit.">
+      </app-card-content>
+  </div>
 </div>
-<div class="container mt-1 ">
-  <!-- <div class="carousel-container">
-    <app-carousel></app-carousel>
-  </div> -->
-  <div class="description-text">
-      <app-card-content class="block" colorBackground="#5b7c99" borderRadius="10,10,10,10"
-        title="CODE COOKBOOK"
-        description="Sit dolore duis commodo et cillum Lorem Lorem aliquip ex deserunt. Do officia elit commodo non voluptate nulla ex cillum. Commodo est tempor est proident commodo excepteur Lorem nulla exercitation Lorem id ipsum minim dolore. Deserunt fugiat nulla nostrud deserunt. Laboris ea cupidatat laborum dolore. Aute sit occaecat eiusmod pariatur consectetur consectetur nisi ex qui ipsum dolor et irure sint. Officia enim dolor voluptate et quis commodo velit.">
-        </app-card-content>
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="vertical-alignment float-right">
-        <button (click)="toggleSort()" class="toggle-button btn custom-button-onlight-reward">FILTER ARTICLES</button>
-      </div>
-    </div>
-    <div class="col">
-      <div class="text-center">
-        <h1 class="section-header-title" >
-          SELECT ARTICLE
-        </h1>
-      </div>
-    </div>
-    <div class="col">
-      <div class="vertical-alignment">
-        <button (click)="toggleMenu()" class="toggle-button btn custom-button-light">{{buttonText}}</button>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-2">
-    <router-outlet></router-outlet>
-    <div>
-      <div *ngIf="!isCollapsed">
-        <div class="p-4 mb-3 rounded about-posts">
-          <h4 class="fst-italic">About Posts</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-        </div>
-        <div class="p-4 mb-3 rounded about-posts">
-          <h4 class="fst-italic">Recent posts</h4>
-          <ul class="list-unstyled">
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Example blog post title</h6>
-                  <small class="text-body-secondary">January 15, 2024</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">This is another blog post title</h6>
-                  <small class="text-body-secondary">January 14, 2024</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                  <small class="text-body-secondary">January 13, 2024</small>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="p-4">
-          <h4 class="fst-italic">Elsewhere</h4>
-          <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
-          </ol>
+<div class="grid md:ml-8 md:mr-8">
+  <div class="col-12 md:col-8">
+    <div class="card ">
+      
+      <div class="mt-1">
+        <div class="row mt-2">
+          <router-outlet></router-outlet>
         </div>
       </div>
     </div>
   </div>
+  <div class="col-12 md:col-4 ">
+    <div class="card p-2">
+      <div class="p-4 mb-3 rounded about-posts">
+        <h4 class="fst-italic">About Posts</h4>
+        <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+      </div>
+      <div class="p-4 mb-3 rounded about-posts">
+        <h4 class="fst-italic">Recent posts</h4>
+        <app-article-card-item [article]="itemArticle1"></app-article-card-item>
+        <app-article-card-item [article]="itemArticle2"></app-article-card-item>
+        <app-article-card-item [article]="itemArticle3"></app-article-card-item>
+      </div>
+      <div class="p-4">
+        <h4 class="fst-italic">Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
 </div>

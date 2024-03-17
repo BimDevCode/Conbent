@@ -15,8 +15,8 @@
 		var $canvas = $(canvas),
 			context = canvas.getContext('2d'),
 			grd = context.createLinearGradient(0, 0, 200, 0);
-			grd.addColorStop(0, "#423629");
-			grd.addColorStop(1, "#423629");
+			grd.addColorStop(0, "#f7f5f1"); //"var(--app-primary-color)");
+			grd.addColorStop(1, "#f7f5f1");
 			defaults = {
 				star: {
 					color: grd,
@@ -209,12 +209,12 @@
 })($, window);
 
 // Init plugin
-$('canvas').constellation({
+$('.conteiner-canvas').constellation({
 	star: {
 		width: 3
 	},
 	line: {
-		color: '#423629'
+		color: '#f7f5f1'
 	},
 	length: (window.innerWidth / 6),
 	radius: (window.innerWidth / 5)

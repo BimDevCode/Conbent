@@ -11,7 +11,6 @@ import { DropdownButtonComponent } from './dropdown-button/dropdown-button.compo
 import { CarouselComponent } from './carousel/carousel.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 import { ToastModule } from 'primeng/toast';
-import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [ //Connected to core.module.ts

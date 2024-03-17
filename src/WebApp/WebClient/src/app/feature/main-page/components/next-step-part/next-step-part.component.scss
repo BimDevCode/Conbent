@@ -18,10 +18,10 @@
     border-radius: 10px;
     background-color: var(--blue-color);
     h2{
-        color: var(--main-background-color)
+        color: var(--app-primary-color)
     }
     p{
-        color: var(--main-background-color)
+        color: var(--app-primary-color)
     }
     border: 1px solid var(--background-border-color);
     cursor: pointer;
@@ -29,7 +29,9 @@
 
 .next-step-container{
 }
-
+.custom-rounded{
+    border-radius: 4px;
+}
 .section-header-title{
     font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
     font-size: 2rem;
@@ -37,7 +39,7 @@
   }
 
   .fade-in-element-left {
-    opacity: 1; 
+    opacity: 1;
   }
   .fade-in-element-right {
     opacity: 1; 

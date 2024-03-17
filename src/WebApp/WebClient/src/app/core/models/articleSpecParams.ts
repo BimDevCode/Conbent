@@ -1,5 +1,5 @@
 export class ArticleSpecParams {
-  pageSize: number = 6;
+  pageSize: number = 14;
   sort: string = 'name';
   search: string ='';
   technologyId: number = 0;

@@ -4,6 +4,7 @@ import { LayoutService } from "./service/app.layout.service";
 
 @Component({
     selector: 'app-topbar',
+    styleUrl: './app.topbar.component.scss',
     templateUrl: './app.topbar.component.html'
 })
 export class AppTopBarComponent {
@@ -16,5 +17,7 @@ export class AppTopBarComponent {
 
     @ViewChild('topbarmenu') menu!: ElementRef;
 
-    constructor(public layoutService: LayoutService) { }
+    constructor(public layoutService: LayoutService) {
+        
+     }
 }

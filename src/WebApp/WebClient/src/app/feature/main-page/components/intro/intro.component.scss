@@ -63,8 +63,12 @@
 }
 
 .intro-conteiner__about {
+
   span{
+      color: var(--app-primary-color);
     margin: 3rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -76,10 +80,11 @@
   position: absolute;
   border-radius: 10px;
   display: block;
-  background-color: var(--background-complementary-light-color);
+  background-color: var(--surface-card);
 }
 
 .intro-conteiner-slogan__about {
+  color: var(--app-primary-color);
   border-radius: 10px;
   margin: 0em;
 }

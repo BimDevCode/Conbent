@@ -2,6 +2,7 @@ import { BaseEntity } from "./contractors/BaseEntity";
 
 export interface ArticleEntity {
   texts: string[];
+  tags: string[];
   relevantScore: number;
   treePath: string ;
   createDateTime : string ;
@@ -9,6 +10,7 @@ export interface ArticleEntity {
 
 export class ArticleEntity implements ArticleEntity, BaseEntity {
   id: number = 0;
+  tags: string[] = ['C#', 'Dotnetcore', 'Conbent'];
   name: string = 'ArticleEntity';
   treePath: string = 'Conbent/Dotnetcore';
   createDateTime : string = Date.now().toString();

@@ -2,7 +2,7 @@
 .menu-trigger {
     text-align: center;
     cursor: pointer;
-    color: var(--main-background-color);
+    color: var(--app-primary-color);
     padding: 10px;
     display: flex;
     border-top-right-radius: 10px;
@@ -18,7 +18,7 @@
   }
   
 .menu {
-    border-bottom: 1px solid  var(--main-background-color);
+    border-bottom: 1px solid  var(--app-primary-color);
     border-top-right-radius: 0px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 0px;
@@ -29,11 +29,11 @@
 .menu-item {
     text-align: center;
     padding: 15px;
-    border-bottom: 1px solid var(--main-background-color);
+    border-bottom: 1px solid var(--app-primary-color);
     max-width: 300px;
     margin: auto;
     width: 100%;
-    color: var(--main-background-color);
+    color: var(--app-primary-color);
     cursor: pointer;
     .menu-item:last-child {
         border-bottom: none;
