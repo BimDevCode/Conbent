@@ -4,10 +4,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Conbent.Identity.API.Data.Migrations
+namespace Identity.API.Data
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class UserContextInitial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

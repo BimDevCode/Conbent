@@ -16,10 +16,16 @@
     <SpaRoot>WebClient</SpaRoot>
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
-
+    
   <ItemGroup>
-    <None Remove="WebClient\assets\academy-page\ContentTree.js" />
-    <None Remove="WebClient\assets\academy-page\prism.js" />
+    <Compile Remove="Client\**" />
+    <Compile Remove="WebClient\assets\**" />
+    <Content Remove="Client\**" />
+    <Content Remove="WebClient\assets\**" />
+    <EmbeddedResource Remove="Client\**" />
+    <EmbeddedResource Remove="WebClient\assets\**" />
+    <None Remove="WebClient\**" />
+    <None Remove="WebClient\assets\**" />
   </ItemGroup>
   <!--<PropertyGroup>
       <DockerfileContext>..\..\..</DockerfileContext>
@@ -29,10 +35,7 @@
       <PublishProfile>DefaultContainer</PublishProfile>
       <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:8.0</ContainerBaseImage>
       <ContainerImageTag>1.0.0</ContainerImageTag>
-      
-      
-      
-      
+
   </PropertyGroup>
     <ItemGroup>
         <ContainerEnvironmentVariable Include="ASPNETCORE_ENVIRONMENT" Value="Development" />
@@ -50,37 +53,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
   </ItemGroup>
 
-  <ItemGroup><!-- Don't publish the SPA source files, but do show them in the project files list
-  <Compile Remove="Client\.vscode\**" />
-  <Compile Remove="Client\node_modules\**" />
-  <Content Remove="$(SpaRoot)**" />
-  <Content Remove="Client\.vscode\**" />
-  <Content Remove="Client\node_modules\**" />
-  <EmbeddedResource Remove="Client\.vscode\**" />
-  <EmbeddedResource Remove="Client\node_modules\**" />
-  <None Remove="$(SpaRoot)**" />
-  <None Remove="Client\.vscode\**" />
-  <None Remove="Client\node_modules\**" />
-  <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />-->
-  
-    <Folder Include="Client\ssl\" />
-  </ItemGroup>
-
   <ItemGroup>
     <ContainerEnvironmentVariable Include="ASPNETCORE_HTTPS_PORTS">
       <Value>8081</Value>
     </ContainerEnvironmentVariable>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="WebClient\assets\academy-page\ContentTree.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="WebClient\assets\academy-page\prism.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

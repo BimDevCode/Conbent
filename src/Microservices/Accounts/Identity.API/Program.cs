@@ -53,3 +53,5 @@ app.UseAuthorization();
 app.MapDefaultControllerRoute();
 
 app.Run();
+//dotnet ef migrations add UserContextInitial -c ApplicationDbContext -o Data
+//dotnet ef database update  -c ApplicationDbContext 

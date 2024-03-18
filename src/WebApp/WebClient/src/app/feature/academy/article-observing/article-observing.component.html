@@ -58,7 +58,7 @@
                 </div>
             </ng-template> -->
         </p-dataView>
-        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalCount" [rowsPerPageOptions]="[7, 14, 28, 56]" ></p-paginator>
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalCount" ></p-paginator>
     </div>
 </div>
 
@@ -67,29 +67,33 @@
         <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50rem', height: '50rem', maxHeight: '50rem'}"
             [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
             <ng-template pTemplate="header">
-                <div class="side-container" style="max-height: 50rem;">
-                    <section>
-                        <div class="">
-                            <h5 class="brown-text-title">Select Tree Tag</h5>
-                        </div>
-                        <div class="justify-content-center tree-view-container">
-                            <p-toast [baseZIndex]="100" [autoZIndex]="true">
-                                <ng-template let-message pTemplate="headless" let-closeFn="closeFn">
-                                    <section class="flex p-3 gap-3 w-full toast-card" style="border-radius: 10px; ">
-                                        
-                                        <div class="flex flex-column gap-3 w-full">
-                                            <p class="m-0 font-semibold text-base text-brown">{{ message.summary }}</p>
-                                            <p class="m-0 text-base text-700 text-brown">{{ message.detail }}</p>
-                                        </div>
-                                    </section>
-                                </ng-template>
-                            </p-toast>
-                            <p-tree [value]="nodes" class="w-full" selectionMode="single" [propagateSelectionUp]="false"
-                                [propagateSelectionDown]="false" [selection]="selectedNodes"
-                                (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"></p-tree>
-                        </div>
-                    </section>
+                <div class="">
+                    <h5 class="brown-text-title">Select Tree Tag</h5>
+                    <p class="brown-text-title" style="font-size: 1em;">*selected tag instaly apply to filter</p>
                 </div>
+            </ng-template>
+            <div class="side-container" style="max-height: 50rem;">
+                <section>
+                    <div class="justify-content-center tree-view-container">
+                        <p-toast [baseZIndex]="100" [autoZIndex]="true">
+                            <ng-template let-message pTemplate="headless" let-closeFn="closeFn">
+                                <section class="flex p-3 gap-3 w-full toast-card" style="border-radius: 10px; ">
+                                    <div class="flex flex-column gap-3 w-full">
+                                        <p class="m-0 font-semibold text-base text-brown">{{ message.summary }}</p>
+                                        <p class="m-0 text-base text-700 text-brown">{{ message.detail }}</p>
+                                    </div>
+                                </section>
+                            </ng-template>
+                        </p-toast>
+                        <p-tree [value]="nodes" class="w-full" selectionMode="single" [propagateSelectionUp]="false"
+                            [propagateSelectionDown]="false" [selection]="selectedNodes"
+                            (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"
+                            ></p-tree>
+                    </div>
+                </section>
+            </div>
+            <ng-template pTemplate="footer">
+                <p-button icon="pi pi-check" (click)="visible = false" label="Close" pAutoFocus [autofocus]="true"></p-button>
             </ng-template>
         </p-dialog>
     </div>

@@ -1,6 +1,6 @@
 <div class="align-items-center p-2 ">
     <div class="card p-2 grid" *ngIf="article">
-            <div class="md:col-5">
+            <div class="col-8 md:col-4">
                 <h1 class="card-title">
                     {{article.name}}
                 </h1>
@@ -16,18 +16,18 @@
                     </div>
                 </div>
             </div>
-            <div class="md:col-4">
-                <div  style="max-height: 100px; overflow: hidden;">
+            <div class="md:col-5">
+                <div style="height: 100%;max-height: 100px; overflow: hidden;">
                     <div class="text-part" [innerHTML]="article.texts.join('') | sanitizeHtml"></div>
                 </div>
                 
             </div>
-            <div class="md:col-2 m-0 p-1" style="min-width: 4em;">
+            <div class="col-2 md:col-2 m-0 p-1" style="min-width: 4em;">
                 <div class="image-banner">
                     <img src="https://picsum.photos/200/200/" alt="{{article.name}}" >
                 </div>
             </div>
-            <div class="md:col-1 m-0 p-1" style="min-width: 4em; ">
+            <div class="col-2 md:col-1 m-0 p-1" style="min-width: 4em; ">
                 <div class="read-button" style="cursor: pointer;">
                     <button #card  pButton pRipple type="button" routerLink="/academy/{{article.id}}" icon="pi pi-angle-double-right" class="p-button-rounded"></button>
                 </div>

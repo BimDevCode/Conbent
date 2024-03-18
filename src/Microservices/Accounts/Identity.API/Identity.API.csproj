@@ -42,13 +42,14 @@
     <None Include="Views\_ViewImports.cshtml" />
     <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
-
+    <ItemGroup>
+        <Compile Include="..\..\..\Infrastructure\Shared\ActivityExtensions.cs" Link="Extensions\ActivityExtensions.cs" />
+        <Compile Include="..\..\..\Infrastructure\Shared\MigrateDbContextExtensions.cs" Link="Extensions\MigrateDbContextExtensions.cs" />
+    </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Shared\MigrateDbContextExtensions.cs" Link="Extensions\MigrateDbContextExtensions.cs" />
-    <Compile Include="..\Shared\ActivityExtensions.cs" Link="Extensions\ActivityExtensions.cs" />
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\ServiceDefaults\Conbent.Service.Defaults.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\ServiceDefaults\Conbent.Service.Defaults.csproj" />
   </ItemGroup>
 </Project>
