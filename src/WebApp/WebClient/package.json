@@ -27,6 +27,7 @@
     "autoprefixer": "^10.4.17",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.2",
+    "chartjs": "^0.3.24",
     "compass": "^0.1.1",
     "compass-mixins": "^0.12.12",
     "express": "^4.18.2",
