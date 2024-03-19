@@ -205,7 +205,7 @@ body {
     margin: 0;
 }
 
-.Conbent-header .logo-header {
+.Conbent-header {
     color: black;
     margin-right: auto;
 }
@@ -238,7 +238,7 @@ body {
     align-items: baseline;
 }
 
-.Conbent-footer .logo-footer {
+.Conbent-footer  {
     color: white;
     margin-right: auto;
 }

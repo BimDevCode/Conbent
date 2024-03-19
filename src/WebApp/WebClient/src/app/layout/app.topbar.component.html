@@ -95,6 +95,24 @@
             <i class="pi pi-user"></i>
             <span>Profile</span>
         </button>
+        <div style="text-align:center">
+            <h1>Sample Angular Client</h1>
+          </div>
+          <div>
+            <button (click)="onLogin()">Login</button>
+            <button (click)="onCallAPI()">Call API</button>
+            <button (click)="onRenewToken()">Renew Token</button>
+            <button (click)="onLogout()">Logout</button>
+          </div>
+          <pre>{{ currentUserJson }}</pre>
+          <div>
+            <h2>Messages</h2>
+            <ul>
+              @for (msg of messages; track msg) {
+                <li>{{ msg }}</li>
+              }
+            </ul>
+          </div>
         <!-- <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
             <i class="pi pi-cog"></i>
             <span>Settings</span>

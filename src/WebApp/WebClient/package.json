@@ -35,6 +35,8 @@
     "imagesloaded": "^5.0.0",
     "jquery": "^3.7.1",
     "modernizr": "^3.13.0",
+    "oidc-client-ts": "^3.0.1",
+    "polyfills": "^2.1.1",
     "postcss": "^8.4.35",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
