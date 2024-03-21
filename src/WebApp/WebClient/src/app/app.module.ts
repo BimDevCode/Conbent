@@ -18,6 +18,7 @@ import { PhotoService } from './demo/service/photo.service';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { MainPageComponent } from './feature/main-page/main-page.component';
 import { app } from '../../server';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { app } from '../../server';
     BrowserModule,
     AppRoutingModule,
     AppLayoutModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     CoreModule
   ],

@@ -19,6 +19,7 @@ import { DataViewModule } from 'primeng/dataview';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule } from 'primeng/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PaginatorModule } from 'primeng/paginator';
   ],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     TreeModule,
     PaginatorModule,
     SharedModule,
