@@ -7,34 +7,30 @@ import { DetailProjectPageComponent } from './feature/detail-project-page/detail
 import { SignInComponent } from './feature/sign-in/sign-in.component';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./layout/app.layout.component";
-import { MainPageModule } from './feature/main-page/main-page.module';
 import { SigninCallbackComponent } from './core/components/signin-callback/signin-callback.component';
 
 const routes: Routes = [
   { path: '', component: AppLayoutComponent,
-  children: [
+    children: [
       { path: '', loadChildren: () => import('./feature/main-page/main-page.module').then(m => m.MainPageModule) },
       { path: 'academy', loadChildren: () => import('./feature/academy/academy.module').then(m => m.AcademyModule) },
+      { path: 'project', component: ProjectPageComponent},
       { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
-      { path: 'signin-callback', component: SigninCallbackComponent },
+      { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
+      { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule) },
+      { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) },
+      { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
+      { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
+      { path: 'notfound', component: NotfoundComponent},
+      { path: 'signin-callback', component: SigninCallbackComponent }
   ]},
   { path: 'home', component: MainPageComponent },
   { path: 'academy', loadChildren: () => import('./feature/academy/academy.module').then(m => m.AcademyModule)},
   { path: 'account', component: AccountPageComponent},
   { path: 'sign-in', component: SignInComponent},
-  { path: 'project', component: ProjectPageComponent},
+  
   { path: 'detail-project', component: DetailProjectPageComponent},
-  //DEMO
-  { path: 'ui', component: AppLayoutComponent,
-  children: [
-      { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
-      { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
-      { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule) },
-      { path: 'documentation', loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) },
-      { path: 'blocks', loadChildren: () => import('./demo/components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
-      { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) }
-  ]},
-  //DEMO
+
 ]
 
 @NgModule({

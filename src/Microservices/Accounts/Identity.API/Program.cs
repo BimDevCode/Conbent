@@ -124,3 +124,4 @@ app.UseCors("allow_all");
 app.Run();
 //dotnet ef migrations add UserContextInitial -c ApplicationDbContext -o Data
 //dotnet ef database update  -c ApplicationDbContext 
+//dotnet run --configuration Debug --launch-profile http

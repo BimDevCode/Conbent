@@ -25,8 +25,9 @@ export class AuthService {
     return this.userManager.getUser();
   }
 
-  login(): Promise<void> {
-    return this.userManager.signinRedirect();
+  login(): Promise<User| null> {
+    return this.userManager.signinPopup();
+    
   }
 
   renewToken(): Promise<User | null> {

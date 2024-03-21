@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -28,7 +27,6 @@ import { app } from '../../server';
     BrowserModule,
     AppRoutingModule,
     AppLayoutModule,
-    BrowserAnimationsModule,
     HttpClientModule,
     CoreModule
   ],
