@@ -32,7 +32,7 @@
 					y: 0
 				},
 				width: window.innerWidth,
-				height: window.innerHeight*0.7,
+				height: window.innerHeight,
 				velocity: 0.2,
 				length: 200,
 				distance: 100,
@@ -216,6 +216,6 @@ $('.conteiner-canvas').constellation({
 	line: {
 		color: '#f7f5f1'
 	},
-	length: (window.innerWidth / 6),
+	length: (window.innerWidth / 5),
 	radius: (window.innerWidth / 5)
 });

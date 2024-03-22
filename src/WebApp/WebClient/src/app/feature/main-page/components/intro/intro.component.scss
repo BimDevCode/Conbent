@@ -1,4 +1,3 @@
-@import "../../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css" layer(bootstrap);
 
 .conteiner-canvas {
   text-align: center;
@@ -19,9 +18,10 @@
     font-weight: 300;
   }
 }
+
 .intro-conteiner {
   padding: 0;
-  height: 50em;
+  height: 40em;
   text-align: center;
   display: flex;
   position: relative;
@@ -41,7 +41,6 @@
   align-items: end;
   height: fit-content;
   text-align: end;
-  min-width: 22em;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -54,17 +53,13 @@
   border: 1px solid rgba(247, 245, 241, 0.42);
   padding: 2em;
   text-align: left;
-}
-
-.intro-conteiner__about {
-
-  span{
-      color: var(--app-primary-color);
-    margin: 3rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  
+  @media (max-width: 767px) {
+    width: 100%;
   }
 }
+
+
 @media (max-width: 600px) {
   .canvas-dots{
     display: none;
@@ -93,11 +88,13 @@
   font-optical-sizing: auto;
   font-weight: 200;
   line-height: 46px;
-  margin: 0.5em;
   text-align: start;
   text-wrap: wrap;
   text-overflow:initial;
   font-size: 32px;
+  color: var(--app-primary-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   font-style: normal;
 }
 
@@ -142,7 +139,8 @@
 .card-rectangle{
   padding: 1.6em;
   margin: 0px;
-  min-width: 22em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   z-index: -1;
   flex-direction: column;
   justify-content: space-between;
@@ -150,6 +148,10 @@
   text-align: justify;
   border-radius: 10px;
   background-color: var(--blue-color);
+    
+  @media (max-width: 767px) {
+    width: 100% !important; 
+  }
 }
 
 .grain {

@@ -9,7 +9,6 @@ import { ParallaxADirective } from './components/parallax-a.directive';
 import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
 import { AboutPageFadeComponent } from './components/about-page-fade/about-page-fade.component';
 import { IntersectionObserverDirective } from '../../directives/intersection-observer.directive';
-import { DashboardsRoutingModule } from '../../demo/components/dashboard/dashboard-routing.module';
 import { MainPageRoutingModule } from './main-page-routing.module';
 
 @NgModule({
