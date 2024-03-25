@@ -1,14 +1,5 @@
 
-.section-header-title{
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.section-header-title{
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
+
 .section-header{
   width: 100%;
   height: 100%;
@@ -16,11 +7,21 @@
 .card-content{
   min-width: 20rem;
 }
-.section-header h1{
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-  font-weight:100;
-  font-size: 26px;
-  font-style: normal;
+.section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  h1{
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+    font-weight:100;
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    font-style: normal;
+  }
 }
 .block-custom {
   flex: 1;
@@ -38,9 +39,18 @@
 .fade-in-element-left {
   opacity: 0; 
 }
-.fade-in-element-left1 {
+
+.fade-in-element-right1 {
   opacity: 0; 
 }
-.fade-in-element-right {
-  opacity: 0; 
+
+@media (max-width: 767px) {
+  .change-order-1 {
+    order: 2;
+
+  }
+  .change-order-2 {
+    order: 1;
+
+  }
 }

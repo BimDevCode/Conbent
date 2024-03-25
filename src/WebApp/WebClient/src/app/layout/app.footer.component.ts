@@ -6,5 +6,6 @@ import { LayoutService } from "./service/app.layout.service";
     templateUrl: './app.footer.component.html'
 })
 export class AppFooterComponent {
+    logoImage = "../../assets/images/large_logo.svg";
     constructor(public layoutService: LayoutService) { }
 }

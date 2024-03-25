@@ -10,7 +10,10 @@
     border-radius: 10px;
     border: 0px;
 }
-
+.filters{
+  display: flex;
+  align-items: center;
+}
 .list-group-custom
     .list-group-item {
         background-color: var(--app-primary-color);
@@ -68,13 +71,7 @@
       background-color: var(--green-color-dark);
   }
 }
-.section-header-title{
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-  font-size: 2rem;
-  margin-bottom: 1rem;
 
-  margin-top: 2rem;
-}
 .center-title{
   position: absolute;
   justify-content: center;

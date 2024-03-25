@@ -4,10 +4,11 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { ArticleObservingComponent } from './article-observing/article-observing.component';
 import { RouterOutlet } from '@angular/router';
 import { ArticleEntity } from '../../core/models/articleEntity';
+import { MenuItem } from 'primeng/api';
+import { BreadcrumbService } from '../../core/services/breadcrumb.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -31,9 +32,11 @@ export class AcademyComponent implements OnInit {
   itemArticle1: ArticleEntity|undefined = new ArticleEntity();
   itemArticle2: ArticleEntity|undefined = new ArticleEntity();
   itemArticle3: ArticleEntity|undefined = new ArticleEntity();
-
-  constructor(private observer: BreakpointObserver) {}
-
+  home: MenuItem | undefined;
+  items$: Observable<MenuItem[]> | undefined;
+  items: MenuItem[] | undefined;
+  constructor(private observer: BreakpointObserver, private breadcrumbService: BreadcrumbService) {}
+  
   ngOnInit() {
     this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
       if(screenSize.matches){
@@ -42,6 +45,12 @@ export class AcademyComponent implements OnInit {
         this.isMobile = false;
       }
     });
+    this.breadcrumbService.setBreadcrumbs();//TODO: improve, duplicates if breadcrumbService injects first time
+    this.items$ = this.breadcrumbService.getBreadcrumbs();
+    this.items$?.subscribe((items) => {
+      this.items = items;
+    });
+    this.home = { icon: 'pi pi-home', routerLink: '/' };
   }
 
   toggleMenu() {

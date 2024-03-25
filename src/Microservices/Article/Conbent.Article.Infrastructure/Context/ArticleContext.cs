@@ -8,6 +8,7 @@ public class ArticleContext(DbContextOptions<ArticleContext> options) : DbContex
     public required DbSet<ArticleEntity> Articles { get; set; }
     public required DbSet<Tag> Tags { get; set; }
     public required DbSet<Technology> Technologies { get; set; }
+    public required DbSet<AuthorEntity> Authors { get; set; }
     public required DbSet<ImageContent> ImageContents { get; set; }
     public required DbSet<TextContent> TextContents { get; set; }
 

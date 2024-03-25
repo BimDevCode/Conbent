@@ -17,6 +17,10 @@ public class ArticleConfiguration : IEntityTypeConfiguration<ArticleEntity>
             .WithMany()
             .HasForeignKey(p => p.TechnologyId);
 
+        builder.HasOne(p => p.Author)
+            .WithMany()
+            .HasForeignKey(p => p.AuthorId);
+
         builder.HasMany(p => p.Tags)
             .WithMany(t=>t.Articles)
             .UsingEntity(e => e.ToTable(ArticlesTagTableName));

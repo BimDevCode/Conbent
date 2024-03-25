@@ -4,6 +4,7 @@ import { AcademyService } from '../academy.service';
 import { ActivatedRoute } from '@angular/router';
 import { RandomColorService } from '../../../core/random-color.service copy';
 import { CardContentComponent } from '../../../shared/card-content/card-content.component';
+import { BreadcrumbService } from '../../../core/services/breadcrumb.service';
 
 @Component({
   selector: 'app-article-reading',
@@ -12,22 +13,23 @@ import { CardContentComponent } from '../../../shared/card-content/card-content.
 })
 export class ArticleReadingComponent implements OnInit {
   @Input() article?: ArticleEntity;
-
-  constructor(private academyService: AcademyService, private activatedRoute: ActivatedRoute, private randomColorService: RandomColorService) {
+  shortAuthorName: string | undefined = 'MS';
+  constructor(private academyService: AcademyService, private activatedRoute: ActivatedRoute, private randomColorService: RandomColorService, private breadcrumbService: BreadcrumbService) {
   }
 
   ngOnInit(): void {
     this.loadProduct();
+    this.breadcrumbService.getBreadcrumbs();
   }
 
   loadProduct() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) this.academyService.getArticle(+id).subscribe({
-      next: product => {
-        this.article = product;
+      next: articleResponse => {
+        this.article = articleResponse;
+        this.shortAuthorName= articleResponse.authorNameSurname?.split(' ').map(word => word[0].toUpperCase()).join('');
         if(this.article.texts.length == 0) this.article.texts.push('No text found for this article');
         else if(this.article.texts.length > 1 ){
-          
         }
         else if(this.article.texts.length === 1 ){
           this.article.texts = this.divideStringIntoParagraphs(this.article.texts[0], 600);
@@ -36,9 +38,8 @@ export class ArticleReadingComponent implements OnInit {
         },
       error: error => console.log(error)
     });
-
-    
   }
+
   divideStringIntoParagraphs(input: string, length: number): string[] {
     let result: string[] = [];
     let start = 0;

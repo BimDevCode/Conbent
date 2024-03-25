@@ -4,7 +4,7 @@
 
 <div class="grid">
     <div class="col-12">
-        <div class="tittle">
+        <div>
             <div class="text-center ">
               <h1 class="section-header-title mt-1">SELECT ARTICLE</h1>
             </div>
@@ -18,7 +18,10 @@
                         <i class="pi pi-search"></i>
                         <input type="search" pinputtext=""
                             placeholder="Search by Name" class="p-inputtext p-component p-element" (input)="onFilter(dv, $event)"></span>
-                    <button pButton pRipple type="button" label="FILTER ARTICLES" (click)="toggleMenu()"></button>
+                        <div class="filters">
+                            <button pButton style="min-width: 90px;" type="button" label="Filter Tag:" (click)="toggleMenu()"></button> 
+                            <p-chip styleClass="ml-2" [style]="{height:'100%'}" label="{{selectedFilter}}"></p-chip>
+                        </div>
                     <!-- <p-dataViewLayoutOptions></p-dataViewLayoutOptions> -->
                 </div>
             </ng-template>
@@ -64,7 +67,7 @@
 
 <div class="overlay-container">
     <div *ngIf="tags.length> 0 && technologies.length > 0">
-        <p-dialog header="Header" [visible]="visible" [modal]="true" [style]="{ width: '50rem', height: '50rem', maxHeight: '50rem'}"
+        <p-dialog header="Header" [visible]="visible" [modal]="true" [closable]="false" [style]="{ width: '50rem', height: '50rem', maxHeight: '50rem'}"
             [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
             <ng-template pTemplate="header">
                 <div class="">

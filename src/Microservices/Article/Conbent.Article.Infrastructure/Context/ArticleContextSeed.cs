@@ -6,22 +6,29 @@ using System.Runtime.InteropServices;
 namespace Conbent.Article.Infrastructure.Context;
 public abstract class ArticleContextSeed
 {
-    private static readonly string ObsidianNotesPath = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? ObsidianNotesPathWinows : ObsidianNotesPathMacOs;
-    private const string ObsidianNotesPathWinows = @"W:\Obsidian\Conbent\Conbent Development\Content";
+    private static readonly string ObsidianNotesPath = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? ObsidianNotesPathWindows : ObsidianNotesPathMacOs;
+    private const string ObsidianNotesPathWindows = @"W:\Obsidian\Conbent\Conbent Development\Content";
     private const string ObsidianNotesPathMacOs = @"/Users/mikalaisabaleuski/Library/Mobile Documents/iCloud~md~obsidian/Documents/Conbent/Conbent Development/Content";
     private const string SearchPattern = "*" + SourceFileExtension;
     private const string SourceFileExtension = ".md";
-    private static Dictionary<string, Tag> _hashTags = new();
-    private static readonly Random _random = new();
+   
+
+    private static readonly Dictionary<string, Tag> HashTags = new();
+    private static readonly Random Random = new();
 
     public static async Task SeedAsync(ArticleContext context)
     {
+        
         var markdownContents = new List<ArticleEntity>();
         var technology = new Technology() { Name = "Dotnet", HashId = "Dotnet".ComputeSha256Hash()};
-  
+        var baseAuthorName = new AuthorEntity()
+        {
+            Name = "Mikalai Sabaleuski",
+            HashId = "Mikalai Sabaleuski".ComputeSha256Hash()
+        };
         if (!context.Articles.Any())
         {
-            ScanDirectoryForArticleEntity(ObsidianNotesPath, technology, ref markdownContents);
+            ScanDirectoryForArticleEntity(ObsidianNotesPath, technology, baseAuthorName, ref markdownContents);
         }
 
         if (!context.Articles.Any())
@@ -34,13 +41,21 @@ public abstract class ArticleContextSeed
 
     public static async Task SeedAsyncWithoutParsing(ArticleContext context)
     {
+        var baseAuthorName = new AuthorEntity()
+        {
+            Name = "Mikalai Sabaleuski",
+            HashId = "Mikalai Sabaleuski".ComputeSha256Hash()
+        };
+
         var technology1 = new Technology() { Name = "Dotnet", HashId = "Dotnet".ComputeSha256Hash()};
         var technology2 = new Technology() { Name = "ASPCore", HashId = "ASPCore".ComputeSha256Hash()};
         var texts = new List<TextContent>(){
                         new(){
                             Name = "TestTexts",
-                            HashId = "TestTexts".ToString(),
-                            Content = "Occaecat ut exercitation officia cillum reprehenderit eiusmod sit exercitation nisi fugiat. Elit adipisicing in anim laborum culpa sunt tempor aute incididunt tempor. Exercitation quis pariatur sit ipsum sunt nulla. Do ut ut mollit elit anim pariatur elit ad fugiat adipisicing anim."
+                            HashId = "TestTexts",
+                            Content = "Occaecat ut exercitation officia cillum reprehenderit eiusmod sit exercitation nisi fugiat. " +
+                                      "Elit adipisicing in anim laborum culpa sunt tempor aute incididunt tempor. Exercitation quis pariatur sit ipsum sunt nulla. " +
+                                      "Do ut ut mollit elit anim pariatur elit ad fugiat adipisicing anim."
                         }
                     };
         var tags1 = new HashSet<Tag>(){
@@ -59,18 +74,20 @@ public abstract class ArticleContextSeed
                 new(){
                     Name = "Test0",
                     HashId = "Test0".ComputeSha256Hash(),
-                    RelevantScore = _random.Next(0,100),
+                    RelevantScore = Random.Next(0,100),
                     TreePath = "TestTag0/TestTag1/TestTag2",
                     Technology = technology1,
+                    Author = baseAuthorName,
                     Tags = tags1,
                     Texts = texts
                 },
                 new(){
                     Name = "Test1",
                     HashId = "Test1".ComputeSha256Hash(),
-                    RelevantScore = _random.Next(0,100),
+                    RelevantScore = Random.Next(0,100),
                     TreePath = "TestTag0/TestTag1/TestTag2",
                     Technology = technology1,
+                    Author = baseAuthorName,
                     Tags = tags1,
                     Texts = texts
                     
@@ -78,9 +95,10 @@ public abstract class ArticleContextSeed
                 new(){
                     Name = "Test2",
                     HashId = "Test2".ComputeSha256Hash(),
-                    RelevantScore = _random.Next(0,100),
+                    RelevantScore = Random.Next(0,100),
                     TreePath = "TestTag00/TestTag11/TestTag22",
                     Technology = technology2,
+                    Author = baseAuthorName,
                     Tags = tags2,
                     Texts = texts
                     
@@ -88,9 +106,10 @@ public abstract class ArticleContextSeed
                 new(){
                     Name = "Test3",
                     HashId = "Test3".ComputeSha256Hash(),
-                    RelevantScore = _random.Next(0,100),
+                    RelevantScore = Random.Next(0,100),
                     TreePath = "TestTag00/TestTag11/TestTag22",
                     Technology = technology2,
+                    Author = baseAuthorName,
                     Tags = tags2,
                     Texts = texts
                 }
@@ -99,31 +118,11 @@ public abstract class ArticleContextSeed
             context.Articles.AddRange(markdownContents);
 
         }
-     
-
-        //if (!context.ProductTypes.Any())
-        //{
-        //    var typesData = File.ReadAllText(path + @"/Data/SeedData/types.json");
-        //    var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
-        //    context.ProductTypes.AddRange(types);
-        //}
-
-        //if (!context.Products.Any())
-        //{
-        //    var productsData = File.ReadAllText(path + @"/Data/SeedData/products.json");
-        //    var products = JsonSerializer.Deserialize<List<Product>>(productsData);
-        //    context.Products.AddRange(products);
-        //}
-
-        //if (!context.DeliveryMethods.Any())
-        //{
-        //    var deliveryData = File.ReadAllText(path + @"/Data/SeedData/delivery.json");
-        //    var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
-        //    context.DeliveryMethods.AddRange(methods);
-        //}
+        
         if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
     }
-    private static void ScanDirectoryForArticleEntity(string directoryPath, Technology technology, ref List<ArticleEntity> markdownContents)
+    private static void ScanDirectoryForArticleEntity(string directoryPath, Technology technology,
+        AuthorEntity baseAuthorName, ref List<ArticleEntity> markdownContents)
     {
         try
         {
@@ -136,8 +135,9 @@ public abstract class ArticleContextSeed
                 {
                     Name = Path.GetFileNameWithoutExtension(filePath),
                     HashId = Path.GetFileNameWithoutExtension(filePath).ComputeSha256Hash(),
-                    RelevantScore = _random.Next(0,100),
+                    RelevantScore = Random.Next(0,100),
                     TreePath = relativePath,
+                    Author = baseAuthorName,
                     Technology = technology,
                 };
                 var tags = relativePath.Split('\\')
@@ -148,11 +148,11 @@ public abstract class ArticleContextSeed
                 var staticObjectTags = new HashSet<Tag>();
                 foreach (var tag in tags)
                 {
-                    if(_hashTags.TryGetValue(tag.HashId, out var value))
+                    if(HashTags.TryGetValue(tag.HashId, out var value))
                         staticObjectTags.Add(value);
                     else
                     {
-                        _hashTags.Add(tag.HashId, tag);
+                        HashTags.Add(tag.HashId, tag);
                         staticObjectTags.Add(tag);
                     }
                 }
@@ -168,8 +168,7 @@ public abstract class ArticleContextSeed
 
             // Recursively process all subdirectories
             foreach (var subDirectory in Directory.GetDirectories(directoryPath))
-                ScanDirectoryForArticleEntity(subDirectory, technology, ref markdownContents);
-            
+                ScanDirectoryForArticleEntity(subDirectory, technology, baseAuthorName, ref markdownContents);
         }
         catch (Exception ex)
         {

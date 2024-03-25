@@ -11,6 +11,8 @@ public class MappingProfiles : Profile
         CreateMap<ArticleEntity, ArticleDto>()
             .ForMember(d => d.Texts, o 
                 => o.MapFrom(s => s.Texts!.Select(x => x.Content)))
+            .ForMember(d => d.AuthorNameSurname, o
+                => o.MapFrom(s => s.Author.Name))
             .ReverseMap();
     }
 }

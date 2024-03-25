@@ -81,10 +81,10 @@
 
 .cardList {
 	position: absolute;
-  --card-width: 20rem;
-	width: calc(var(--card-width) * 3);
+  	--card-width: 20rem;
+	width: 80%;
 	height: 40rem;
-
+	
 	&__btn {
 		--btn-size: 35px;
 		width: var(--btn-size);
@@ -98,7 +98,7 @@
 			left: -5%;
 		}
 		&.btn--right {
-			right: -5%;
+			right: -8%;
 		}
 
 		.icon {
@@ -258,11 +258,7 @@
 	}
 
 
-  .section-header-title{
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
+
 	.description {
 		--text-size-offset: 0.065;
 		font-weight: 500;

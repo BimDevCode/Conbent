@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Conbent.Article.Infrastructure.ArticlesMigration
 {
     [DbContext(typeof(ArticleContext))]
-    [Migration("20240310162126_ArticleContextInitial")]
-    partial class ArticleContextInitial
+    [Migration("20240325103203_AddInitial")]
+    partial class AddInitial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,9 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("HashId")
                         .IsRequired()
                         .HasColumnType("text");
@@ -68,9 +71,32 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthorId");
+
                     b.HasIndex("TechnologyId");
 
                     b.ToTable("Articles");
+                });
+
+            modelBuilder.Entity("Conbent.Article.Core.Entities.AuthorEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("HashId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("Conbent.Article.Core.Entities.ImageContent", b =>
@@ -213,11 +239,19 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
 
             modelBuilder.Entity("Conbent.Article.Core.Entities.ArticleEntity", b =>
                 {
+                    b.HasOne("Conbent.Article.Core.Entities.AuthorEntity", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Conbent.Article.Core.Entities.Technology", "Technology")
                         .WithMany()
                         .HasForeignKey("TechnologyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Author");
 
                     b.Navigation("Technology");
                 });

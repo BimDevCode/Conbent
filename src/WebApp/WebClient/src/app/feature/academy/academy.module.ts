@@ -17,9 +17,10 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DialogModule } from 'primeng/dialog';
 import { DataViewModule } from 'primeng/dataview';
 import { DropdownModule } from 'primeng/dropdown';
-import { ButtonModule } from 'primeng/button';
 import { PaginatorModule } from 'primeng/paginator';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { ChipModule } from 'primeng/chip';
+import { ArticleCommentsComponent } from './article-comments/article-comments.component';
 
 @NgModule({
   declarations: [
@@ -27,17 +28,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ArticleObservingComponent,
     ArticleCardItemComponent,
     AcademyComponent,
+    ArticleCommentsComponent,
   ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
+    BreadcrumbModule,
+    ChipModule,
     TreeModule,
     PaginatorModule,
     SharedModule,
     DialogModule,
     ConfirmPopupModule,
     TreeSelectModule,
-    ButtonModule,
     AcademyRoutingModule,
     DropdownModule,
     MatIconModule,

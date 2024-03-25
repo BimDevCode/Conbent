@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppLayoutModule } from './layout/app.layout.module';
@@ -16,9 +15,8 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { MainPageComponent } from './feature/main-page/main-page.component';
-import { app } from '../../server';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -41,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NodeService,
     PhotoService,
     ProductService,
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
     provideClientHydration(),
     provideHttpClient(withFetch()),
     provideAnimationsAsync()

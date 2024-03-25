@@ -10,6 +10,7 @@ import { CardCarouselComponent } from './components/card-carousel/card-carousel.
 import { AboutPageFadeComponent } from './components/about-page-fade/about-page-fade.component';
 import { IntersectionObserverDirective } from '../../directives/intersection-observer.directive';
 import { MainPageRoutingModule } from './main-page-routing.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MainPageRoutingModule } from './main-page-routing.module';
   imports: [
     CommonModule,
     MainPageRoutingModule,
+    ButtonModule,
     SharedModule
   ],
   exports: [

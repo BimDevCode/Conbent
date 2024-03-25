@@ -1,33 +1,38 @@
-<div class="align-items-center p-2 ">
+<div class="align-items-center p-2 " #articleCard>
     <div class="card p-2 grid" *ngIf="article">
-            <div class="col-8 md:col-4">
+            <div class="col-3" style="min-width: 3em;" [ngClass]="{'col-5': isSmallCard}">
                 <h1 class="card-title">
                     {{article.name}}
                 </h1>
-                <div>
-                    <span class="mb-2 relevant-text">Relevant position: {{article.relevantScore | number}}</span>
+                <div class="mt-1">
+                    <span class="relevant-text">Liked: {{article.relevantScore | number}}</span>
                 </div>
-                <div>
+                <div class="mt-1">
+                    <span class="mb-2 relevant-text">Author: {{article.authorNameSurname}}</span>
+                </div>
+                <div class="mt-1">
                     <span class="mb-2 relevant-text">Date: {{article.createDateTime}}</span>
                 </div>
+              
+            </div>
+            <div class="col-2" style="min-width: 3em;" [ngStyle]="{'display': isSmallCard ? 'none' : 'block'}" >
                 <div class="flex flex-wrap gap-1 align-items-start justify-content-start mb-1 mt-2">
                     <div class="flex align-items-center" *ngFor="let tag of article.tags;">
                         <p-button styleClass="p-button-link p-1"  class="ml-1" label="{{tag}}" icon="pi pi-tag mr-2" (onClick)="onTagSelected($event)"></p-button>
                     </div>
                 </div>
             </div>
-            <div class="md:col-5">
+            <div class="col-4" style="min-width: 3em;" [ngStyle]="{'display': isSmallCard ? 'none' : 'block'}" >
                 <div style="height: 100%;max-height: 100px; overflow: hidden;">
                     <div class="text-part" [innerHTML]="article.texts.join('') | sanitizeHtml"></div>
                 </div>
-                
             </div>
-            <div class="col-2 md:col-2 m-0 p-1" style="min-width: 4em;">
+            <div class="col-2 m-0 p-1" style="min-width: 4em;"  [ngClass]="{'col-5': isSmallCard}">
                 <div class="image-banner">
                     <img src="https://picsum.photos/200/200/" alt="{{article.name}}" >
                 </div>
             </div>
-            <div class="col-2 md:col-1 m-0 p-1" style="min-width: 4em; ">
+            <div class="col-2 m-0 p-1" style="min-width: 3.5em; "[ngClass]="{'col-2': isSmallCard}">
                 <div class="read-button" style="cursor: pointer;">
                     <button #card  pButton pRipple type="button" routerLink="/academy/{{article.id}}" icon="pi pi-angle-double-right" class="p-button-rounded"></button>
                 </div>

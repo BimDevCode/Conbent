@@ -6,11 +6,25 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Conbent.Article.Infrastructure.ArticlesMigration
 {
     /// <inheritdoc />
-    public partial class ArticleContextInitial : Migration
+    public partial class AddInitial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Authors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    HashId = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Authors", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Tags",
                 columns: table => new
@@ -48,14 +62,21 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     RelevantScore = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
-                    TechnologyId = table.Column<int>(type: "integer", nullable: false),
                     TreePath = table.Column<string>(type: "text", nullable: false),
+                    TechnologyId = table.Column<int>(type: "integer", nullable: false),
+                    AuthorId = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     HashId = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Articles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Articles_Authors_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Articles_Technologies_TechnologyId",
                         column: x => x.TechnologyId,
@@ -138,6 +159,11 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Articles_AuthorId",
+                table: "Articles",
+                column: "AuthorId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Articles_TechnologyId",
                 table: "Articles",
                 column: "TechnologyId");
@@ -175,6 +201,9 @@ namespace Conbent.Article.Infrastructure.ArticlesMigration
 
             migrationBuilder.DropTable(
                 name: "Articles");
+
+            migrationBuilder.DropTable(
+                name: "Authors");
 
             migrationBuilder.DropTable(
                 name: "Technologies");

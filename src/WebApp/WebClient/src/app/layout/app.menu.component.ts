@@ -15,13 +15,21 @@ export class AppMenuComponent implements OnInit {
     ngOnInit() {
         this.model = [
             {
-                label: 'Home',
+                label: 'Application',
+                items: [
+                    { label: 'Main Page', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+                    { label: 'Articels', icon: 'pi pi-fw pi-code', routerLink: ['/academy'] },
+                    { label: 'Projects', icon: 'pi pi-fw pi-th-large', routerLink: ['/project'] }
+                ]
+            },
+            {
+                label: 'UI Dashboard Example',
                 items: [
                     { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['dashboard'] }
                 ]
             },
             {
-                label: 'UI Components',
+                label: 'UI Components Example',
                 items: [
                     { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['uikit/formlayout'] },
                     { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['uikit/input'] },
@@ -43,14 +51,14 @@ export class AppMenuComponent implements OnInit {
             },
             
             {
-                label: 'Utilities',
+                label: 'UI Prime Utilities',
                 items: [
                     { label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', routerLink: ['utilities/icons'] },
                     { label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: ['https://www.primefaces.org/primeflex/'], target: '_blank' },
                 ]
             },
             {
-                label: 'Pages',
+                label: 'UI Pages Example',
                 icon: 'pi pi-fw pi-briefcase',
                 items: [
                     {
@@ -102,7 +110,7 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
-                label: 'Hierarchy',
+                label: 'Hierarchy Example',
                 items: [
                     {
                         label: 'Submenu 1', icon: 'pi pi-fw pi-bookmark',

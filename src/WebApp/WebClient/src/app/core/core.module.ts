@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SigninCallbackComponent } from './components/signin-callback/signin-callback.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,13 @@ import { SigninCallbackComponent } from './components/signin-callback/signin-cal
   imports: [
     CommonModule,
     FeatureModule,
+
+    NgxSpinnerModule,
     SharedModule,
     SigninCallbackComponent // Add SigninCallbackComponent to imports
   ],
   exports: [
+    NgxSpinnerModule,
     SharedModule,
   ]
 })

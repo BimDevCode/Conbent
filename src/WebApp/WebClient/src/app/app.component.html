@@ -3,6 +3,11 @@
 <div class="basement-container">
   <!-- class="grain" -->
   <div >
+    <ngx-spinner bdColor = "transparent" size = "medium" color = "transparent" type = "timer" [fullScreen] = "true">
+      <div class="background-blur" >
+        <p class="notification">Loading...</p>
+      </div>
+    </ngx-spinner>
     <router-outlet/>
   </div>
 </div>

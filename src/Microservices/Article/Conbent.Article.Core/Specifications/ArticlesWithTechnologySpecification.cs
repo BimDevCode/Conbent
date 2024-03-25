@@ -14,6 +14,7 @@ public class ArticlesWithTechnologySpecification : BaseSpecification<ArticleEnti
         AddInclude(x => x.Technology);
         AddInclude(x => x.Texts!);
         AddInclude(x => x.Tags!);
+        AddInclude(x => x.Author);
         AddOrderBy(x => x.Name);
         ApplyPaging(articleParams.PageSize * (articleParams.PageIndex - 1), articleParams.PageSize);
 

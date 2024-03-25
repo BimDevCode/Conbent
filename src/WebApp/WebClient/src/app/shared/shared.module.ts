@@ -11,6 +11,11 @@ import { DropdownButtonComponent } from './dropdown-button/dropdown-button.compo
 import { CarouselComponent } from './carousel/carousel.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 import { ToastModule } from 'primeng/toast';
+import { DividerModule } from 'primeng/divider';
+import { AccountChipComponent } from './account/account-chip/account-chip.component';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [ //Connected to core.module.ts
@@ -21,25 +26,33 @@ import { ToastModule } from 'primeng/toast';
     PageHeaderComponent,
     DropdownButtonComponent,
     CarouselComponent,
-    SanitizeHtmlPipe
+    SanitizeHtmlPipe,
+    AccountChipComponent
   ],
   imports: [
     ToastModule,//.forRoot(),
     ReactiveFormsModule,
+    AvatarGroupModule,
+    ButtonModule,
     FormsModule,
+    AvatarModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    DividerModule
   ],
   exports: [ //Connected to core.module.ts
     NavbarComponent,
     PageContentComponent,
+    DividerModule,
     PageHeaderComponent,
     ReactiveFormsModule,
     FooterComponent,
     ToastModule,
+    ButtonModule,
     CardContentComponent,
     DropdownButtonComponent,
     CarouselComponent,
+    AccountChipComponent,
     SanitizeHtmlPipe
   ]
 })

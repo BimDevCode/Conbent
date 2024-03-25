@@ -16,6 +16,7 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppConfigModule } from './config/config.module';
 import { AppSidebarComponent } from "./app.sidebar.component";
 import { AppLayoutComponent } from "./app.layout.component";
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { AppLayoutComponent } from "./app.layout.component";
     imports: [
         BrowserModule,
         FormsModule,
+        DividerModule,
         HttpClientModule,
         InputTextModule,
         SidebarModule,

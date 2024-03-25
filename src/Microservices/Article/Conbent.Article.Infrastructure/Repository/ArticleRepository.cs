@@ -13,6 +13,7 @@ public class ArticleRepository(ArticleContext context) : IArticleRepository
             .Include(p => p.Tags)
             .Include(p => p.Texts)
             .Include(p => p.Images)
+            .Include(p => p.Author)
             .FirstOrDefaultAsync(x => x.Id == id) ?? throw new NullReferenceException("Cant retrieve article " +
             "by id from database");
     }
@@ -24,6 +25,7 @@ public class ArticleRepository(ArticleContext context) : IArticleRepository
             .Include(p => p.Tags)
             .Include(p => p.Texts)
             .Include(p => p.Images)
+            .Include(p => p.Author)
             .ToListAsync();
     }
 

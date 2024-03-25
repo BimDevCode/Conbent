@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: AppLayoutComponent,
     children: [
       { path: '', loadChildren: () => import('./feature/main-page/main-page.module').then(m => m.MainPageModule) },
-      { path: 'academy', loadChildren: () => import('./feature/academy/academy.module').then(m => m.AcademyModule) },
+      { path: 'academy', loadChildren: () => import('./feature/academy/academy.module').then(m => m.AcademyModule) ,data: { breadcrumb: 'Articles'}},
       { path: 'project', component: ProjectPageComponent},
       { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
       { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },

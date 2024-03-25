@@ -37,6 +37,7 @@ export class ArticleObservingComponent implements OnInit {
   articleParameters = new ArticleSpecParams();
   first: number = 0;
   private _rows: number = 14; 
+  selectedFilter: string = 'No Tag';
   get rows(): number { // replace 'any' with the actual type of 'rows'
     return this._rows;
   }
@@ -185,6 +186,7 @@ export class ArticleObservingComponent implements OnInit {
 
   nodeSelect(event: any) {
       this.messageService.add({ severity: 'info', summary: 'Tag Selected', detail: event.node.label });
+      this.selectedFilter =  event.node.label;
       let selectedTagData = event.node.data;
       if (typeof selectedTagData === 'string') {
         selectedTagData = this.academyService.tagsDict[selectedTagData];

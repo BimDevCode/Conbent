@@ -24,6 +24,10 @@
   font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2rem;
   margin-bottom: 2rem;
+
+  &:empty {
+    display: none;
+  }
 }
 .grain {
   height: 100%;

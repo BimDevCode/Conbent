@@ -61,6 +61,15 @@
 
   }
 }
+
+::ng-deep .p-breadcrumb{
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.breadcrumb-component{
+
+}
 .container-intro{
   margin-bottom: 2em;
 

@@ -27,6 +27,8 @@
   position: relative;
   margin-bottom: 1rem;
   margin-top: 1rem;
+
+
 }
 
 .section-header-title{
@@ -55,7 +57,7 @@
   text-align: left;
   
   @media (max-width: 767px) {
-    width: 100%;
+    display: none;
   }
 }
 

@@ -8,44 +8,41 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <div class="row">
-          <div class="section-part">
-            <app-card-content class="block-custom fade-in-element-left "
-            appIntersectionObserver (intersectionVisible)="fadeInOnScrollLeft($event)"   
-            description="Incididunt id duis amet esse eiusmod eu veniam ex laborum. Consequat incididunt fugiat incididunt in velit eiusmod elit ad. Officia elit exercitation sunt ex. Enim dolore non minim adipisicing aute amet aliqua nostrud fugiat ad magna. Exercitation eu nulla consequat est sint eu anim aliqua quis reprehenderit deserunt veniam.">
-            </app-card-content>
-            <div class="block-custom section-header d-flex justify-content-center align-items-center ">
+        <div class="section-part">
+          <div class="col">
+             <div class="block-custom section-header ">
               <h1>WHO WE ARE</h1>
             </div>
           </div>
+         
+          <app-card-content class="block-custom  fade-in-element-right" colorBackground="#5b7c99"  appIntersectionObserver (intersectionVisible)="fadeInOnScrollRight($event)" 
+          description="Incididunt id duis amet esse eiusmod eu veniam ex laborum. Consequat incididunt fugiat incididunt in velit eiusmod elit ad. Officia elit exercitation sunt ex. Enim dolore non minim adipisicing aute amet aliqua nostrud fugiat ad magna. Exercitation eu nulla consequat est sint eu anim aliqua quis reprehenderit deserunt veniam.">
+          </app-card-content>
+         
         </div>
-
-        <div class="row">
-          <div class="section-part">
-            <div class="block-custom section-header d-flex justify-content-center align-items-center">
+        <div class="section-part ">
+          <app-card-content class="block-custom fade-in-element-left change-order-1"
+          appIntersectionObserver (intersectionVisible)="fadeInOnScrollLeft($event)"   
+          description="Mollit anim velit pariatur sint sit magna proident mollit. Cupidatat mollit ad officia nostrud. Tempor et eiusmod veniam fugiat irure ex nostrud non dolor nisi consequat do adipisicing labore. Adipisicing sunt nulla eiusmod tempor deserunt elit ut exercitation deserunt id sint id proident excepteur. Minim sit duis magna Lorem reprehenderit laborum ex aliquip id veniam nulla.">
+          </app-card-content>
+          <div class="col">
+            <div class="block-custom section-header change-order-2">
               <h1>WHAT WE DO</h1>
-            </div>
-            <app-card-content class="block-custom fade-in-element-right" colorBackground="#5b7c99"  appIntersectionObserver (intersectionVisible)="fadeInOnScrollRight($event)"
-            description="Mollit anim velit pariatur sint sit magna proident mollit. Cupidatat mollit ad officia nostrud. Tempor et eiusmod veniam fugiat irure ex nostrud non dolor nisi consequat do adipisicing labore. Adipisicing sunt nulla eiusmod tempor deserunt elit ut exercitation deserunt id sint id proident excepteur. Minim sit duis magna Lorem reprehenderit laborum ex aliquip id veniam nulla.">
-            </app-card-content>
-          </div>
+           </div>
+         </div>
         </div>
-
-        <div class="row">
-          <div class="section-part">
-            <app-card-content class="block-custom fade-in-element-left1 "
-            appIntersectionObserver (intersectionVisible)="fadeInOnScrollLeft1($event)"    
-            colorBackground="#423629" 
-            description="Aliquip in est elit eu voluptate aute aliqua Lorem voluptate eiusmod elit mollit. Reprehenderit officia et sit ea aute proident commodo. Dolor laborum amet consectetur ullamco. Exercitation adipisicing velit labore eiusmod ad fugiat irure proident nostrud ex magna. Lorem cupidatat sint mollit laboris. Irure deserunt occaecat eu cillum nisi reprehenderit.">
-            </app-card-content>
-            <div class="block-custom section-header d-flex justify-content-center align-items-center">
+        <!-- <div class="row">
+        </div> -->
+        <div class="section-part">
+          <div class="col">
+            <div class="block-custom section-header">
               <h1>OUR ADVANTAGES</h1>
-            </div>
-          </div>
-      </div>
-      </div>
-
+           </div>
+         </div>
+          <app-card-content class="block-custom  fade-in-element-right1" colorBackground="#5b7c99"  appIntersectionObserver (intersectionVisible)="fadeInOnScrollRight1($event)"  
+          description="Aliquip in est elit eu voluptate aute aliqua Lorem voluptate eiusmod elit mollit. Reprehenderit officia et sit ea aute proident commodo. Dolor laborum amet consectetur ullamco. Exercitation adipisicing velit labore eiusmod ad fugiat irure proident nostrud ex magna. Lorem cupidatat sint mollit laboris. Irure deserunt occaecat eu cillum nisi reprehenderit.">
+          </app-card-content>
+        </div>
     </div>
 
   </div>
