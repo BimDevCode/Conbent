@@ -33,15 +33,17 @@ import { ButtonModule } from 'primeng/button';
     ToastModule,//.forRoot(),
     ReactiveFormsModule,
     AvatarGroupModule,
+    AvatarModule,
     ButtonModule,
     FormsModule,
-    AvatarModule,
     CommonModule,
     RouterModule,
     DividerModule
   ],
   exports: [ //Connected to core.module.ts
     NavbarComponent,
+    AvatarGroupModule,
+    AvatarModule,
     PageContentComponent,
     DividerModule,
     PageHeaderComponent,

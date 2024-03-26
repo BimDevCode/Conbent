@@ -1,7 +1,5 @@
 import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccountPageComponent } from './account-page/account-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
 import { DetailProjectPageComponent } from './detail-project-page/detail-project-page.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -14,21 +12,20 @@ import { ButtonModule } from 'primeng/button';
 import { StyleClassModule } from 'primeng/styleclass';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { FormsModule } from '@angular/forms';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
 
   declarations: [
-    AccountPageComponent,
-    ContactPageComponent,
     DetailProjectPageComponent,
     ProjectPageComponent,
     SignInComponent
   ],
   imports: [
     CommonModule,
+    AccountModule,
     AcademyModule,
     MainPageModule,
-    CommonModule,
     FormsModule,
     ChartModule,
     MenuModule,
@@ -38,8 +35,6 @@ import { FormsModule } from '@angular/forms';
     ButtonModule
   ],
   exports: [
-    AccountPageComponent,
-    ContactPageComponent,
     DetailProjectPageComponent,
     ProjectPageComponent,
     SignInComponent
