@@ -13,7 +13,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   imports: [
     CommonModule,
     FeatureModule,
-
     NgxSpinnerModule,
     SharedModule,
     SigninCallbackComponent // Add SigninCallbackComponent to imports

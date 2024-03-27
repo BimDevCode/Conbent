@@ -11,17 +11,17 @@
           </div>
         <p-dataView #dv [paginator]="false" [value]="articleEntities" filterBy="createDateTime" [sortField]="sortField" [sortOrder]="sortOrder" layout="list">
             <ng-template pTemplate="header">
-                <div class="flex flex-column md:flex-row md:justify-content-between gap-2">
+                <div class="flex flex-column md:flex-row md:justify-content-between gap-2 align-items-center" style="flex-wrap: wrap;">
                     <p-dropdown [options]="sortDateOptions" placeholder="Sort By Date"
                         (onChange)="onSortChange($event)"></p-dropdown>
                     <span class="p-input-icon-left">
                         <i class="pi pi-search"></i>
-                        <input type="search" pinputtext=""
-                            placeholder="Search by Name" class="p-inputtext p-component p-element" (input)="onFilter(dv, $event)"></span>
-                        <div class="filters">
-                            <button pButton style="min-width: 90px;" type="button" label="Filter Tag:" (click)="toggleMenu()"></button> 
-                            <p-chip styleClass="ml-2" [style]="{height:'100%'}" label="{{selectedFilter}}"></p-chip>
-                        </div>
+                        <input type="search" pinputtext="" placeholder="Search by Name" class="p-inputtext p-component p-element" (input)="onFilter(dv, $event)"/>
+                    </span>
+                    <div class="filters" style="left: 0; ">
+                        <button pButton style="min-width: 80px;" type="button" label="Filter Tag:" (click)="toggleMenu()"></button>
+                        <p-chip styleClass="ml-2" [style]="{height:'100%'}" label="{{selectedFilter}}"></p-chip>
+                    </div>
                     <!-- <p-dataViewLayoutOptions></p-dataViewLayoutOptions> -->
                 </div>
             </ng-template>

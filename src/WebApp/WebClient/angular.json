@@ -26,6 +26,7 @@
           "options": {
             "styles": [
               "src/styles.scss"
+
             ],
             "outputPath": "dist/web-client",
             "index": "src/index.html",
@@ -49,11 +50,9 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/gsap/dist/gsap.min.js",
               "node_modules/imagesloaded/imagesloaded.pkgd.min.js",
-              "src/assets/js/academy-page/ContentTree.js",
-              "src/assets/js/academy-page/prism.js",
 
+              "src/assets/js/academy-page/ContentTree.js",
               "src/assets/js/main-page/main.js",
-              "src/assets/js/main-page/prism.js",
               "src/assets/js/main-page/intro.js"
             ],
             "server": "src/main.server.ts",

@@ -99,8 +99,11 @@ builder.Services.AddTransient<ICorsPolicyService, DemoCorsPolicy>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("allow_all",
-        policy => { policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); });
+    options.AddPolicy("allow_web_client",
+        policy => { policy
+        .WithOrigins("https://localhost:4200")
+        .AllowAnyHeader()
+        .AllowAnyMethod(); });
 });
 
 var app = builder.Build();
@@ -120,7 +123,7 @@ app.UseAuthorization();
 
 app.MapDefaultControllerRoute();
 
-app.UseCors("allow_all");
+app.UseCors("allow_web_client");
 app.Run();
 //dotnet ef migrations add UserContextInitial -c ApplicationDbContext -o Data
 //dotnet ef database update  -c ApplicationDbContext 

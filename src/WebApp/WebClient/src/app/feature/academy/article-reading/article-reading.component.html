@@ -24,6 +24,7 @@
           </div>
         </div>
       </div>
+      <app-copy-code></app-copy-code>
       <div class="grid">
         <div class="col-12 lg:col-2">
           <div class="flex flex-row lg:flex-column lg:border-right-1 surface-border gap-5 mb-4 lg:px-5">
@@ -46,7 +47,7 @@
           </div>
           <div class="line-height-3 text-xl text-900 mb-5"
           *ngIf="article" [innerHTML]="article.texts.join('') | sanitizeHtml"></div>
-          <div class="line-height-3 text-xl text-900 mb-5"> 
+          <div class="line-height-3 text-xl text-900 mb-5">
             Metus aliquam eleifend mi in nulla posuere. In vitae turpis
             massa sed elementum tempus egestas sed. Dui ut ornare lectus sit. Massa ultricies mi quis hendrerit. </div>
           <div class="line-height-3 text-lg text-900 mb-4"> Nisi est sit amet facilisis. Ac odio tempor orci dapibus
@@ -83,7 +84,7 @@
                 class="pi pi-arrow-right"></i></div>
           </div>
         </div>
-   
+
       </div>
     </div>
 </div>

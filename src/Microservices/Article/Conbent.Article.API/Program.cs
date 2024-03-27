@@ -15,7 +15,7 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseSwaggerDocumentation();
 app.UseStaticFiles();
-app.UseCors("AllowSpecificOrigin");
+app.UseCors("allow_web_client");
 
 app.MapControllers();
 app.MapFallbackToController("Index", "Fallback");

@@ -14,6 +14,7 @@ import { BreadcrumbService } from '../../../core/services/breadcrumb.service';
 export class ArticleReadingComponent implements OnInit {
   @Input() article?: ArticleEntity;
   shortAuthorName: string | undefined = 'MS';
+
   constructor(private academyService: AcademyService, private activatedRoute: ActivatedRoute, private randomColorService: RandomColorService, private breadcrumbService: BreadcrumbService) {
   }
 

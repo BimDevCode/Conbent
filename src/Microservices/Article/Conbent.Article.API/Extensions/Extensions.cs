@@ -52,12 +52,13 @@ public static class Extensions
                 options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
                 options.HttpsPort = 4200;
             });
-        services.AddCors(opt =>
+        services.AddCors(options =>
         {
-            opt.AddPolicy("AllowSpecificOrigin",
-                builder => builder.WithOrigins("https://localhost:4200")
-                          .AllowAnyMethod()
-                          .AllowAnyHeader());
+            options.AddPolicy("allow_web_client",
+                policy => { policy
+                .WithOrigins("https://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod(); });
         });
 
         return services;
