@@ -17,7 +17,7 @@ import { PhotoService } from './demo/service/photo.service';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
-
+import { PrismService } from './core/services/prism.service';
 @NgModule({
   declarations: [
     AppComponent, NotfoundComponent
@@ -28,7 +28,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     AppLayoutModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },
@@ -38,6 +38,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     IconService,
     NodeService,
     PhotoService,
+    PrismService,
     ProductService,
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
     provideClientHydration(),

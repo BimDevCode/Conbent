@@ -1,1 +1,12 @@
-@import '../../../../node_modules/highlight.js/styles/atom-one-dark.min.css';
+@import '../../../assets/prism/prism.css';
+
+.c-button{
+    position: absolute;
+    right: 0;
+    margin: 1em;
+    z-index: 3;
+    padding: 10px;
+}
+.position-relative{
+    position: relative;
+}

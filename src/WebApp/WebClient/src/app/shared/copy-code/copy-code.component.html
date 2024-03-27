@@ -1,5 +1,7 @@
-<div #codeBlock class="C#"  >
-  <pre>
-    <code > {{ code }}</code>
+<div #codeBlock class="language-csharp position-relative">
+  <button pButton  type="button" icon="pi pi-copy" class="p-button-text c-button" (click)="copyText()"></button>
+  <pre style="border-radius: 10px;"> 
+    <code [innerHTML]="code">
+    </code>
   </pre>
 </div>
