@@ -16,6 +16,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { ButtonModule } from 'primeng/button';
 import { CopyCodeComponent } from './copy-code/copy-code.component';
+import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [ //Connected to core.module.ts
@@ -36,6 +37,7 @@ import { CopyCodeComponent } from './copy-code/copy-code.component';
     AvatarModule,
     ButtonModule,
     FormsModule,
+    RouterOutlet,
     CommonModule,
     RouterModule,
     DividerModule
@@ -48,6 +50,7 @@ import { CopyCodeComponent } from './copy-code/copy-code.component';
     DividerModule,
     PageHeaderComponent,
     ReactiveFormsModule,
+    RouterOutlet,
     FooterComponent,
     ToastModule,
     ButtonModule,

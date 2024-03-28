@@ -1,7 +1,5 @@
 import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DetailProjectPageComponent } from './detail-project-page/detail-project-page.component';
-import { ProjectPageComponent } from './project-page/project-page.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { MainPageModule } from './main-page/main-page.module';
 import { AcademyModule } from './academy/academy.module';
@@ -17,8 +15,6 @@ import { AccountModule } from './account/account.module';
 @NgModule({
 
   declarations: [
-    DetailProjectPageComponent,
-    ProjectPageComponent,
     SignInComponent
   ],
   imports: [
@@ -35,8 +31,6 @@ import { AccountModule } from './account/account.module';
     ButtonModule
   ],
   exports: [
-    DetailProjectPageComponent,
-    ProjectPageComponent,
     SignInComponent
   ]
 })
